@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import users from './users_reducer';
+
+import session from './session_errors';
 
 export default combineReducers({
-    users
+    session
 });

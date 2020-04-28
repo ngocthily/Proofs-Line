@@ -1,3 +1,4 @@
 class StaticPagesController < ApplicationController
-    render :root
+    def root
+    end
 end
