@@ -35,11 +35,10 @@ class Signup extends React.Component {
     render() {
         return (
             <div className = "signup-form">
-                <h2>Sign up!</h2>
                 <form onSubmit = {this.handleSubmit}>
                     {this.renderErrors()}
                     <label>
-                        Username:
+                        Display Name
                         <input
                             type = "text"
                             value = {this.state.username}
@@ -47,7 +46,7 @@ class Signup extends React.Component {
                         />
                     </label>
                     <label>
-                        Email:
+                        Email
                         <input
                             type="text"
                             value={this.state.email}
@@ -55,7 +54,7 @@ class Signup extends React.Component {
                         />
                     </label>
                     <label>
-                        Password:
+                        Password
                         <input
                             type="text"
                             value={this.state.password}
