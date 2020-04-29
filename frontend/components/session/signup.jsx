@@ -20,11 +20,24 @@ class Signup extends React.Component {
         return (e) => {this.setState({ [type]: e.target.value })};
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
-            <div className = "session-form">
+            <div className = "signup-form">
                 <h2>Sign up!</h2>
-                <form>
+                <form onSubmit = {this.handleSubmit}>
+                    {this.renderErrors()}
                     <label>
                         Username:
                         <input
@@ -49,7 +62,7 @@ class Signup extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button onClick = {this.handleSubmit}>Sign Up!</button>
+                    <button type="submit">Sign up</button>
                 </form>
             </div>
         )

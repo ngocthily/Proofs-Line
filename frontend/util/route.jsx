@@ -7,6 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const Auth = ({ component: Component, path, loggedIn }) => (
+
     <Route
         path={path}
         render={props => (
@@ -15,6 +16,7 @@ const Auth = ({ component: Component, path, loggedIn }) => (
     />
 );
 
+// will be using later
 const Protected = ({ component: Component, path, loggedIn }) => (
     <Route
         path={path}
