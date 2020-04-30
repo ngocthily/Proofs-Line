@@ -5781,3 +5781,260 @@ Processing by Api::QuestionsController#index as JSON
 Completed 200 OK in 56ms (Views: 14.8ms | ActiveRecord: 35.2ms)
 
 
+Started GET "/" for ::1 at 2020-04-29 20:21:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "STQSEKxA9FJRAUAhzS41XbKnyVo1d7uAmHDyrnbIaIwdmgHYchFdpzPBwWgd5b+bnG/tc32EUUccwoY76F91yA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 410ms (Views: 406.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 20:22:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "STQSEKxA9FJRAUAhzS41XbKnyVo1d7uAmHDyrnbIaIwdmgHYchFdpzPBwWgd5b+bnG/tc32EUUccwoY76F91yA=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 365ms (Views: 360.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-29 20:22:19 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ngoc", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ngoc"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "2OiIPYZ9w/y2+KU/q7JSTIFf702Hff7ub1EOFQIP/S8gh0RFS8YKAKK8KEP6kMGAZWeo67sIVMpkzG3brFNitQ=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2OiIPYZ9w/y2+KU/q7JSTIFf702Hff7ub1EOFQIP/S8gh0RFS8YKAKK8KEP6kMGAZWeo67sIVMpkzG3brFNitQ=="], ["updated_at", "2020-04-30 03:22:19.624931"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "QdrcVrkjve0AwQtE4GJdRkyV0/4zPQolkAwOSjb1Y7lSSwD3blhUBC9jlhxrsw4WHpH6doaUaSMoJQ+2m5PQ4w=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "QdrcVrkjve0AwQtE4GJdRkyV0/4zPQolkAwOSjb1Y7lSSwD3blhUBC9jlhxrsw4WHpH6doaUaSMoJQ+2m5PQ4w=="], ["updated_at", "2020-04-30 03:22:19.633466"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 248ms (Views: 8.2ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-04-29 20:22:19 -0700
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (2.2ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-29 20:26:14 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ngoc", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ngoc"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "zz+/xDGafZqTiGVuSEZkG9vfcwey7YlBV/7T96YTTIzQOg30mx9XMkF8nfif6wi9p8XdOsHBkneHwFRI7ydDBA=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "zz+/xDGafZqTiGVuSEZkG9vfcwey7YlBV/7T96YTTIzQOg30mx9XMkF8nfif6wi9p8XdOsHBkneHwFRI7ydDBA=="], ["updated_at", "2020-04-30 03:26:14.437740"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "XcenIwebJB3AtdmgJO1xa6zASEzBQBWhyR4B01IuHr4HdtSVVbvX3v3Uw44DHgz+2b1GlASDQ4KDMeEon3OH/Q=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "XcenIwebJB3AtdmgJO1xa6zASEzBQBWhyR4B01IuHr4HdtSVVbvX3v3Uw44DHgz+2b1GlASDQ4KDMeEon3OH/Q=="], ["updated_at", "2020-04-30 03:26:14.446527"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 248ms (Views: 7.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-04-29 20:26:14 -0700
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (1.2ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 20:26:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "XcenIwebJB3AtdmgJO1xa6zASEzBQBWhyR4B01IuHr4HdtSVVbvX3v3Uw44DHgz+2b1GlASDQ4KDMeEon3OH/Q=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 355ms (Views: 350.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-29 20:26:51 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ngoc", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ngoc"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Hbyi4YHpmsx7xqSwuxXwSlDQRi+FQhwQE0YC7Zvk+vQxtj/7lHveZodZSiwD+d36R7OJpnCpLYUuypeBJ8prPA=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Hbyi4YHpmsx7xqSwuxXwSlDQRi+FQhwQE0YC7Zvk+vQxtj/7lHveZodZSiwD+d36R7OJpnCpLYUuypeBJ8prPA=="], ["updated_at", "2020-04-30 03:26:52.012964"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "wMsxhdA+rlGqLdidYiVAcmGE21vXQhwZBj+POS4fD5vuruP7EUkNTjr9UE+JFTyiW306XnkuBidP4KxkGUxcHg=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "wMsxhdA+rlGqLdidYiVAcmGE21vXQhwZBj+POS4fD5vuruP7EUkNTjr9UE+JFTyiW306XnkuBidP4KxkGUxcHg=="], ["updated_at", "2020-04-30 03:26:52.022320"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 248ms (Views: 9.3ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-04-29 20:26:52 -0700
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (1.4ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 20:27:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wMsxhdA+rlGqLdidYiVAcmGE21vXQhwZBj+POS4fD5vuruP7EUkNTjr9UE+JFTyiW306XnkuBidP4KxkGUxcHg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 366ms (Views: 361.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-29 20:27:57 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wMsxhdA+rlGqLdidYiVAcmGE21vXQhwZBj+POS4fD5vuruP7EUkNTjr9UE+JFTyiW306XnkuBidP4KxkGUxcHg=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "91tJtE514d4lB6LhfC7egsuAk+h82m/+hsmPTmrnYlVG+iUzg1UVke6j8gofHvcXRdbh9uo0Ur6Nk8Uv0ex5rA=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "91tJtE514d4lB6LhfC7egsuAk+h82m/+hsmPTmrnYlVG+iUzg1UVke6j8gofHvcXRdbh9uo0Ur6Nk8Uv0ex5rA=="], ["updated_at", "2020-04-30 03:27:57.012035"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 24ms (Views: 9.6ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-29 20:28:02 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ngoc", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ngoc"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "16tYSNPJtu9uARVivXbV762okJJ7BRS5X5oldZEEiGXKoTMCF5KWPOM5x+lMDp3d0Q6Hp2MfqcKygV3h6GQNNQ=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "16tYSNPJtu9uARVivXbV762okJJ7BRS5X5oldZEEiGXKoTMCF5KWPOM5x+lMDp3d0Q6Hp2MfqcKygV3h6GQNNQ=="], ["updated_at", "2020-04-30 03:28:02.564272"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ngoc"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "PqDSTwg3oQItpYOVRBIY9bIBDcjPdSTihnaDym4DNhV3SIi5OdFYteh87twULIGorPjnaHclML5ZxUzvjXqTfw=="], ["id", 10], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PqDSTwg3oQItpYOVRBIY9bIBDcjPdSTihnaDym4DNhV3SIi5OdFYteh87twULIGorPjnaHclML5ZxUzvjXqTfw=="], ["updated_at", "2020-04-30 03:28:02.572179"], ["id", 10]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 242ms (Views: 7.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-04-29 20:28:02 -0700
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (7.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (9.4ms)
+Completed 200 OK in 22ms (Views: 12.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 20:28:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PqDSTwg3oQItpYOVRBIY9bIBDcjPdSTihnaDym4DNhV3SIi5OdFYteh87twULIGorPjnaHclML5ZxUzvjXqTfw=="], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 384ms (Views: 378.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/questions" for ::1 at 2020-04-29 20:28:17 -0700
+Processing by Api::QuestionsController#index as JSON
+  Rendering api/questions/index.json.jbuilder
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/api/questions/index.json.jbuilder:1
+  Rendered api/questions/index.json.jbuilder (4.0ms)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 0.8ms)
+
+
