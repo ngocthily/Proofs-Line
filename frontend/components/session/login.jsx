@@ -13,31 +13,58 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
+            .then(() => this.props.history.push('/questions'));
     }
 
     handleInput(type) {
-        return (e) => {this.setState({ [type]: e.target.value })};
+        return (e) => {this.setState({ [type]: e.currentTarget.value })};
     }
 
+    demoLogin() {
+        return () => {
+            this.setState({
+                email: 'demo@proofsline.com',
+                password: 'password'
+            })
+        }
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         return (
             <div className="session-form">
                 <form>
+                    {this.renderErrors()}
                     <label>Email
                         <input
-                            type="text"
+                            type='text'
                             value={this.state.email}
                             onChange={this.handleInput('email')}
                         />
                     </label>
                     <label>Password
                         <input
-                            type="password"
+                            type='password'
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
-                        <button onClick={this.handleSubmit}>Log In</button>
+                        <button onClick={this.handleSubmit}>Log in</button>
+                        <input 
+                            type = 'submit'
+                            value = 'Log in Demo'
+                            onClick={this.demoLogin()}
+                        />
                     </label>
                 </form>
             </div>

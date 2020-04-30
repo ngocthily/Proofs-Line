@@ -13,11 +13,12 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createUser(this.state);
+        this.props.createUser(this.state)
+            .then(() => this.props.history.push('/questions'));
     }
 
     handleInput(type) {
-        return (e) => {this.setState({ [type]: e.target.value })};
+        return (e) => {this.setState({ [type]: e.currentTarget.value })};
     }
 
     renderErrors() {
