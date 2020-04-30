@@ -19,7 +19,134 @@
    font-family: sans-serif;
  }
 
-.nav-bar {
-  display: flex;
-  justify-content: flex-end;
+ 
+ .for-the-orange {
+   border-top: 4px solid orange;
+   background-color: #F6F6F6;
+  }
+  .nav-bar-container {
+    padding: 4px 8px;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-bar-header {
+    font-size: 20px;
+    padding: 4px 8px;
+  }
+
+  .for-word-proofs {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 4px;
+  }
+
+  .for-word-line {
+    display: inline-block;
+    font-weight: bold;
+  }
+// .nav-bar-buttons {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+.btn-login { 
+  color: #467594; 
+  background-color: #DBEEFF; 
+  border-color: #467594; 
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
+} 
+ 
+.btn-login:hover, 
+.btn-login:focus, 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  color: #467594; 
+  background-color: #B6DAFA; 
+  border-color: #467594; 
+} 
+ 
+.btn-login:active, 
+.btn-login.active, 
+.open .dropdown-toggle.btn-login { 
+  background-image: none; 
+} 
+ 
+.btn-login.disabled, 
+.btn-login[disabled], 
+fieldset[disabled] .btn-login, 
+.btn-login.disabled:hover, 
+.btn-login[disabled]:hover, 
+fieldset[disabled] .btn-login:hover, 
+.btn-login.disabled:focus, 
+.btn-login[disabled]:focus, 
+fieldset[disabled] .btn-login:focus, 
+.btn-login.disabled:active, 
+.btn-login[disabled]:active, 
+fieldset[disabled] .btn-login:active, 
+.btn-login.disabled.active, 
+.btn-login[disabled].active, 
+fieldset[disabled] .btn-login.active { 
+  background-color: #DBEEFF; 
+  border-color: #467594; 
+} 
+ 
+.btn-login .badge { 
+  color: #DBEEFF; 
+  background-color: #467594; 
+}
+
+.btn-signup { 
+  color: #FFFFFF; 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
+} 
+ 
+.btn-signup:hover, 
+.btn-signup:focus, 
+.btn-signup:active, 
+.btn-signup.active, 
+.open .dropdown-toggle.btn-signup { 
+  color: #FFFFFF; 
+  background-color: #0A78CC; 
+  border-color: #77A4C2; 
+} 
+ 
+.btn-signup:active, 
+.btn-signup.active, 
+.open .dropdown-toggle.btn-signup { 
+  background-image: none; 
+} 
+ 
+.btn-signup.disabled, 
+.btn-signup[disabled], 
+fieldset[disabled] .btn-signup, 
+.btn-signup.disabled:hover, 
+.btn-signup[disabled]:hover, 
+fieldset[disabled] .btn-signup:hover, 
+.btn-signup.disabled:focus, 
+.btn-signup[disabled]:focus, 
+fieldset[disabled] .btn-signup:focus, 
+.btn-signup.disabled:active, 
+.btn-signup[disabled]:active, 
+fieldset[disabled] .btn-signup:active, 
+.btn-signup.disabled.active, 
+.btn-signup[disabled].active, 
+fieldset[disabled] .btn-signup.active { 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+} 
+ 
+.btn-signup .badge { 
+  color: #1499FF; 
+  background-color: #FFFFFF; 
 }

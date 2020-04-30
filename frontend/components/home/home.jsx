@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-    <div>
-        <h1>Proofs Line</h1>
+    <div className = 'home'>
+        <h1>We {`<3`} people who do proofs</h1>
     </div>
 )
