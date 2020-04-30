@@ -9,24 +9,26 @@ class Login extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-            .then(() => this.props.history.push('/questions'));
+            // .then(() => this.props.history.push('/questions'));
     }
 
     handleInput(type) {
         return (e) => {this.setState({ [type]: e.currentTarget.value })};
     }
 
-    demoLogin() {
-        return () => {
-            this.setState({
-                email: 'demo@proofsline.com',
-                password: 'password'
-            })
-        }
+    demoLogin(e) {
+        e.preventDefault();
+        this.setState({
+            email: 'demo@proofsline.com',
+            password: 'password'
+        })
     }
 
     renderErrors() {
@@ -63,7 +65,7 @@ class Login extends React.Component {
                         <input 
                             type = 'submit'
                             value = 'Log in Demo'
-                            onClick={this.demoLogin()}
+                            onClick={(e) => this.demoLogin(e)}
                         />
                     </label>
                 </form>

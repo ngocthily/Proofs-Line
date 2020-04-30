@@ -11,10 +11,14 @@ class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.createUser(this.state)
-            .then(() => this.props.history.push('/questions'));
+            // .then(() => this.props.history.push('/questions'));
     }
 
     handleInput(type) {
