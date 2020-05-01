@@ -8,7 +8,7 @@ export default ({currentUser, logout }) => {
             will edit later to do what stack overflow does 
             also logout will be in a dropdown eventually...*/}
             <h2> {currentUser.username} </h2>
-            <button onClick = {logout}>Log out</button>
+            <button className = "navbar-logout-btn" onClick = {logout}>Log out</button>
         </div>
     ) : (
         <div>
@@ -20,6 +20,9 @@ export default ({currentUser, logout }) => {
     return (
         <div className = "nav-bar-container">
             <div className = "nav-bar-header">
+            <Link to = "/">
+            <img className="home-logo" src={window.logo} />
+                </Link>
                 <div className = "for-word-proofs">
                     proofs 
                 </div>
