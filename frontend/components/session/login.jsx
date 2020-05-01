@@ -1,6 +1,12 @@
 import React from 'react';
 
+const demoInfo = {
+    email: 'demo@proofsline.com',
+    password: 'password'
+};
+
 class Login extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -8,7 +14,9 @@ class Login extends React.Component {
             password: '',
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
+
     componentWillUnmount() {
         this.props.clearSessionErrors();
     }
@@ -23,12 +31,14 @@ class Login extends React.Component {
         return (e) => {this.setState({ [type]: e.currentTarget.value })};
     }
 
+    demoLoginFill() {
+        this.setState(demoInfo)
+    }
+
     demoLogin(e) {
         e.preventDefault();
-        this.setState({
-            email: 'demo@proofsline.com',
-            password: 'password'
-        })
+        this.demoLoginFill();
+        setTimeout(()=> {this.props.login(demoInfo)}, 1000)
     }
 
     renderErrors() {
@@ -57,16 +67,17 @@ class Login extends React.Component {
                     </label>
                     <label>Password
                         <input
-                            type='password'
+                            type='text'
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
                         <button onClick={this.handleSubmit}>Log in</button>
-                        <input 
+                        {/* <input 
                             type = 'submit'
-                            value = 'Log in Demo'
+                            value = 'Log in demo'
                             onClick={(e) => this.demoLogin(e)}
-                        />
+                        /> */}
+                        <button onClick={this.demoLogin}>Log in demo</button>
                     </label>
                 </form>
             </div>
