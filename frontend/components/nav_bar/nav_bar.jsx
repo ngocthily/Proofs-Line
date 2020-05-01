@@ -18,7 +18,6 @@ export default ({currentUser, logout }) => {
     );
 
     return (
-        <div className = "for-the-orange">
         <div className = "nav-bar-container">
             <div className = "nav-bar-header">
                 <div className = "for-word-proofs">
@@ -31,7 +30,6 @@ export default ({currentUser, logout }) => {
             <div className = "nav-bar-buttons">
                 {display}
             </div>
-        </div>
         </div>
     )
 }

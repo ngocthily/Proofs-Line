@@ -39,12 +39,19 @@ class Signup extends React.Component {
 
     render() {
         return (
+            <div className = "whole-signup-form">
+            <div className = "signup-description">
+                <h3>Join the Proofs Line community</h3>
+                <p>Get unstuck -- ask a question</p>
+                <p>Unlock new privileges like voting and commenting</p>
+            </div>
             <div className = "signup-form">
                 <form onSubmit = {this.handleSubmit}>
                     {this.renderErrors()}
                     <label>
                         Display Name
                         <input
+                            className="signup-textbox"
                             type = "text"
                             value = {this.state.username}
                             onChange = {this.handleInput('username')}
@@ -53,6 +60,7 @@ class Signup extends React.Component {
                     <label>
                         Email
                         <input
+                            className = "signup-textbox"
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
@@ -61,13 +69,15 @@ class Signup extends React.Component {
                     <label>
                         Password
                         <input
+                            className= "signup-textbox"
                             type="text"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <button type="submit">Sign up</button>
+                    <button className = "signup-submit-btn" type="submit">Sign up</button>
                 </form>
+            </div>
             </div>
         )
     }
