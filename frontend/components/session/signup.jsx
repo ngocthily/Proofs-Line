@@ -48,8 +48,9 @@ class Signup extends React.Component {
             <div className = "signup-form">
                 <form onSubmit = {this.handleSubmit}>
                     {this.renderErrors()}
-                    <label>
-                        Display Name
+                    <label for = 'signup-display-name'>
+                            Display Name
+                        <br/>
                         <input
                             className="signup-textbox"
                             type = "text"
@@ -57,8 +58,10 @@ class Signup extends React.Component {
                             onChange = {this.handleInput('username')}
                         />
                     </label>
-                    <label>
-                        Email
+                    <br />
+                    <label for = 'signup-email'>
+                            Email
+                        <br/>
                         <input
                             className = "signup-textbox"
                             type="text"
@@ -66,8 +69,10 @@ class Signup extends React.Component {
                             onChange={this.handleInput('email')}
                         />
                     </label>
-                    <label>
-                        Password
+                    <br />
+                    <label for = 'signup-password'>
+                                Password
+                        <br/>
                         <input
                             className= "signup-textbox"
                             type="text"
@@ -75,6 +80,7 @@ class Signup extends React.Component {
                             onChange={this.handleInput('password')}
                         />
                     </label>
+                    <br />
                     <button className = "signup-submit-btn" type="submit">Sign up</button>
                 </form>
             </div>
