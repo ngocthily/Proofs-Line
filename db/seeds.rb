@@ -9,6 +9,5 @@
 User.destroy_all
 Question.destroy_all
 
-demo = User.create({username: 'demo', email: 'demo@proofsline.com', password: 'password'})
-
-testQuestion = Question.create({title: 'test', body: 'testing questions', author_id: demo.id})
+demo = User.create(username: 'demo', email: 'demo@proofsline.com', password: 'password')
+testQuestion = Question.create(title: 'test', body: 'testing questions', author_id: demo.id)

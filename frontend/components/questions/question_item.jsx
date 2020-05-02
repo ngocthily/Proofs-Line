@@ -1,10 +1,11 @@
 import React from 'react';
 
-const QuestionItem = (props) => (
+export default ( {question} ) => {
+    return ( 
         <li>
-            <h2>{question.title}</h2>
-            <p>{question.body}</p>
+            <h3>{question.title}</h3>
+            <h3>{question.body}</h3>
         </li>
-);
+    )
+}
 
-export default QuestionItem;
