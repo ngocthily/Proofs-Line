@@ -20,8 +20,24 @@ export default ({currentUser, logout }) => {
     return (
         <div className = "nav-bar-container">
             <div className = "nav-bar-header">
-            <Link to = "/">
-            <img className="home-logo" src={window.logo} />
+                <div className = 'dropdown'>
+                    <label className="dropdown-items">
+                        <button className = 'dropbtn'>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    <div class="dropdown-content">
+                            <Link to = "/">
+                            <p className = "dropdown-home">Home</p>
+                            </Link>
+                            <p className = "dropdown-public">PUBLIC</p>
+                            <Link to = "/questions">
+                            <p className = "dropdown-questions">Questions</p>
+                            </Link>
+                        </div>
+                    </label>
+                </div>
+                <Link to = "/">
+                    <img className="home-logo" src={window.logo} />
                 </Link>
                 <div className = "for-word-proofs">
                     proofs 
@@ -31,6 +47,10 @@ export default ({currentUser, logout }) => {
                 </div>
             </div>
             <div className = "nav-bar-buttons">
+                <div className = "search-img">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input className="search-bar" type="text" placeholder="Search.."></input>
                 {display}
             </div>
         </div>

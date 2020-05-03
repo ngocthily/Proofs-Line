@@ -15,6 +15,76 @@
     .nav-bar-header {
     font-size: 20px;
     padding: 4px 8px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dropdown-img {
+    padding: 2px;
+    color: #848d94;
+  }
+
+  .dropbtn {
+  background-color: #fafafb;
+  // color: white;
+  padding: 2px 10px;
+  font-size: 22px;
+  border: none;
+  margin-left: -10px;
+}
+
+.dropbtn:hover {
+  background-color: #e5e6e8;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  // min-width: 160px;
+  // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  // z-index: 1;
+
+}
+
+.dropdown-content p {
+  color: #525a60;
+  padding: 6px 30px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  // margin-left: 12px;
+  width: 120px;
+}
+
+.dropdown-content a:hover {color: black}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-public {
+  font-size: 12px;
+  // position: relative;
+  // left: 0px;
+  // padding: 2px; 
+}
+
+.dropdown-home {
+  // background-color: #eff0f1;
+  text-align: left;
+}
+
+.dropdown-questions {
+  position: relative;
+  left: 10px;
+}
+  .home-logo {
+    // padding: 2px;
+    margin-left: 12px;
   }
 
   .for-word-proofs {
@@ -77,6 +147,18 @@ fieldset[disabled] .navbar-logout-btn.active {
 .navbar-logout-btn.badge { 
   color: #DBEEFF; 
   background-color: #467594;
+}
+
+.nav-bar-buttons {
+  display: flex;
+  align-items: row;
+
+}
+
+.search-bar {
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
 }
 
 .btn-login { 
@@ -178,3 +260,33 @@ fieldset[disabled] .btn-signup.active {
   color: #1499FF; 
   background-color: #FFFFFF; 
 }
+
+.search-bar {
+  // float: right;
+  // border-left-style: hidden;
+  background-color: white;
+  // border-color: #bbc0c4;
+  // border-width: 1px;
+  border-left-style: hidden;
+  border-top: 1px solid #bbc0c4;
+  border-right: 1px solid #bbc0c4;
+  border-bottom: 1px solid #bbc0c4;
+  margin-left: -8px;
+  float: right;
+  outline: none;
+}
+
+.search-img {
+  padding: 8px 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 26px;
+  background-color: white;
+  border-top: 1px solid #bbc0c4;
+  border-left: 1px solid #bbc0c4;
+  border-bottom: 1px solid #bbc0c4;
+  // width: 1px;
+  overflow: hidden;
+  margin-left: 8px;
+}
+
