@@ -85,17 +85,20 @@
   .home-logo {
     // padding: 2px;
     margin-left: 12px;
+    margin-top: 6px;
   }
 
   .for-word-proofs {
     display: inline-block;
     margin-left: 8px;
     margin-right: 4px;
+    margin-top: 4px;
   }
 
   .for-word-line {
     display: inline-block;
     font-weight: bold;
+    margin-top: 4px;
   }
 
 .navbar-logout-btn {
@@ -152,13 +155,14 @@ fieldset[disabled] .navbar-logout-btn.active {
 .nav-bar-buttons {
   display: flex;
   align-items: row;
-
+  height: 44px;
 }
 
 .search-bar {
-  margin: 4px 2px;
+  margin: 4px 4px;
   font-size: 12px;
   padding: 8px 12px;
+  // height: 35px;
 }
 
 .btn-login { 

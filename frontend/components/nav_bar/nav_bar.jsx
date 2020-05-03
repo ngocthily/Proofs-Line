@@ -50,7 +50,7 @@ export default ({currentUser, logout }) => {
                 <div className = "search-img">
                     <i class="fas fa-search"></i>
                 </div>
-                <input className="search-bar" type="text" placeholder="Search.."></input>
+                <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
                 {display}
             </div>
         </div>
