@@ -13,7 +13,7 @@ class QuestionIndex extends React.Component {
     render() {
         // const questions = this.props;
         return (
-        <div>
+        <div className = "questions">
             <ul>
             {
                 this.props.questions.map(question => {

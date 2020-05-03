@@ -25,7 +25,7 @@ export default ({currentUser, logout }) => {
                         <button className = 'dropbtn'>
                             <i class="fas fa-bars"></i>
                         </button>
-                    <div class="dropdown-content">
+                    <div className="dropdown-content">
                             <Link to = "/">
                             <p className = "dropdown-home">Home</p>
                             </Link>
@@ -51,8 +51,8 @@ export default ({currentUser, logout }) => {
                     <i class="fas fa-search"></i>
                 </div>
                 <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
-                {display}
             </div>
+                {display}
         </div>
     )
 }

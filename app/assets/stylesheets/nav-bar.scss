@@ -106,11 +106,13 @@
   background-color: #DBEEFF; 
   border-color: #467594; 
   border-radius: 4px;
-  margin-top: -20px;
+  margin-top: -30px;
   margin-left: -80px;
   font-size: 12px;
   padding: 8px 12px;
-  position: fixed;
+  position: absolute;
+  display: inline-block;
+  top: 40px;
 }
 
 .navbar-logout-btn:hover, 
