@@ -43,7 +43,7 @@ class Login extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className = 'login-errors'>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -60,26 +60,26 @@ class Login extends React.Component {
             <img className = "logo" src={window.logo}/>
             <div className="session-form">
                 <form>
-                    {this.renderErrors()}
                     <div>
-                    <label className = "login-email">Email
+                    <label className="login-email">Email
                         <input
-                            className = "login-textbox"
+                            className="login-textbox"
                             type='text'
                             value={this.state.email}
                             onChange={this.handleInput('email')}
-                        />
+                        /> 
                     </label>
                     </div>
                     <div>
                     <label className = "login-password">Password
                         <input
                             className = "login-textbox"
-                            type='text'
+                            type='password'
                             value={this.state.password}
                             onChange={this.handleInput('password')}
-                        />
+                            />
                     </label>
+                            {this.renderErrors()}
                     </div>
                     <div>
                         <div>

@@ -27,7 +27,7 @@ class Signup extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className = 'signup-errors'>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -40,6 +40,7 @@ class Signup extends React.Component {
     render() {
         return (
             <div className = "whole-signup-form">
+            <div className = "signup-form-center">
             <div className = "signup-description">
                 <h3>Join the Proofs Line community</h3>
                 <p>Get unstuck -- ask a question</p>
@@ -47,8 +48,7 @@ class Signup extends React.Component {
             </div>
             <div className = "signup-form">
                 <form onSubmit = {this.handleSubmit}>
-                    {this.renderErrors()}
-                    <label for = 'signup-display-name'>
+                    <label className = 'signup-display-name'>
                             Display Name
                         <br/>
                         <input
@@ -59,7 +59,7 @@ class Signup extends React.Component {
                         />
                     </label>
                     <br />
-                    <label for = 'signup-email'>
+                    <label className = 'signup-email'>
                             Email
                         <br/>
                         <input
@@ -70,19 +70,21 @@ class Signup extends React.Component {
                         />
                     </label>
                     <br />
-                    <label for = 'signup-password'>
+                    <label className = 'signup-password'>
                                 Password
                         <br/>
                         <input
                             className= "signup-textbox"
-                            type="text"
+                            type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
                     </label>
+                            {this.renderErrors()}
                     <br />
                     <button className = "signup-submit-btn" type="submit">Sign up</button>
                 </form>
+            </div>
             </div>
             </div>
         )
