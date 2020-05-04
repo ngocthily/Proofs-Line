@@ -3,5 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .questions {
-    margin-top: 200px;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+.question-header {
+    margin-left: 40px;
+}
+
+.question-title {
+    font-size: 14px;
+    color: #147dce;
+}
+
+.question-body {
+    font-size: 12px;
+}
+
+.question-divider {
+    width: 70%;
+    margin-left: 0px;
 }

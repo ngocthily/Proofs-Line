@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionItem from './question_index';
+import QuestionItem from './question_item';
 
 class QuestionIndex extends React.Component {
     constructor(props) {
@@ -14,18 +14,23 @@ class QuestionIndex extends React.Component {
         // const questions = this.props;
         return (
         <div className = "questions">
-            <ul>
+            <h3 className = "question-header">All Questions</h3>
+            <div>
             {
-                this.props.questions.map(question => {
-                    <QuestionItem
-                    // title={question.title}
-                    // body={question.body}
-                            question = {question}
-                            key={question.id}
-                    />
-                })
+                this.props.questions.map((question,idx) => (
+                    // return (
+                    <ul>
+                        <QuestionItem
+                        // title={question.title}
+                        // body={question.body}
+                                question = {question}
+                                key={question.id}
+                        />
+                    </ul>
+                    // )
+                ))
             }
-            </ul>
+            </div>
         </div>
         )
     }

@@ -1,13 +1,13 @@
 export const fetchQuestions = () => (
     $.ajax({
-        method: 'GET',
-        url: '/api/questions'
+        url: '/api/questions',
+        method: 'GET'
     })
 );
 
-export const fetchQuestion = () => (
-    $.ajax({
-        method: 'GET',
-        url: `/api/questions/${id}`
-    })
-);
+// export const fetchQuestion = () => (
+//     $.ajax({
+//         method: 'GET',
+//         url: `/api/questions/question.${id}`
+//     })
+// );

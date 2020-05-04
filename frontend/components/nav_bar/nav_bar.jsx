@@ -23,7 +23,7 @@ export default ({currentUser, logout }) => {
                 <div className = 'dropdown'>
                     <label className="dropdown-items">
                         <button className = 'dropbtn'>
-                            <i class="fas fa-bars"></i>
+                            <i className ="fas fa-bars"></i>
                         </button>
                     <div className="dropdown-content">
                             <Link to = "/">
@@ -48,7 +48,7 @@ export default ({currentUser, logout }) => {
             </div>
             <div className = "nav-bar-buttons">
                 <div className = "search-img">
-                    <i class="fas fa-search"></i>
+                    <i className="fas fa-search"></i>
                 </div>
                 <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
             </div>
