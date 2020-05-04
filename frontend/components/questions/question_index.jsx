@@ -15,9 +15,10 @@ class QuestionIndex extends React.Component {
         return (
         <div className = "questions">
             <h3 className = "question-header">All Questions</h3>
-            <div>
+            <button className = "ask-question-button">Ask Question</button>
+            <div className = "all-questions">
             {
-                this.props.questions.map((question,idx) => (
+                this.props.questions.map((question) => (
                     // return (
                     <ul>
                         <QuestionItem

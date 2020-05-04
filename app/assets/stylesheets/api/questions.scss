@@ -9,6 +9,7 @@
 
 .question-header {
     margin-left: 40px;
+    // top: 30px;
 }
 
 .question-title {
@@ -23,4 +24,61 @@
 .question-divider {
     width: 70%;
     margin-left: 0px;
+}
+
+.all-questions {
+    position: relative;
+    top: -20px;
+}
+.ask-question-button {
+   position: relative;
+   left: 550px;
+   top: -45px;
+   color: #FFFFFF; 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.ask-question-button:hover, 
+.ask-question-button:focus, 
+.ask-question-button:active, 
+.ask-question-button.active, 
+.open .dropdown-toggle.ask-question-button { 
+  color: #FFFFFF; 
+  background-color: #0A78CC; 
+  border-color: #77A4C2; 
+}
+
+.ask-question-button:active, 
+.ask-question-button.active, 
+.open .dropdown-toggle.ask-question-button { 
+  background-image: none; 
+} 
+ 
+.ask-question-button.disabled, 
+.ask-question-button[disabled], 
+fieldset[disabled] .ask-question-button, 
+.ask-question-button.disabled:hover, 
+.ask-question-button[disabled]:hover, 
+fieldset[disabled] .ask-question-button:hover, 
+.ask-question-button.disabled:focus, 
+.ask-question-button[disabled]:focus, 
+fieldset[disabled] .ask-question-button:focus, 
+.ask-question-button.disabled:active, 
+.ask-question-button[disabled]:active, 
+fieldset[disabled] .ask-question-button:active, 
+.ask-question-button.disabled.active, 
+.ask-question-button[disabled].active, 
+fieldset[disabled] .ask-question-button.active { 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+} 
+
+.ask-question-button.badge { 
+  color: #1499FF; 
+  background-color: #FFFFFF; 
 }
