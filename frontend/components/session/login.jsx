@@ -57,7 +57,7 @@ class Login extends React.Component {
         return (
             <div className = "whole-login-page">
             <div className="session-form-center">
-            <img className = "logo" src={window.logo}/>
+            <img className = "icon" src={window.icon}/>
             <div className="session-form">
                 <form>
                     <div>

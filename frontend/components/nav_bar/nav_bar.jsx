@@ -39,12 +39,6 @@ export default ({currentUser, logout }) => {
                 <Link to = "/">
                     <img className="home-logo" src={window.logo} />
                 </Link>
-                <div className = "for-word-proofs">
-                    proofs 
-                </div>
-                <div className = "for-word-line">
-                    line 
-                </div>
             </div>
             <div className = "nav-bar-buttons">
                 <div className = "search-img">
