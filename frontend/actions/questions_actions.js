@@ -18,10 +18,10 @@ export const fetchQuestions = () => dispatch => (
         .then((questions) => dispatch(receiveAllQuestions(questions)))
 );
 
-// export const fetchQuestion = () => dispatch => (
-//     QuestionAPIUtil.fetchQuestion()
-//         .then((question) => dispatch(receiveQuestion(question)))
-// );
+export const fetchQuestion = (questionId) => dispatch => (
+    QuestionAPIUtil.fetchQuestion(questionId)
+        .then((question) => dispatch(receiveQuestion(question)))
+);
 
 export const createQuestion = (question) => dispatch => (
     QuestionAPIUtil.createQuestion(question)

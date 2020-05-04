@@ -1,21 +1,21 @@
 export const fetchQuestions = () => (
     $.ajax({
-        url: '/api/questions',
+        url: 'api/questions',
         method: 'GET'
     })
 );
 
-// export const fetchQuestion = () => (
-//     $.ajax({
-//         method: 'GET',
-//         url: `/api/questions/question.${id}`
-//     })
-// );
+export const fetchQuestion = (questionId) => (
+    $.ajax({
+        url: `/api/questions/${questionId}`,
+        method: 'GET'
+    })
+);
 
 export const createQuestion = (question) => (
     $.ajax({
+        api: '/api/questions',
         method: 'POST',
-        api: `api/questions`,
-        data: { question }
+        data: { question } 
     })
-)
+);

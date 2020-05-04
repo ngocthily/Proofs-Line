@@ -82,3 +82,58 @@ fieldset[disabled] .ask-question-button.active {
   color: #1499FF; 
   background-color: #FFFFFF; 
 }
+
+.question-form {
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.post-question-btn {
+  color: #FFFFFF; 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.post-question-btn:hover, 
+.post-question-btn:focus, 
+.post-question-btn:active, 
+.post-question-btn.active, 
+.open .dropdown-toggle.post-question-btn { 
+  color: #FFFFFF; 
+  background-color: #0A78CC; 
+  border-color: #77A4C2; 
+}
+
+.post-question-btn:active, 
+.post-question-btn.active, 
+.open .dropdown-toggle.post-question-btn { 
+  background-image: none; 
+} 
+ 
+.post-question-btn.disabled, 
+.post-question-btn[disabled], 
+fieldset[disabled] .post-question-btn, 
+.post-question-btn.disabled:hover, 
+.post-question-btn[disabled]:hover, 
+fieldset[disabled] .post-question-btn:hover, 
+.post-question-btn.disabled:focus, 
+.post-question-btn[disabled]:focus, 
+fieldset[disabled] .post-question-btn:focus, 
+.post-question-btn.disabled:active, 
+.post-question-btn[disabled]:active, 
+fieldset[disabled] .post-question-btn:active, 
+.post-question-btn.disabled.active, 
+.post-question-btn[disabled].active, 
+fieldset[disabled] .post-question-btn.active { 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+} 
+
+.post-question-btn.badge { 
+  color: #1499FF; 
+  background-color: #FFFFFF; 
+}

@@ -19,7 +19,7 @@ const QuestionItem = (props) => {
             <div className = "question-body">
                 {props.question.body}
             </div>
-            <hr className = "question-divider"></hr>
+            {/* <hr className = "question-divider"></hr> */}
         </div>
     )
 }
