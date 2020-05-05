@@ -6,21 +6,26 @@ class QuestionForm extends React.Component {
         super(props);
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.routeToQuestionIdx = this.routeToQuestionIdx.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createQuestion(this.state)
-            .then(() => this.props.history.push(`/questions/${question.id}`));
+            .then((res) => this.routeToQuestionIdx(res));
     }
 
     handleInput(type) {
         return (e) => {this.setState({ [type]: e.currentTarget.value})};
     } 
 
+    routeToQuestionIdx(res) {
+        this.props.history.push(`/questions/${res.question.id}`);
+    }
+
     render() {
         return (
-        <div>
+        <div className = "question-form">
             <form onSubmit = {this.handleSubmit}>
                 {/* <div className="question-form"> */}
                 <label>Title</label>
@@ -40,12 +45,12 @@ class QuestionForm extends React.Component {
                     onChange={this.handleInput('body')}
                 />
                 <br/>
-                {/* <input
+                <input
                     type= "submit" 
                     value = "Post your question"
                     className = "post-question-btn"
-                /> */}
-                <button className = "post-question-btn">Post your question</button>
+                />
+                {/* <button className = "post-question-btn">Post your question</button> */}
                 {/* </div> */}
             </form>
         </div>

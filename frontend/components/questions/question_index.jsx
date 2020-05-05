@@ -26,9 +26,9 @@ class QuestionIndex extends React.Component {
             </div>
             <div className = "all-questions">
                 {this.props.questions.map((question) => (
-                    <div>
+                    <div key={question.id}>
                         <hr className = "question-divider"/>
-                        <li className = "ind-question" key = {question.id}>
+                        <li className = "ind-question">
                         <Link to = {`questions/${question.id}`}>
                             <p>{question.title}</p>
                         </Link>
