@@ -1,45 +1,42 @@
 import React from 'react';
-import QuestionItem from './question_item';
-import CreateQuestionFormContainer from './question_form_container';
+import { Link } from 'react-router-dom';
 
 class QuestionIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.routeToAsk = this.routeToAsk.bind(this);
+        this.routeToQuestions = this.routeToQuestions.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchQuestions();
     }
 
-    routeToAsk() {
-        let path = `/questions/ask`;
-        this.props.history.push(path);
+    routeToQuestions() {
+        this.props.history.push('/questions/new')
     }
 
     render() {
-        // const questions = this.props;
         return (
         <div className = "questions">
+            <div className = "question-first-line">
             <h3 className = "question-header">All Questions</h3>
-            <button className = "ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
-            <div className = "all-questions">
-            {
-                this.props.questions.map((question) => (
-                    // return (
-                        <ul key = {question.id}>
-                        <QuestionItem
-                        // title={question.title}
-                        // body={question.body}
-                                question = {question}
-                                // key = {question.id}
-                        />
-                        </ul>
-                    // )
-                ))
-            }
+            <div>
+            <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
             </div>
-            {/* <CreateQuestionFormContainer/> */}
+            </div>
+            <div className = "all-questions">
+                {this.props.questions.map((question) => (
+                    <div>
+                        <hr className = "question-divider"/>
+                        <li className = "ind-question" key = {question.id}>
+                        <Link to = {`questions/${question.id}`}>
+                            <p>{question.title}</p>
+                        </Link>
+                        {question.body}
+                        </li>
+                    </div>
+                ))}
+            </div>
         </div>
         )
     }

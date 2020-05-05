@@ -7,8 +7,8 @@ const mapStateToProps = (state, ownProps) => {
     const questionId = parseInt(ownProps.match.params.questionId);
     const question = state.entities.questions[questionId] || {};
     return {
-        questionId: questionId,
-        question: question
+        questionId,
+        question
     };
 }
 

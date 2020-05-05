@@ -1,15 +1,20 @@
 import React from 'react';
 
 class QuestionShow extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.fetchQuestion(this.props.questionId);
     }
 
     render() {
         return (
-            <div>
-                here
-            </div>
+        <div className = "ind-question-page">
+            <p>{this.props.question.title}</p>
+            <p>{this.props.question.body}</p>
+        </div>
         )
     }
 }

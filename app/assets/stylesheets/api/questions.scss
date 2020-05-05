@@ -5,42 +5,40 @@
 .questions {
     margin-top: 80px;
     margin-left: 100px;
+    
+}
+
+.question-first-line {
+  display: flex;
+  flex-direction: row;
 }
 
 .question-header {
-    margin-left: 40px;
-    // top: 30px;
-}
-
-.question-title {
-    font-size: 14px;
-    color: #147dce;
-}
-
-.question-body {
-    font-size: 12px;
+    margin-left: 150px;
+    margin-top: 130px;
 }
 
 .question-divider {
-    width: 70%;
-    margin-left: 0px;
+    width: 60%;
+    margin-left: 20px;
 }
 
 .all-questions {
-    position: relative;
-    top: -20px;
+    margin-left: 150px;
+    // height: 100px;
 }
 .ask-question-button {
-   position: relative;
-   left: 550px;
-   top: -45px;
-   color: #FFFFFF; 
+  display: block;
+  right: 100px;
+  top: 65px;
+  color: #FFFFFF; 
   background-color: #1499FF; 
   border-color: #77A4C2; 
   border-radius: 4px;
-  margin: 4px 2px;
+  margin: 4px 6px;
   font-size: 12px;
-  padding: 8px 12px;
+  padding: 8px 8px;
+
 }
 
 .ask-question-button:hover, 
@@ -136,4 +134,13 @@ fieldset[disabled] .post-question-btn.active {
 .post-question-btn.badge { 
   color: #1499FF; 
   background-color: #FFFFFF; 
+}
+
+.ind-question-page {
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.ind-question {
+  list-style-type: none;
 }

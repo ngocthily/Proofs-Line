@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import QuestionIndex from './question_index';
 
 const mapStateToProps = (state) => ({
-    // questions: Object.keys(state.entities.questions).map(id => state.entities.questions[id])
     questions: Object.values(state.entities.questions)
 });
 

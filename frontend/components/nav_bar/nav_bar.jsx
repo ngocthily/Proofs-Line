@@ -25,15 +25,16 @@ export default ({currentUser, logout }) => {
                         <button className = 'dropbtn'>
                             <i className ="fas fa-bars"></i>
                         </button>
-                    <div className="dropdown-content">
+                        {/* broken */}
+                    {/* <div className="dropdown-content">
                             <Link to = "/">
                             <p className = "dropdown-home">Home</p>
                             </Link>
                             <p className = "dropdown-public">PUBLIC</p>
-                            <Link to = "/questions">
+                            <Link to = "/">
                             <p className = "dropdown-questions">Questions</p>
                             </Link>
-                        </div>
+                        </div> */}
                     </label>
                 </div>
                 <Link to = "/">
