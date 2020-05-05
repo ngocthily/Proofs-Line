@@ -7,14 +7,14 @@ export const fetchQuestions = () => (
 
 export const fetchQuestion = (questionId) => (
     $.ajax({
-        url: `/api/questions/${questionId}`,
+        url: `api/questions/${questionId}`,
         method: 'GET'
     })
 );
 
 export const createQuestion = (question) => (
     $.ajax({
-        url: '/api/questions',
+        url: 'api/questions',
         method: 'POST',
         data: { question } 
     })

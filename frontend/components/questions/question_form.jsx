@@ -12,15 +12,15 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createQuestion(this.state)
-            .then((res) => this.routeToQuestionIdx(res));
+            .then((question) => this.routeToQuestionIdx(question));
     }
 
     handleInput(type) {
         return (e) => {this.setState({ [type]: e.currentTarget.value})};
     } 
 
-    routeToQuestionIdx(res) {
-        this.props.history.push(`/questions/${res.question.id}`);
+    routeToQuestionIdx(question) {
+        this.props.history.push(`/questions/${question.question.id}`);
     }
 
     render() {

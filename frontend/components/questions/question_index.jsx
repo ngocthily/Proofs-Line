@@ -24,16 +24,16 @@ class QuestionIndex extends React.Component {
             <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
             </div>
             </div>
-            <div className = "all-questions">
+            <div>
                 {this.props.questions.map((question) => (
                     <div key={question.id}>
                         <hr className = "question-divider"/>
-                        <li className = "ind-question">
-                        <Link to = {`questions/${question.id}`}>
-                            <p>{question.title}</p>
-                        </Link>
-                        {question.body}
-                        </li>
+                            <li className="ind-question">
+                                <Link to = {`questions/${question.id}`}>
+                                    <p>{question.title}</p>
+                                </Link>
+                                    {question.body}
+                            </li>
                     </div>
                 ))}
             </div>
