@@ -19,10 +19,10 @@ class QuestionIndex extends React.Component {
         return (
         <div className = "questions">
             <div className = "question-first-line">
-            <h3 className = "question-header">All Questions</h3>
-            <div>
-            <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
-            </div>
+                <h3 className = "question-header">All Questions</h3>
+                <div>
+                    <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
+                </div>
             </div>
             <div>
                 {this.props.questions.map((question) => (
@@ -30,8 +30,9 @@ class QuestionIndex extends React.Component {
                         <hr className = "question-divider"/>
                             <li className="ind-question">
                                 <Link to = {`questions/${question.id}`}>
-                                    <p>{question.title}</p>
+                                    {question.title}
                                 </Link>
+                                <br/>
                                     {question.body}
                             </li>
                     </div>

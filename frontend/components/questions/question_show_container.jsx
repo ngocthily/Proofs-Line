@@ -6,7 +6,7 @@ import QuestionShow from './question_show';
 
 const mapStateToProps = (state, ownProps) => {
     const questionId = parseInt(ownProps.match.params.questionId);
-    const question = selectQuestion(state.entities, question);
+    const question = selectQuestion(state.entities, questionId);
     return {
         questionId,
         question
