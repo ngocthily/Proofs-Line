@@ -1,21 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { createQuestion } from '../../actions/questions_actions';
+import { createQuestion, clearQuestionErrors } from '../../actions/questions_actions';
 import QuestionForm from './question_form';
 
-const mapStateToProps = (state) => {
-    return {
+const mapStateToProps = ( {errors, session}) => ({
         question: {
             title: '',
             body: '',
-            author_id: state.session.id
-        }
-    }
-};
+            author_id: session.id
+        },
+        errors: errors.question,
+        formType: 'Post your question'
+});
 
 const mapDispatchToProps = (dispatch) => ({
-    createQuestion: question => dispatch(createQuestion(question))
+    action: (question) => dispatch(createQuestion(question)),
+    clearQuestionErrors: () => dispatch(clearQuestionErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionForm);

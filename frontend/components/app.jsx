@@ -5,6 +5,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import QuestionIndexContainer from './questions/question_index_container';
 import CreateQuestionFormContainer from './questions/create_question_form_container';
+import EditQuestionFormContainer from './questions/edit_question_form_container';
 import QuestionShowContainer from './questions/question_show_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
@@ -18,6 +19,7 @@ const App = () => (
         <Switch>
             <Route exact path="/questions/new" component={CreateQuestionFormContainer}/>
             <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
+            <Route path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
         </Switch>
     </div>

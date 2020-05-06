@@ -11,16 +11,32 @@ class QuestionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createQuestion(this.state)
+        this.props.action(this.state)
             .then((question) => this.routeToQuestionIdx(question));
     }
 
+    componentWillUnmount() {
+        this.props.clearQuestionErrors();
+    }
+    
     handleInput(type) {
         return (e) => {this.setState({ [type]: e.currentTarget.value})};
     } 
 
     routeToQuestionIdx(question) {
         this.props.history.push(`/questions/${question.question.id}`);
+        // this.props.history.push(`/questions/${question.id}`);
+    }
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error,i) => (
+                    <li key ={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -44,11 +60,12 @@ class QuestionForm extends React.Component {
                     value = {this.state.body}
                     onChange={this.handleInput('body')}
                 />
+                    {this.renderErrors()}
                 <br/>
                 <input
+                    className="post-question-btn"
                     type= "submit" 
-                    value = "Post your question"
-                    className = "post-question-btn"
+                    value = {this.props.formType}
                 />
                 {/* <button className = "post-question-btn">Post your question</button> */}
                 {/* </div> */}
