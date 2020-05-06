@@ -6,13 +6,13 @@ class QuestionForm extends React.Component {
         super(props);
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.routeToQuestionIdx = this.routeToQuestionIdx.bind(this);
+        this.routeToIndQuestion = this.routeToIndQuestion.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state)
-            .then((question) => this.routeToQuestionIdx(question));
+            .then((question) => this.routeToIndQuestion(question));
     }
 
     componentWillUnmount() {
@@ -23,10 +23,10 @@ class QuestionForm extends React.Component {
         return (e) => {this.setState({ [type]: e.currentTarget.value})};
     } 
 
-    routeToQuestionIdx(question) {
+    routeToIndQuestion(question) {
         this.props.history.push(`/questions/${question.question.id}`);
-        // this.props.history.push(`/questions/${question.id}`);
     }
+
     renderErrors() {
         return(
             <ul>
@@ -43,7 +43,6 @@ class QuestionForm extends React.Component {
         return (
         <div className = "question-form">
             <form onSubmit = {this.handleSubmit}>
-                {/* <div className="question-form"> */}
                 <label>Title</label>
                 <br/>
                 <input 
@@ -67,8 +66,6 @@ class QuestionForm extends React.Component {
                     type= "submit" 
                     value = {this.props.formType}
                 />
-                {/* <button className = "post-question-btn">Post your question</button> */}
-                {/* </div> */}
             </form>
         </div>
         )

@@ -2,6 +2,7 @@ import * as QuestionAPIUtil from '../util/question_api_util';
 
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
+export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const CLEAR_QUESTION_ERRORS = 'CLEAR_QUESTION_ERRORS';
 
@@ -13,6 +14,11 @@ export const receiveAllQuestions = (questions) => ({
 export const receiveQuestion = (question) => ({
     type: RECEIVE_QUESTION,
     question
+});
+
+export const removeQuestion = (questionId) => ({
+    type: REMOVE_QUESTION,
+    questionId
 });
 
 export const receiveQuestionErrors = (errors) => ({
@@ -41,7 +47,13 @@ export const createQuestion = (question) => dispatch => (
 );
 
 export const updateQuestion = (question) => dispatch => (
-    Question.APIUtil.updateQuestion(question)
+    QuestionAPIUtil.updateQuestion(question)
         .then((question) => (dispatch(receiveQuestion(question))),
+            err => (dispatch(receiveQuestionErrors(err.responseJSON))))
+);
+
+export const deleteQuestion = (questionId) => dispatch => (
+    QuestionAPIUtil.deleteQuestion(questionId)
+        .then((questionId) => (dispatch(removeQuestion(questionId))),
             err => (dispatch(receiveQuestionErrors(err.responseJSON))))
 );

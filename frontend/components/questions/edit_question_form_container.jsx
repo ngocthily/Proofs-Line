@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
         id: question.id,
         title: question.title,
         body: question.body,
-        author_id: question.author_id
+        authorId: question.author_id
     },
     questionId,
     errors: state.errors.question,
