@@ -24,7 +24,19 @@ class QuestionShow extends React.Component {
                 <Link to= {'/questions'} onClick = {this.handleDelete}>Delete</Link>
             </div> 
             :
-            <button>Answer question</button>
+            <div>
+                <form>
+                    {/* need to edit once done with answers */}
+                    <label>Your Answer</label>
+                    <br/>
+                    <textarea
+                        cols="50"
+                        rows="10"
+                    />
+                </form>
+                <br/>
+                <button className = "answer-btn">Post Your Answer</button>
+            </div>
         return (
             <div className = "ind-question-page">
                 <p>{question.title}</p>
