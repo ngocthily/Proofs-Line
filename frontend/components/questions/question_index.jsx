@@ -23,6 +23,7 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        let count = this.props.questions.length;
         return (
         <div className = "questions">
             <div className = "question-first-line">
@@ -30,6 +31,9 @@ class QuestionIndex extends React.Component {
                 <div>
                     <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
                 </div>
+            </div>
+            <div>
+            {count} questions with no accepted answers
             </div>
             <div>
                 {this.props.questions.map((question) => (
