@@ -8,7 +8,7 @@ import CreateQuestionFormContainer from './questions/create_question_form_contai
 import EditQuestionFormContainer from './questions/edit_question_form_container';
 import QuestionShowContainer from './questions/question_show_container';
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
@@ -17,9 +17,9 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
         <Switch>
-            <Route exact path="/questions/new" component={CreateQuestionFormContainer}/>
+            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
             <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
-            <Route path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
+            <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
         </Switch>
     </div>

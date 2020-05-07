@@ -139,6 +139,7 @@ fieldset[disabled] .post-question-btn.active {
 .ind-question-page {
   margin-top: 100px;
   margin-left: 100px;
+  margin-right: 250px;
 }
 
 .ind-question {
@@ -208,4 +209,31 @@ fieldset[disabled] .answer-btn.active {
 .answer-btn.badge { 
   color: #1499FF; 
   background-color: #FFFFFF; 
+}
+
+.ind-question-page {
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+.ind-first-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e6e8;
+  padding-bottom: 20px;
+}
+
+.ind-question-title {
+  font-size: 30px;
+}
+
+.ind-question-body {
+  margin-top: 50px;
+  font-size: 16px;
+}
+
+.answer-response {
+  // position: relative;
+  margin-top: 150px;
 }

@@ -5,6 +5,7 @@ class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
         this.handleDelete = this.handleDelete.bind(this);
+        this.routeToAsk = this.routeToAsk.bind(this);
     }
 
     componentDidMount() {
@@ -15,16 +16,21 @@ class QuestionShow extends React.Component {
         this.props.deleteQuestion(this.props.questionId);
     }
 
+
+    routeToAsk() {
+        this.props.history.push(`/questions/new`);
+    }
+
     render() {
         const { question, currentUserId, authorId } = this.props;
         const editLink = (currentUserId === authorId) ? 
             <div>
                 <Link to={`/questions/${question.id}/edit`}>Edit</Link> 
                 <br/>
-                <Link to= {'/questions'} onClick = {this.handleDelete}>Delete</Link>
+                <Link to="/questions" onClick = {this.handleDelete}>Delete</Link>
             </div> 
             :
-            <div>
+            <div className = "answer-response">
                 <form>
                     {/* need to edit once done with answers */}
                     <label>Your Answer</label>
@@ -39,8 +45,11 @@ class QuestionShow extends React.Component {
             </div>
         return (
             <div className = "ind-question-page">
-                <p>{question.title}</p>
-                <p>{question.body}</p>
+                <div className = "ind-first-line">
+                    <p className = 'ind-question-title'>{question.title}</p>
+                    <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
+                </div>
+                <p className = 'ind-question-body'>{question.body}</p>
                 {editLink}
             </div>
         )

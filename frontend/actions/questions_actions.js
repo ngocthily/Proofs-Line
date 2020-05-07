@@ -54,6 +54,5 @@ export const updateQuestion = (question) => dispatch => (
 
 export const deleteQuestion = (questionId) => dispatch => (
     QuestionAPIUtil.deleteQuestion(questionId)
-        .then((questionId) => (dispatch(removeQuestion(questionId))),
-            err => (dispatch(receiveQuestionErrors(err.responseJSON))))
+        .then(() => (dispatch(removeQuestion(questionId))))
 );

@@ -16,8 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchQuestion: questionId => dispatch(fetchQuestion(questionId)),
-    deleteQuestion: questionId => dispatch(deleteQuestion(questionId))
+    fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
+    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);

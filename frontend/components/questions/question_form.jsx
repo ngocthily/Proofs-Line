@@ -54,9 +54,8 @@ class QuestionForm extends React.Component {
                 <label>Body</label>
                 <br/>
                 <textarea
-                    // cols="30"
-                    // rows = "10"
-                        name="area1" cols="40"
+                    cols="30"
+                    rows = "10"
                     value = {this.state.body}
                     onChange={this.handleInput('body')}
                 />
