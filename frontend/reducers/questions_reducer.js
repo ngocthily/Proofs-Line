@@ -18,6 +18,12 @@ const questionsReducer = (state = {}, action) => {
             nextState = Object.assign({}, state);
             delete nextState[action.questionId];
             return nextState;
+        case RECEIVE_QUESTION:
+            const { answer, body } = action;
+            nextState = Object.assign({}, state);
+            nextState[answer.question_id].answerIds.push(question.id);
+            nextState[answer.question_id].body = body;
+            return nextState;
         default:
             return state;     
     }

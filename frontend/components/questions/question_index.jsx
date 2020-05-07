@@ -23,6 +23,7 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        // need to redo once answers comes in
         let count = this.props.questions.length;
         return (
         <div className = "questions">
