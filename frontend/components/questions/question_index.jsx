@@ -27,13 +27,14 @@ class QuestionIndex extends React.Component {
             <div>
                 {this.props.questions.map((question) => (
                     <div key={question.id}>
-                        <hr className = "question-divider"/>
                             <li className="ind-question">
-                                <Link to = {`questions/${question.id}`}>
+                                <Link className = "link-to-question" to = {`questions/${question.id}`}>
                                     {question.title}
                                 </Link>
                                 <br/>
+                                <p className = "ind-body">
                                     {question.body}
+                                </p>
                             </li>
                     </div>
                 ))}
