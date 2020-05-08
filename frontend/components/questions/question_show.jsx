@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import AnswerListItemContainer from '../answers/answer_list_item_container';
+// import AnswerFormContainer from '../answers/answer_form_container';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -8,9 +10,9 @@ class QuestionShow extends React.Component {
         this.routeToAsk = this.routeToAsk.bind(this);
     }
 
-    componentDidMount() {
-        this.props.fetchQuestion(this.props.questionId);
-    }
+    // componentDidMount() {
+    //     this.props.fetchQuestion(this.props.questionId);
+    // }
 
     handleDelete() {
         this.props.deleteQuestion(this.props.questionId);
@@ -41,8 +43,11 @@ class QuestionShow extends React.Component {
                     />
                 </form>
                 <br/>
+                {/* <AnswerFormContainer answer_id = {answer.id}/> */}
+                <br/>
                 <button className = "answer-btn">Post Your Answer</button>
             </div>
+
         return (
             <div className = "ind-question-page">
                 <div className = "ind-first-line">
@@ -51,6 +56,14 @@ class QuestionShow extends React.Component {
                 </div>
                 <p className = 'ind-question-body'>{question.body}</p>
                 {editLink}
+                {/* <div>
+                    {this.props.answers.map(answer => (
+                        <AnswerListItemContainer
+                            answer={answer}
+                            key={answer.id}
+                        />
+                    ))}
+                </div> */}
             </div>
         )
     }

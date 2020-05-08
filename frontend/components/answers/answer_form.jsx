@@ -4,18 +4,19 @@ import { withRouter } from 'react-router-dom';
 class AnswerForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            body: ''
-        };
+        this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchQuestion(this.props.questionId)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        const questionId = parseInt(this.props.match.params.questionId);
-        const answer = Object.assign({}, this.state, {
-            question_id: questionId
-        });
+        // const answer = Object.assign({}, this.state, {
+        //     question_id: this.props.questionId
+        // });
         this.props.createAnswer(answer);
     }
 
@@ -36,7 +37,7 @@ class AnswerForm extends React.Component {
                         onChange = {this.update("body")}
                     />
                     <br/>
-                    <input type = "submit"/>
+                    <button className="answer-btn">Post Your Answer</button>
                 </form>
             </div>
         )

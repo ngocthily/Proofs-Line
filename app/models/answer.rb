@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-    validates :body, presense: true
+    validates :body, presence: true
     validates :user_id, presence: true
     validates :question_id, presence: true
 

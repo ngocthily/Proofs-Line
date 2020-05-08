@@ -8,6 +8,7 @@
 
 User.destroy_all
 Question.destroy_all
+Answer.destroy_all
 
 demo = User.create!(username: 'demo', email: 'demo@proofsline.com', password: 'password')
 ngoc = User.create!(username: 'ngoc', email: 'ngoc@proofsline.com', password: 'ngociscool!')
@@ -44,3 +45,5 @@ question5 = Question.create!(title: 'Partial differential equations textbook rec
                                         wanted a head start. The class recommendation is 'A First Course in Partial 
                                         Differential Equations by H.F. Weinberger, is it worth the purchase?",
                                         author_id: ngoc.id)
+
+answer1 = Answer.create!(body: 'testing answer', user_id: ngoc.id, question_id: question1.id)

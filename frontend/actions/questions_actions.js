@@ -5,6 +5,7 @@ export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const CLEAR_QUESTION_ERRORS = 'CLEAR_QUESTION_ERRORS';
+// export const RECEIVE_ANSWERS = 'RECEIVE_ANSWERS';
 export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
 export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
@@ -37,6 +38,11 @@ export const receiveAnswer = (answer) => ({
     type: RECEIVE_ANSWER,
     answer
 });
+
+// export const receiveAnswers = (answers) => ({
+//     type: RECEIVE_ANSWERS,
+//     answers
+// });
 
 export const receiveAnswerErrors = (errors) => ({
     type: RECEIVE_ANSWER_ERRORS,
@@ -73,6 +79,11 @@ export const deleteQuestion = (questionId) => dispatch => (
     QuestionAPIUtil.deleteQuestion(questionId)
         .then(() => (dispatch(removeQuestion(questionId))))
 );
+
+// export const fetchAnswers = (questionId) => dispatch => (
+//     QuestionAPIUtil.fetchAnswers(questionId)
+//         .then((answers) => dispatch(receiveAnswers(answers)))
+// );
 
 export const createAnswer = (answer) => dispatch => (
     QuestionAPIUtil.createAnswer(answer)
