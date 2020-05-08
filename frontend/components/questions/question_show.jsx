@@ -32,17 +32,6 @@ class QuestionShow extends React.Component {
             </div> 
             :
             <div className = "answer-response">
-                {/* <form>
-                    <label>Your Answer</label>
-                    <br/>
-                    <textarea
-                        cols="50"
-                        rows="10"
-                    />
-                </form>
-                <br/> */}
-                {/* <br/>
-                <button className = "answer-btn">Post Your Answer</button> */}
                 <AnswerFormContainer />
             </div>
 

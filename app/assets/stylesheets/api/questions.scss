@@ -5,8 +5,8 @@
 .questions {
     margin-top: 100px;
     margin-bottom: 100px;
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 360px;
+    margin-left: 220px;
 }
 
 .question-first-line {
@@ -15,9 +15,9 @@
   justify-content: space-between;
 }
 
-// .question-header {
-
-// }
+.question-header {
+  font-size: 28px;
+}
 
 .question-divider {
     width: 60%;
@@ -37,8 +37,8 @@
   border-color: #77A4C2; 
   border-radius: 4px;
   margin: 4px 6px;
-  font-size: 12px;
-  padding: 8px 8px;
+  font-size: 14px;
+  padding: 10px 10px;
 }
 
 .ask-question-button:hover, 
@@ -151,6 +151,7 @@ fieldset[disabled] .post-question-btn.active {
 .link-to-question {
   list-style-type: none;
   font-size: 16px;
+  color: #0064bd;
 }
 
 .ind-body {

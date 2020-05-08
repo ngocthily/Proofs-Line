@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default ({currentUser, logout }) => {
     const display = currentUser ? (
-        <div>
+        <div className = "navbar-logout-btn-container">
             {/* current user has no username, just id so no username shows up
             will edit later to do what stack overflow does 
             also logout will be in a dropdown eventually...*/}
-            <h2> {currentUser.username} </h2>
+            {/* <h2> {currentUser.username} </h2> */}
             <button className = "navbar-logout-btn" onClick = {logout}>Log out</button>
         </div>
     ) : (
@@ -20,19 +20,19 @@ export default ({currentUser, logout }) => {
     return (
         <div className = "nav-bar-container">
             <div className = "nav-bar-header">
+                {/* edit to show dropdown bar only on home page */}
                 <div className = 'dropdown'>
                     <label className="dropdown-items">
                         <button className = 'dropbtn'>
-                            <i className ="fas fa-bars"></i>
+                            <i className="fas fa-bars fa-sm"></i>
                         </button>
-                        {/* broken */}
-                    <div className="dropdown-content">
+                        <div className="dropdown-content">
                             <Link to = "/">
-                            <p className = "dropdown-home">Home</p>
+                                <p className = "dropdown-home">Home</p>
                             </Link>
-                            <p className = "dropdown-public">PUBLIC</p>
+                                <p className = "dropdown-public">PUBLIC</p>
                             <Link to = "/questions">
-                            <p className = "dropdown-questions">Questions</p>
+                                <p className = "dropdown-questions">Questions</p>
                             </Link>
                         </div>
                     </label>
@@ -46,8 +46,8 @@ export default ({currentUser, logout }) => {
                     <i className="fas fa-search"></i>
                 </div>
                 <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
-            </div>
                 {display}
+            </div>
         </div>
     )
 }

@@ -8,8 +8,8 @@ const answersReducer = (state = {}, action) => {
     Object.freeze(state);
     // let nextState;
     switch(action.type) {
-        // case RECEIVE_QUESTION:
-        //     return Object.assign({}, state, action.answers);
+        case RECEIVE_QUESTION:
+            return Object.assign({}, state, action.answers);
         // case RECEIVE_ANSWERS:
         //     nextState = Object.assign({}, state);
         //     action.answers.forEach((answer) => nextState[answer.id] = answer);

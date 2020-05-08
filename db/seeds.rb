@@ -47,3 +47,18 @@ question5 = Question.create!(title: 'Partial differential equations textbook rec
                                         author_id: ngoc.id)
 
 answer1 = Answer.create!(body: 'testing answer', user_id: ngoc.id, question_id: question1.id)
+answer2 = Answer.create!(body: 'Since all angles (angle ABC, angle BCA, angle CAB) add up to 180 degrees 
+                                and angle DAB and angle CAB add up to 180 degrees too,  then angle ABC + angle
+                                BCA is equal to 180 degrees minus angle CAB and angle DAB is equal to 180 degrees 
+                                - angle CAB. Combining the last two equations, we have angle DAB is equal to angle 
+                                ABC + angle BCA. We can see angle DAB is greater than angle ABC or angle DAB is 
+                                greater than angle BCA. Therefore, the exterior angle is greater than either of 
+                                the two interior and opposite angles.',
+                                user_id: euclid.id,
+                                question_id: question2.id)
+answer3 = Answer.create!(body: 'the limit does not exist',
+                                user_id: cady.id,
+                                question_id: question3.id)
+answer4 = Answer.create!(body: '0',
+                            user_id: demo.id,
+                            question_id: question3.id)

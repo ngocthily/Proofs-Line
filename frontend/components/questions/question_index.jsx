@@ -10,14 +10,7 @@ class QuestionIndex extends React.Component {
     componentDidMount() {
         this.props.fetchQuestions();
     }
-    
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.questions !== this.props.questions) {
-    //         console.log('questions state has changed')
-    //         this.setState({ questions: this.props.fetchQuestions() })
-    //     }
-    // }
-
+   
     routeToQuestions() {
         this.props.history.push('/questions/new')
     }

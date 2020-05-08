@@ -1,8 +1,8 @@
 import { 
     RECEIVE_ALL_QUESTIONS,
     RECEIVE_QUESTION, 
-    REMOVE_QUESTION
-} from '../actions/questions_actions';
+    REMOVE_QUESTION,
+    RECEIVE_ANSWER } from '../actions/questions_actions';
 
 const questionsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -18,7 +18,7 @@ const questionsReducer = (state = {}, action) => {
             nextState = Object.assign({}, state);
             delete nextState[action.questionId];
             return nextState;
-        case RECEIVE_QUESTION:
+        case RECEIVE_ANSWER:
             const { answer, body } = action;
             nextState = Object.assign({}, state);
             nextState[answer.question_id].answerIds.push(question.id);
