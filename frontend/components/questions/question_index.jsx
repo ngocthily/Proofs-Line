@@ -26,8 +26,8 @@ class QuestionIndex extends React.Component {
                     <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
                 </div>
             </div>
-            <div>
-            {count} questions with no accepted answers
+            <div className = "count-unanswered-q">
+                {count} questions with no accepted answers
             </div>
             <div>
                 {this.props.questions.map((question) => (

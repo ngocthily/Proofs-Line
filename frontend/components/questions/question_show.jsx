@@ -34,7 +34,9 @@ class QuestionShow extends React.Component {
             <div className = "answer-response">
                 <AnswerFormContainer />
             </div>
-
+        const count = this.props.question.answers ?
+                        <div className = "amt-of-answers-per-q">{this.props.question.answers.length} Answers</div> :
+                        <div className="amt-of-answers-per-q"> 0 Answers</div>
         return (
             <div className = "ind-question-page">
                 <div className = "ind-first-line">
@@ -42,11 +44,15 @@ class QuestionShow extends React.Component {
                     <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
                 </div>
                 <p className = 'ind-question-body'>{question.body}</p>
-                {editLink}
+                {count}
                 <div>
                     {this.props.question.answers ? 
-                    (
-                        <ul>
+                    (  
+                        <ul className = "answer-section">
+                            <div className = "up-down">
+                                <i class="fas fa-caret-up fa-4x"></i>
+                                <i class="fas fa-caret-down fa-4x"></i>
+                            </div>
                             {this.props.question.answers.map((answer) => (
                                 <div key = {answer.id}>
                                     <li className = "answer-to-q">
@@ -57,6 +63,7 @@ class QuestionShow extends React.Component {
                         </ul>
                     ) : null }
                 </div>
+                {editLink}
             </div>
         )
     }

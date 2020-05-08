@@ -47,10 +47,10 @@ class AnswerForm extends React.Component {
         return (
             <div className="answer-form">
                 <form onSubmit = {this.handleSubmit}>
-                    <label>Your answer</label>
+                    <label className = "your-answer-label">Your answer</label>
                     <br/>
                     <textarea
-                        cols = "30"
+                        cols = "100"
                         rows = "10"
                         value = {this.state.body}
                         onChange = {this.update("body")}
