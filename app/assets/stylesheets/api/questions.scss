@@ -42,6 +42,8 @@
   margin: 4px 6px;
   font-size: 14px;
   padding: 10px 10px;
+  display: block;
+  // display: relative;
 }
 
 .ask-question-button:hover, 
@@ -241,6 +243,7 @@ fieldset[disabled] .answer-btn.active {
 .ind-question-title {
   font-size: 30px;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+
 }
 
 .ind-question-body {
@@ -251,40 +254,10 @@ fieldset[disabled] .answer-btn.active {
   margin-bottom: 100px;
 }
 
-.answer-response {
-  // position: relative;
-  margin-top: 150px;
-  margin-left: 30px;
-}
-
-.your-answer-label {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.answer-to-q {
-  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-  // margin-bottom: 5px;
-  font-size: 15px;
-  // line-height: 1.3;
+.question-errors {
   list-style: none;
-}
-
-.amt-of-answers-per-q {
-  font-size: 18px;
-  padding: 20px;
-}
-
-.answer-section {
-  display: flex;
-  flex-direction: row;
-}
-
-.up-down {
-  display: flex;
-  flex-direction: column;
-  color: #bbc0c4;
-  padding: 10px;
-  margin-right: 8px;
-  margin-top: -14px;
+  color: #d1383d;
+  // text-align: left;
+  margin: 0; 
+  padding: 0;
 }

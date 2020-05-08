@@ -119,9 +119,11 @@ fieldset[disabled] .login-form-button.active {
 }
 
 .login-errors {
-  color: red;
+  color: #d1383d;
   list-style-type: none;
   font-size: 10px;
   position: relative;
   left: -30px;
+  // margin: 0; 
+  // padding: 0;
 }

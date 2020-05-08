@@ -26,12 +26,11 @@ class QuestionShow extends React.Component {
         const { question, currentUserId, authorId } = this.props;
         const editLink = (currentUserId === authorId) ? 
             <div>
-                <Link to={`/questions/${question.id}/edit`}>Edit</Link> 
-                <br/>
+                <Link to={`/questions/${question.id}/edit`}>Edit</Link> &nbsp;
                 <Link to="/questions" onClick = {this.handleDelete}>Delete</Link>
             </div> 
             :
-            <div className = "answer-response">
+            <div className="answer-response">
                 <AnswerFormContainer />
             </div>
         const count = this.props.question.answers ?
@@ -41,29 +40,46 @@ class QuestionShow extends React.Component {
             <div className = "ind-question-page">
                 <div className = "ind-first-line">
                     <p className = 'ind-question-title'>{question.title}</p>
+                    <div>
                     <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
+                    </div>
                 </div>
-                <p className = 'ind-question-body'>{question.body}</p>
+                <div className='ind-question-body'>
+                    {question.body} 
+                    { (currentUserId === authorId) ? 
+                    <div>
+                    {editLink}
+                    </div> : null}
+                </div>
+                <div className = 'count-answers'>
                 {count}
+                </div>
                 <div>
                     {this.props.question.answers ? 
                     (  
-                        <ul className = "answer-section">
-                            <div className = "up-down">
-                                <i class="fas fa-caret-up fa-4x"></i>
-                                <i class="fas fa-caret-down fa-4x"></i>
-                            </div>
+                        <ul>
+                            <div className = "whole-answer-section">
                             {this.props.question.answers.map((answer) => (
-                                <div key = {answer.id}>
+                                <div className = "answer-section" key = {answer.id}>
+                                <div className = "up-down">
+                                    <i className="fas fa-caret-up fa-4x"></i>
+                                    <i className="fas fa-caret-down fa-4x"></i>
+                                </div>
+                                <div>
                                     <li className = "answer-to-q">
                                         {answer.body}
                                     </li>
                                 </div>
+                                </div>
                             ))}
+                            </div>
                         </ul>
                     ) : null }
                 </div>
-                {editLink}
+                {(currentUserId !== authorId) ?
+                    <div>
+                        {editLink}
+                    </div> : null}
             </div>
         )
     }
