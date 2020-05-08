@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const demoInfo = {
     email: 'demo@proofsline.com',
@@ -90,6 +91,11 @@ class Login extends React.Component {
                     </div>
                 </form>
             </div>
+            </div>
+            <br/>
+            <div className = "under-login">
+                Don't have an account? 
+                <Link to = "/signup"> Sign up </Link>
             </div>
             </div>
         );
