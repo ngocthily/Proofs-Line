@@ -13,6 +13,10 @@ class AnswerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearAnswerErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         // const answer = Object.assign({}, this.state);

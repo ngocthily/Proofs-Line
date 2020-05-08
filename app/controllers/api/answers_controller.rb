@@ -18,7 +18,7 @@ class Api::AnswersController < ApplicationController
         if @answer.save
             render 'api/answers/show'
         else
-            render json: @answer.error.full_messages, status: 422
+            render json: @answer.errors.full_messages, status: 422
         end
     end
 
