@@ -1,25 +1,26 @@
 import { connect } from 'react-redux';
 
-import { fetchQuestion, createAnswer } from '../../actions/questions_actions';
+import { createAnswer } from '../../actions/questions_actions';
 import AnswerForm from './answer_form';
 
-const mapStateToProps = (state, ownProps) => {
-    const questionId = parseInt(ownProps.match.params.questionId);
-    const question = selectQuestion(state.entities, questionId);
+const mapStateToProps = ({errors, session}) => {
+    // const questionId = parseInt(ownProps.match.params.questionId);
+    // const question = selectQuestion(state.entities, questionId);
+    // // debugger
     return {
         answer: {
             body: '',
-            user_id: state.session.id,
-            question_id: questionId
+            user_id: session.id
         },
-        questionId,
-        question
+        // questionId,
+        // question
+        errors: errors.answer
     }
 };
 
 const mapDispatchToProps = dispatch => ({
     createAnswer: (answer) => dispatch(createAnswer(answer)),
-    fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId))
+    // fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnswerForm);
