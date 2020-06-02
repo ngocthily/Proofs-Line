@@ -1,17 +1,79 @@
 // styling for the home page
+
 .home-container1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    // padding: 12px 20px;
-    // margin-top: 100px;
     flex-direction: column;
-    background-color: #ffcf10;
     background-position: center;
-    height: 500px;
+    margin-top: 280px;
+}
+
+.bg-main {
+    position: absolute;
+    top: 60px;
+}
+
+.splash-page-words {
+    position: absolute;
 }
 
 .home-container1-header {
-    font-size: 50px;
-    padding: 20px;
+    font-size: 46px;
+    padding: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    margin-top: -30px;
+}
+
+.description1 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    line-height: 90%;
+    margin-top: 18px;
+}
+
+.background {
+    width: 100%;
+}
+
+.home-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 280px;
+    padding: 6px;
+}
+
+.second-home-header {
+    padding: 6px;
+    font-size: 28px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+.orange-divider {
+    height: 40px;
+    width: 60px;
+}
+
+.link-to-questions {
+    color: #F48024;
+}
+
+.link-to-questions:hover {
+    text-decoration: none;
+    color: #F48024;
+}
+
+.description2 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    line-height: 90%;
+    margin-top: 18px;
 }
