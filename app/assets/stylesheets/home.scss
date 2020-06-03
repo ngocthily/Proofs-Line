@@ -1,5 +1,10 @@
 // styling for the home page
-
+.home-page-nav-bar {
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index:999999;
+}
 .home-container1 {
     display: flex;
     justify-content: center;
@@ -16,13 +21,14 @@
 
 .splash-page-words {
     position: absolute;
+    margin-top: 50px;
 }
 
 .home-container1-header {
     font-size: 46px;
     padding: 18px;
     font-family: 'Roboto Slab', serif;
-    font-weight: 700;
+    font-weight: bolder;
     margin-top: -30px;
 }
 
@@ -35,17 +41,43 @@
     margin-top: 18px;
 }
 
+.home-page-scroll-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-btn {
+    padding: 6px;
+}
+
+.scroll-to-math {
+    background-color: white;
+    color: #f4822b;
+    border: 1px solid #f4822b;
+    padding: 14px 18px;
+    border-radius: 3px;
+}
+
+.scroll-to-business {
+    background-color: #f4822b;
+    color: white;
+    border: 1px solid #f4822b;
+    padding: 14px 18px;
+    border-radius: 3px;
+}
 .background {
     width: 100%;
 }
 
 .home-container2 {
+    margin-top: 300px;
+    padding: 6px;
+}
+
+.before-boxes {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 280px;
-    padding: 6px;
 }
 
 .second-home-header {
@@ -60,11 +92,11 @@
     width: 60px;
 }
 
-.link-to-questions {
+.link-to-questions, .link-to-signup {
     color: #F48024;
 }
 
-.link-to-questions:hover {
+.link-to-questions:hover, .link-to-signup:hover {
     text-decoration: none;
     color: #F48024;
 }
@@ -76,4 +108,159 @@
     text-align: center;
     line-height: 90%;
     margin-top: 18px;
+}
+
+.three-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.public-q-and-a {
+    -webkit-box-shadow: 0 0 6px lightgray;
+    box-shadow: 0 0 6px lightgray;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+    margin-right: 200px;
+    width: 320px;
+}
+
+.public-q-and-a:hover {
+    -webkit-box-shadow: 0 0 20px lightgray;
+    box-shadow: 0 0 20px lightgray;
+}
+
+.public-q-and-a-img {
+    width: 240px;
+    padding: 2px;
+}
+
+.private-q-and-a {
+    -webkit-box-shadow: 0 0 6px lightgray;
+    box-shadow: 0 0 6px lightgray;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    width: 320px;
+}
+
+.private-q-and-a:hover {
+    -webkit-box-shadow: 0 0 20px lightgray;
+    box-shadow: 0 0 20px lightgray;
+}
+
+.private-q-and-a-img {
+    width: 240px;
+    padding: 2px;
+}
+
+.browse-jobs {
+    -webkit-box-shadow: 0 0 6px lightgray;
+    box-shadow: 0 0 6px lightgray;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+    width: 320px;
+}
+
+.browse-jobs:hover {
+    -webkit-box-shadow: 0 0 20px lightgray;
+    box-shadow: 0 0 20px lightgray;
+}
+
+.browse-jobs-img {
+    width: 240px;
+    padding: 2px;
+}
+
+.three-boxes-title {
+    font-family: 'Roboto Slab';
+    font-weight: 200;
+    font-size: 24px;
+    padding: 4px;
+}
+
+.box-description {
+    text-align: center;
+    font-family: 'Source Sans Pro',sans-serif;
+    line-height: 60%;
+    font-size: 15px;
+    padding: 4px;
+}
+
+.browse-questions-btn, .find-a-job-btn {
+    background-color: #2b2d6e;
+    font-family: 'Source Sans Pro',sans-serif;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    border: none;
+} 
+
+.try-for-free-btn {
+    background-color: #f47f25;
+    font-family: 'Source Sans Pro',sans-serif;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    border: none;
+}
+
+.home-container3 {
+    background-color: #f7f6f9;
+    height: 650px;
+}
+
+.share-img, .find-img, .rocket-img {
+    width: 100px;
+    height: 100px;
+}
+
+.share, .find, .rocket {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 20px;
+    -webkit-box-shadow: 0 0 10px lightgray;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 6px;
+    width: 380px;
+}
+
+.share-description, .find-description, .rocket-description {
+    padding: 6px;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 90%;
+    margin-top: 6px;
+    margin-right: 14px;
+}
+
+.share-description, .find-description {
+    margin-top: 12px;
+}
+
+.third-home-header {
+    margin-top: 130px;
+    font-size: 32px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
 }
