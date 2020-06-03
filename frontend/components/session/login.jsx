@@ -57,7 +57,9 @@ class Login extends React.Component {
         return (
             <div className = "whole-login-page">
             <div className="session-form-center">
-            <img className = "icon" src={window.icon}/>
+            <Link to="/">
+                <img className = "icon" src={window.icon}/>
+            </Link>
             <div className="session-form">
                 <form>
                     <div>
@@ -94,8 +96,10 @@ class Login extends React.Component {
             </div>
             <br/>
             <div className = "under-login">
-                Don't have an account? 
-                <Link to = "/signup"> Sign up </Link>
+                <p>
+                    Don't have an account? 
+                    <Link to = "/signup"> Sign up </Link>
+                </p>
             </div>
             </div>
         );
