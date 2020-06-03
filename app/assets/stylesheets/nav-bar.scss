@@ -19,37 +19,20 @@
     flex-direction: row;
   }
 
-  .dropdown-img {
-    padding: 2px;
-    color: #848d94;
-  }
 
-  .dropbtn {
-  background-color: #fafafb;
-  // color: white;
-  padding: 2px 10px;
-  font-size: 22px;
-  border: none;
-  margin-left: -10px;
-  color: #848d94;
-}
-
-.dropbtn:hover {
-  background-color: #e5e6e8;
-}
 .dropdown {
-  position: relative;
-  display: inline-block;
   left: 90px;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: fixed;
+  margin-top: 30px;
   background-color: #f9f9f9;
-  // min-width: 160px;
-  // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   // z-index: 1;
+  margin-left: -10px;
 
 }
 
@@ -59,13 +42,13 @@
   text-decoration: none;
   display: block;
   font-size: 12px;
-  // margin-left: 12px;
+  margin-left: -15px;
   width: 120px;
 }
 
-.dropdown-content a:hover {color: black}
+// .dropdown-content a:hover {color: black}
 
-.dropdown:hover .dropdown-content {
+.dropdown-icon.active .dropdown-content {
   display: block;
 }
 
@@ -74,22 +57,55 @@
   // position: relative;
   // left: 0px;
   // padding: 2px; 
+  font-family: Arial;
+  font-weight: 200;
 }
 
 .dropdown-home {
-  // background-color: #eff0f1;
+  background-color: #848d93;
   text-align: left;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
 
-.dropdown-questions {
+.dropdown-home-link:hover {
+  text-decoration: none;
+}
+
+.home-word {
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-question-link:hover {
+  text-decoration: none;
+}
+
+.dropdown-questions-word {
   position: relative;
   left: 10px;
+  font-weight: 500;
+}
+
+.dropdown-questions-word:hover {
+  color: black;
 }
 
 .home-logo {
-    // padding: 2px;
   margin-left: 100px;
-  margin-top: 6px;
+  margin-top: -6px;
+  margin-bottom: -4px;
+  width: 120px;
+  height: 50px;
+}
+
+.home-logo:hover {
+  background-color: lightgray;
+}
+
+.home-logo-img {
+    // padding: 2px;
+  // margin-left: 100px;
+  margin-top: 15px;
   width: 120px;
   height: 18px;
   // left: 50px;
@@ -304,3 +320,66 @@ fieldset[disabled] .btn-signup.active {
   border-radius: 3px;
 }
 
+.dropdown-icon {
+  position: absolute;
+  margin-top: 18px;
+  left: -20px;
+  transform: translate(-50%, -50%);
+  top: 0%;
+  width: 40px;
+  height: 43px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.x-icon {
+  width: 20px;
+  height: 2px;
+  background: #848d94;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  // box-shadow: 0 2px 5px rgba(0,0,0,.2);
+  transition: .2s;
+}
+
+.x-icon:before,
+.x-icon:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #848d94;
+  transition: .2s;
+}
+
+.x-icon:before {
+  top: -5px;
+}
+
+.x-icon:after {
+  top: 5px;
+}
+
+.dropdown-icon.active .x-icon {
+  background: rgba(0,0,0,0);
+}
+
+.dropdown-icon.active .x-icon:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.dropdown-icon.active .x-icon:after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.dropdown-icon:hover {
+    background-color: lightgray;
+}
+
+.dropdown-icon.active {
+  background-color: lightgray;
+}

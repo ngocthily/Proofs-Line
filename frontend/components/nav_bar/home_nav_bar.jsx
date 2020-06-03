@@ -1,28 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default () => (
+export default () => {
+    function dropdownChange() {
+            $('.dropdown-icon').toggleClass('active');
+    }
+
+    return (
     <div className="nav-bar-container">
         <div className="nav-bar-header">
-            <div className='dropdown'>
+            <div className="dropdown">
                 <label className="dropdown-items">
-                    <button className='dropbtn'>
-                        <i className="fas fa-bars fa-sm"></i>
-                    </button>
-                    <div className="dropdown-content">
-                        <Link to="/">
-                            <p className="dropdown-home">Home</p>
-                        </Link>
-                        <p className="dropdown-public">PUBLIC</p>
-                        <Link to="/questions">
-                            <p className="dropdown-questions">Questions</p>
-                        </Link>
+                    <div className="dropdown-icon" onClick={dropdownChange}>
+                        <div className="x-icon">
+                        <div className="dropdown-content">
+                            <p></p>
+                            <div className ="dropdown-home">
+                                <Link to="/" className="dropdown-home-link">
+                                    <p className="home-word">Home</p>
+                                </Link>
+                            </div>
+                            <p className="dropdown-public">PUBLIC</p>
+                            <div className="dropdown-question">
+                                <Link to="/questions" className="dropdown-question-link">
+                                    <p className="dropdown-questions-word">Questions</p>
+                                </Link>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </label>
             </div>
-            <Link to="/">
-                <img className="home-logo" src={window.logo} />
-            </Link>
+            <div className="home-logo">
+                <Link to="/">
+                    <img className="home-logo-img" src={window.logo} />
+                </Link>
+            </div>
         </div>
         <div className="nav-bar-buttons">
             <div className="search-img">
@@ -35,4 +48,5 @@ export default () => (
             </div>
         </div>
     </div>
-)
+    )
+}
