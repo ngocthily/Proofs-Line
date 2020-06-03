@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .new-question-page {
   background-color: #eff0f1;
-  height: 800px;
+  height: 900px;
   margin-top: -40px;
   position: relative;
   width: 100%;
@@ -352,4 +352,46 @@ fieldset[disabled] .answer-btn.active {
 
 .ask-question-title-textbox {
   width: 760px;
+}
+
+.ask-question-midsection {
+  display: flex;
+  flex-direction: row;
+}
+
+.ask-question-directions {
+  margin-top: 230px;
+  margin-left: 60px;
+  width: 350px;
+  padding: 20px;
+  height: 240px;
+  background-color: #d6d9dc;
+  -webkit-box-shadow: 0 0 6px #d6d9dc;
+  box-shadow: 0 0 6px #d6d9dc;
+  border-radius: 3px;
+}
+
+.ask-question-directions-description {
+  line-height: 60%;
+  // margin-top: 20px;
+}
+
+.avoid-tip {
+  margin-top: 20px;
+}
+
+.ask-question-steps {
+  margin-top: 20px;
+}
+
+.ask-question-bottom {
+  background-color: white;
+  width: 350px;
+  margin-left: -20px;
+  height: 195px;
+  padding: 15px;
+}
+
+.ask-question-step1 {
+  margin-top: -15px;
 }
