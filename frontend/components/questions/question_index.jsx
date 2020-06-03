@@ -56,9 +56,10 @@ class QuestionIndex extends React.Component {
                                         <p className = "ind-body">
                                             {question.body}
                                         </p>
+                                        <p>*future tags*</p>
                                     <div className="ind-question-right-side">
                                         {/* problems here but are undefined */}
-                                        <p>(editing) asked {question.created_at}</p>
+                                        <p>*(editing) asked {question.created_at}*</p>
                                         <p>{question.author}</p>
                                     </div>
                                     </div>

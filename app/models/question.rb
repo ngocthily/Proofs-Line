@@ -2,7 +2,7 @@ class Question < ApplicationRecord
     validates :title, presence: true
     validates :body, presence: true
     validates :author_id, presence: true
-    validates :author, presence: true
+    # validates :author, presence: true
 
     belongs_to :authored,
         foreign_key: :author_id,

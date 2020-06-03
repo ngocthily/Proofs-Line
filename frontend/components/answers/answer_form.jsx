@@ -43,6 +43,10 @@ class AnswerForm extends React.Component {
         )
     }
 
+    refreshPage() {
+        window.location.reload();
+    }
+
     render() {
         return (
             <div className="answer-form">
@@ -58,7 +62,7 @@ class AnswerForm extends React.Component {
                     <br/>
                     {this.renderErrors()}
                     <br/>
-                    <button className="answer-btn">Post Your Answer</button>
+                    <button className="answer-btn" onClick={this.refreshPage}>Post Your Answer</button>
                 </form>
             </div>
         )

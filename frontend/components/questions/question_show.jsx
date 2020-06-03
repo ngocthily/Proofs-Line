@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import AnswerFormContainer from '../answers/answer_form_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import Sidebar from '../sidebar/sidebar';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -40,9 +41,15 @@ class QuestionShow extends React.Component {
         return (
             <div>
                 <NavBarContainer/>
+                <div>
+                    <Sidebar/>
+                </div>
                 <div className = "ind-question-page">
                     <div className = "ind-first-line">
-                        <p className = 'ind-question-title'>{question.title}</p>
+                        <div className="ind-question-title-section">
+                            <p className = 'ind-question-title'>{question.title}</p>
+                            <p>*Asked (editing)*</p>
+                        </div>
                         <div>
                         <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
                         </div>

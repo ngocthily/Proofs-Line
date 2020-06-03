@@ -1,6 +1,30 @@
 // Place all the styles related to the api/Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new-question-page {
+  background-color: #eff0f1;
+  height: 800px;
+  margin-top: -40px;
+  position: relative;
+  width: 100%;
+}
+
+.ask-question-header {
+  padding: 40px;
+  margin-top: 10px;
+  font-size: 28px;
+  margin-left: -100px;
+}
+
+.ask-question-form {
+  -webkit-box-shadow: 0 0 6px #d6d9dc;
+  box-shadow: 0 0 6px #d6d9dc;
+  border-radius: 3px;
+  width: 800px;
+  margin-left: -60px;
+  background-color: white;
+}
+
 .question-index-columns {
   display: flex;
   flex-direction: row;
@@ -110,6 +134,7 @@ fieldset[disabled] .ask-question-button.active {
   margin: 4px 2px;
   font-size: 12px;
   padding: 8px 12px;
+  margin-top: 30px;
 }
 
 .post-question-btn:hover, 
@@ -169,6 +194,11 @@ fieldset[disabled] .post-question-btn.active {
   flex-direction: row;
 }
 
+.ind-question-title-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .ind-question-left-side {
   margin-left: 20px;
   margin-top: 20px;
@@ -190,7 +220,12 @@ fieldset[disabled] .post-question-btn.active {
 .link-to-question {
   list-style-type: none;
   font-size: 16px;
-  color: #0064bd;
+  color: #0077cc;
+}
+
+.link-to-question:hover {
+  color: #0294ff;
+  text-decoration: none;
 }
 
 .ind-body {
@@ -253,7 +288,7 @@ fieldset[disabled] .answer-btn.active {
 
 .ind-question-page {
   margin-left: 200px;
-  margin-top: 100px;
+  margin-top: -135px;
 }
 
 .ind-first-line {
@@ -293,4 +328,28 @@ fieldset[disabled] .answer-btn.active {
   margin-top: 90px;
   margin-right: 50px;
   // width: 100px;
+}
+
+// .ask-question-footer {
+//   position: relative;
+// }
+
+.ask-question-form-title {
+  padding: 18px;
+}
+
+.ask-question-form-body {
+  padding: 18px;
+}
+
+.ask-question-form-tags {
+  padding: 18px;
+}
+
+.post-question-btn-container {
+  margin-left: -60px;
+}
+
+.ask-question-title-textbox {
+  width: 760px;
 }
