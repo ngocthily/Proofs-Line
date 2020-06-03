@@ -1,0 +1,25 @@
+.entire-note {
+    width: 300px;
+    background-color: #fbf2d4;
+    -webkit-box-shadow: 0 0 6px lightgray;
+    box-shadow: 0 0 6px lightgray;
+    // padding: 6px;
+}
+
+.note-title {
+    background-color: #fbf2d4;
+    height: 30px;
+    padding: 8px;
+    color: #6a737c;
+    font-weight: 550;
+    font-size: 14px;
+}
+
+.note-below {
+    background-color: #fdf7e3;
+}
+
+.note-below p {
+    border-bottom: 1px solid #f0e5bc;
+    padding: 8px;
+}

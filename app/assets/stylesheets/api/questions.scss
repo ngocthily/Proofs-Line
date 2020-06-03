@@ -1,13 +1,19 @@
 // Place all the styles related to the api/Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.question-index-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-index-sidebar {
+  position: fixed;
+}
 
 .questions {
-    margin-top: -145px;
-    margin-bottom: 100px;
-    margin-right: 380px;
-    margin-left: 180px;
-    padding: 20px;
+    margin-top: 60px;
+    margin-left: 200px;
+    padding: 18px;
     border-left: 1px solid #d7d9dc;
 }
 
@@ -43,6 +49,7 @@
   font-size: 14px;
   padding: 10px 10px;
   display: block;
+  margin-top: 10px;
   // display: relative;
 }
 
@@ -158,6 +165,26 @@ fieldset[disabled] .post-question-btn.active {
   padding: 12px 12px;
   margin-bottom: 60px;
   margin-left: -20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.ind-question-left-side {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.ind-question-middle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.ind-question-right-side {
+  margin-left: 460px;
+  margin-top: 20px;
+  line-height: 60%;
 }
 
 .link-to-question {
@@ -260,4 +287,10 @@ fieldset[disabled] .answer-btn.active {
   // text-align: left;
   margin: 0; 
   padding: 0;
+}
+
+.questions-index-note {
+  margin-top: 90px;
+  margin-right: 50px;
+  // width: 100px;
 }
