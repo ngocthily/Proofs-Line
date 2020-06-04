@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
-import HomeNavBar from '../nav_bar/home_nav_bar';
+import HomeNavBarContainer from '../nav_bar/home_nav_bar_container';
 
 export default () => {
     function scrollToForMath() {
@@ -17,7 +17,7 @@ export default () => {
     return (
     <div className="home-page">
         <div className="home-page-nav-bar">
-            <HomeNavBar/>
+            <HomeNavBarContainer/>
         </div>
         <div className = 'home-container1'>
             <div className="bg-main">
