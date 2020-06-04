@@ -25,6 +25,24 @@ class QuestionShow extends React.Component {
         this.props.history.push(`/questions/new`);
     }
 
+    upvote(id) {
+        const vote = {
+            vote_type: "upvote",
+            post_type: "answer",
+            post_id: id,
+        }
+        this.props.createVote(vote)
+    }
+
+    downvote(id) {
+        const vote = {
+            vote_type: "downvote",
+            post_type: "answer",
+            post_id: id,
+        }
+        this.props.createVote(vote);
+    }
+
     render() {
         const { question, currentUserId, authorId } = this.props;
         const editLink = (currentUserId === authorId) ? 
@@ -37,8 +55,8 @@ class QuestionShow extends React.Component {
                 <AnswerFormContainer />
             </div>
         const count = this.props.question.answers ?
-                        <div className = "amt-of-answers-per-q">{this.props.question.answers.length} Answers</div> :
-                        <div className="amt-of-answers-per-q"> 0 Answers</div>
+                        (<div className = "amt-of-answers-per-q">{this.props.question.answers.length} Answers</div> ):
+                        (<div className="amt-of-answers-per-q"> 0 Answers</div>)
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -52,7 +70,7 @@ class QuestionShow extends React.Component {
                         <div className = "ind-first-line">
                             <div className="ind-question-title-section">
                                 <p className = 'ind-question-title'>{question.title}</p>
-                                <p>Asked {question.created_at ? question.created_at.substring(0,10): null}</p>
+                                <p>Asked on {question.created_at ? question.created_at.substring(0,10): null}</p>
                             </div>
                             <div>
                             <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
@@ -76,12 +94,21 @@ class QuestionShow extends React.Component {
                                     {this.props.question.answers.map((answer) => (
                                         <div className = "answer-section" key = {answer.id}>
                                         <div className = "up-down">
-                                            <i className="fas fa-caret-up fa-4x"></i>
-                                            <i className="fas fa-caret-down fa-4x"></i>
+                                            <div className ="answer-up" onClick={() => this.upvote(answer.id)}>
+                                                <i className="fas fa-caret-up fa-4x"></i>
+                                            </div>
+                                            <div>
+                                                count
+                                            </div>
+                                            <div className="answer-down" onClick={() => this.downvote(answer.id)}>
+                                                <i className="fas fa-caret-down fa-4x"></i>
+                                            </div>
                                         </div>
                                         <div>
                                             <li className = "answer-to-q">
-                                                {answer.body}
+                                                <p>{answer.body}</p>
+                                                <p className="answer-date">Asked on {answer.created_at.substring(0,10)}</p>
+                                                <p className="answer-author">By {answer.user.username}</p>
                                             </li>
                                         </div>
                                         </div>

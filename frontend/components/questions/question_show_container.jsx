@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { 
     fetchQuestion, 
     deleteQuestion } from '../../actions/questions_actions';
+import { createVote } from '../../actions/votes_actions';
 import { selectQuestion } from '../../reducers/selectors';
 import QuestionShow from './question_show';
 
@@ -19,8 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
-    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId))
-    // createAnswer: (answer) => dispatch(createAnswer(answer))
+    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
+    createVote: (vote) => dispatch(createVote(vote))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);

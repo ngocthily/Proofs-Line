@@ -185,7 +185,7 @@ fieldset[disabled] .post-question-btn.active {
 .ind-question-page {
   margin-left: 100px;
   // margin-right: 250px;
-  width: 870px;
+  width: 875px;
   border-left: 1px solid #d7d9dc;
 }
 
@@ -413,6 +413,33 @@ fieldset[disabled] .answer-btn.active {
 
 .ind-question-note {
   margin-top: 90px;
-  left: 20px;
-  position: relative;
+  margin-left: 20px;
+}
+
+.answer-date {
+  margin-left: 500px;
+}
+
+.ind-question-navbar {
+  position: fixed;
+}
+
+.answer-author {
+  margin-left: 500px;
+}
+
+.answer-up {
+  cursor: pointer;
+}
+
+.answer-up:active {
+  color: #f47f25;
+}
+
+.answer-down {
+  cursor: pointer;
+}
+
+.answer-down:active {
+  color: #f47f25;
 }

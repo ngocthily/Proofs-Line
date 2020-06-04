@@ -3,6 +3,7 @@ import {
     RECEIVE_QUESTION, 
     REMOVE_QUESTION,
     RECEIVE_ANSWER } from '../actions/questions_actions';
+import { RECEIVE_VOTE } from '../actions/votes_actions';
 
 const questionsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -24,6 +25,10 @@ const questionsReducer = (state = {}, action) => {
             nextState[answer.question_id].answerIds.push(question.id);
             nextState[answer.question_id].body = body;
             return nextState;
+        // case RECEIVE_VOTE:
+        //     const { vote } = action;
+        //     nextState = Object.assign({}, state);
+        //     console.log(nextState[action])
         default:
             return state;     
     }

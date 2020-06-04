@@ -8,4 +8,6 @@ class Question < ApplicationRecord
         class_name: :User
 
     has_many :answers, :dependent => :destroy
+
+    has_many :votes
 end

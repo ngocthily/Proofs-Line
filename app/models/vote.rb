@@ -1,9 +1,11 @@
 class Vote < ApplicationRecord
-    validates_inclusion_of :vote_type, :in => %w( upvote downvote )
-    validates_inclusion_of :post_type, :in => %w( question answer)
+    validates :vote_type, presence: true
+    validates :post_type, presence: true
     validates :post_id, presence: true
 
     belongs_to :user
-
-    belongs_to :post, polymorphic: true
+    
+    belongs_to :answer,
+        foreign_key: :post_id,
+        class_name: :Answer
 end
