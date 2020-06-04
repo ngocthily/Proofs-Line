@@ -52,7 +52,7 @@ class QuestionShow extends React.Component {
                         <div className = "ind-first-line">
                             <div className="ind-question-title-section">
                                 <p className = 'ind-question-title'>{question.title}</p>
-                                <p>*Asked (editing)*</p>
+                                <p>Asked {question.created_at ? question.created_at.substring(0,10): null}</p>
                             </div>
                             <div>
                             <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
