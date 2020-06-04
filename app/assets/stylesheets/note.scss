@@ -22,4 +22,13 @@
 .note-below p {
     border-bottom: 1px solid #f0e5bc;
     padding: 8px;
+    color: black;
+}
+
+.note-below a:hover {
+    text-decoration: none;
+}
+
+.note-below p:hover {
+    color: #6a737c;
 }

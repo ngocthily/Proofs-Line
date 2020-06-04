@@ -19,8 +19,7 @@ export default ({ currentUser, logout }) => {
     return (
         <div className = "nav-bar-container">
             <div className = "main-navbar-logo">
-                {/* edit to show dropdown bar only on home page */}
-                <Link to = "/">
+                <Link to="/">
                     <img className="navbar-home-logo" src={window.logo} />
                 </Link>
             </div>

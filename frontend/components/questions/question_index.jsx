@@ -24,7 +24,9 @@ class QuestionIndex extends React.Component {
         let count = this.props.questions.length;
         return (
         <div>
-            <NavBarContainer/>
+            <div className="question-index-navbar">
+                <NavBarContainer/>
+            </div>
             <div className="question-index-columns">
             <div className="question-index-sidebar">
                 <Sidebar/>
@@ -58,9 +60,9 @@ class QuestionIndex extends React.Component {
                                         </p>
                                         <p>*future tags*</p>
                                     <div className="ind-question-right-side">
-                                        {/* problems here but are undefined */}
-                                        <p>*(editing) asked {question.created_at}*</p>
-                                        <p>{question.author}</p>
+                                        {/* Will edit the asked to show how long ago it was asked */}
+                                        <p>asked on {question.created_at.substring(0,10)}</p>
+                                        <p>by {question.author.username}</p>
                                     </div>
                                     </div>
                                 </li>

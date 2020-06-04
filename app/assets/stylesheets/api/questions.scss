@@ -32,6 +32,11 @@
 
 .question-index-sidebar {
   position: fixed;
+  margin-top: 100px;
+}
+
+.question-index-navbar {
+  position:fixed;
 }
 
 .questions {
@@ -178,9 +183,9 @@ fieldset[disabled] .post-question-btn.active {
 }
 
 .ind-question-page {
-  margin-top: 100px;
   margin-left: 100px;
-  margin-right: 250px;
+  // margin-right: 250px;
+  width: 870px;
   border-left: 1px solid #d7d9dc;
 }
 
@@ -288,7 +293,7 @@ fieldset[disabled] .answer-btn.active {
 
 .ind-question-page {
   margin-left: 200px;
-  margin-top: -135px;
+  margin-top: -152px;
 }
 
 .ind-first-line {
@@ -299,7 +304,7 @@ fieldset[disabled] .answer-btn.active {
   padding-bottom: 20px;
   padding-left: 14px;
   padding-top: 20px;
-  margin-top: -35px;
+  margin-top: 210px;
 }
 
 .ind-question-title {
@@ -394,4 +399,20 @@ fieldset[disabled] .answer-btn.active {
 
 .ask-question-step1 {
   margin-top: -15px;
+}
+
+.ind-question-sidebar {
+  margin-top: 100px;
+  position: fixed;
+}
+
+.ind-question-midsection {
+  display: flex;
+  flex-direction: row;
+}
+
+.ind-question-note {
+  margin-top: 90px;
+  left: 20px;
+  position: relative;
 }
