@@ -8,8 +8,15 @@ import Note from '../note/note';
 class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            upvote: null,
+            downvote: null
+        }
         this.handleDelete = this.handleDelete.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
+
+        this.upvote = this.upvote.bind(this);
+        this.downvote = this.downvote.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +41,11 @@ class QuestionShow extends React.Component {
             post_id: id
         }
         this.props.createVote(vote);
+        this.setState({
+            upvote: true,
+            downvote: false
+        });
+        // $('.answer-up').toggleClass('active');
     }
 
     downvote(e, id) {
@@ -45,6 +57,11 @@ class QuestionShow extends React.Component {
             post_id: id
         }
         this.props.createVote(vote);
+        this.setState({
+            upvote: false,
+            downvote: true
+        });
+        // $('.answer-down').toggleClass('active');
     }
 
     voteCount(answer) {
@@ -100,14 +117,17 @@ class QuestionShow extends React.Component {
                             (  
                                 <ul>
                                     <div className = "whole-answer-section">
-                                    {this.props.question.answers.map((answer) => (
-                                        <div className = "answer-section" key = {answer.id}>
+                                    {this.props.question.answers.map((answer, idx) => (
+                                        <div className = "answer-section" key = {idx}>
                                         <div className = "up-down">
-                                            <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}>
+                                            <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}
+                                            >
                                                 <i className="fas fa-caret-up fa-4x"></i>
-                                            </div>
                                             <div className="vote-count">
-                                                {this.voteCount(answer)}
+                                                {/* {this.voteCount(answer)} */}
+                                                {this.state.upvote ? this.voteCount(answer) + 1 : 
+                                                this.state.downvote ? this.voteCount(answer) - 1 : this.voteCount(answer)}
+                                            </div>
                                             </div>
                                             <div className="answer-down" onClick={(e) => this.downvote(e, answer.id)}>
                                                 <i className="fas fa-caret-down fa-4x"></i>
