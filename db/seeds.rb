@@ -18,18 +18,15 @@ regina = User.create!(username: 'regina', email: 'regina@meangirls.com', passwor
 
 question1 = Question.create!(title: 'Demo title', 
                                 body: 'The demo should be able to edit and delete this question', 
-                                author_id: demo.id,
-                                author: demo.username)
+                                author_id: demo.id)
 question2 = Question.create!(title: 'Exterior Angle Theorem', 
                                 body: 'Given triangle ABC, 
                                 if one of the sides (AC) is extended, then the exterior angle produced (angle DAB) is 
                                 greater than either of the two interior and opposite angles (angle BCA or angle ABC)', 
-                                author_id: cady.id,
-                                author: cady.username)
+                                author_id: cady.id)
 question3 = Question.create!(title: 'Find the limit', 
                                 body: 'What is the limit of sin(1/x) as x approaches 0?', 
-                                author_id: regina.id,
-                                author: regina.username)
+                                author_id: regina.id)
 question4 = Question.create!(title: 'Gauss quadrature method in MATLAB', 
                                 body: 'Can someone explain how this code works? function [I] = gauss(f,a,b)
                                         %Basic two-point Gauss procedure 
@@ -41,15 +38,13 @@ question4 = Question.create!(title: 'Gauss quadrature method in MATLAB',
                                         end
                                         I=(nc(1)*f(nx(1)))+(nc(2)*f(nx(2)));
                                     end',
-                                author_id: euclid.id,
-                                author: euclid.username)
+                                author_id: euclid.id)
 question5 = Question.create!(title: 'Partial differential equations textbook recommendations',
                                 body: "Looking for textbook recommendations for a first timer learning partial 
                                         differential equations. I'm taking a college course next quarter on it and
                                         wanted a head start. The class recommendation is 'A First Course in Partial 
                                         Differential Equations by H.F. Weinberger, is it worth the purchase?",
-                                        author_id: ngoc.id,
-                                        author: ngoc.username)
+                                        author_id: ngoc.id)
 
 answer1 = Answer.create!(body: 'testing answer', user_id: ngoc.id, question_id: question1.id)
 answer2 = Answer.create!(body: 'Since all angles (angle ABC, angle BCA, angle CAB) add up to 180 degrees 

@@ -17,6 +17,8 @@ class QuestionShow extends React.Component {
 
         this.upvote = this.upvote.bind(this);
         this.downvote = this.downvote.bind(this);
+
+        this.voteCount = this.voteCount.bind(this);
     }
 
     componentDidMount() {
@@ -65,8 +67,12 @@ class QuestionShow extends React.Component {
     }
 
     voteCount(answer) {
-        return ((answer.votes.filter(vote => vote.vote_type === "upvote").length
-                - answer.votes.filter(vote => vote.vote_type === "downvote").length))
+        if (answer.votes) {
+            return ((answer.votes.filter(vote => vote.vote_type === "upvote").length
+                    - answer.votes.filter(vote => vote.vote_type === "downvote").length))
+        } else {
+            return null
+        }
     }
 
     render() {
@@ -136,7 +142,7 @@ class QuestionShow extends React.Component {
                                         <div>
                                             <li className = "answer-to-q">
                                                 <p>{answer.body}</p>
-                                                <p className="answer-date">Asked on {answer.created_at.substring(0,10)}</p>
+                                                <p className="answer-date">Asked on { answer.created_at ? answer.created_at.substring(0,10) : null}</p>
                                                 <p className="answer-author">By {answer.user}</p>
                                             </li>
                                         </div>
