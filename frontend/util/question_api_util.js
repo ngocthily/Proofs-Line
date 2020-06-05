@@ -35,13 +35,6 @@ export const deleteQuestion = (questionId) => (
     })
 )
 
-// export const fetchAnswers = (questionId) => (
-//     $.ajax({
-//         url: `api/questions/${questionId}/answers`,
-//         method: 'GET'
-//     })
-// );
-
 export const createAnswer = (answer) => (
     $.ajax({
         url: 'api/answers',
@@ -50,3 +43,9 @@ export const createAnswer = (answer) => (
     })
 );
 
+export const fetchAnswers = () => (
+    $.ajax({
+        url: 'api/answers',
+        method: 'GET'
+    })
+);

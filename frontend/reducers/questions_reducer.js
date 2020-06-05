@@ -19,16 +19,6 @@ const questionsReducer = (state = {}, action) => {
             nextState = Object.assign({}, state);
             delete nextState[action.questionId];
             return nextState;
-        case RECEIVE_ANSWER:
-            const { answer, body } = action;
-            nextState = Object.assign({}, state);
-            nextState[answer.question_id].answerIds.push(question.id);
-            nextState[answer.question_id].body = body;
-            return nextState;
-        // case RECEIVE_VOTE:
-        //     const { vote } = action;
-        //     nextState = Object.assign({}, state);
-        //     console.log(nextState[action])
         default:
             return state;     
     }

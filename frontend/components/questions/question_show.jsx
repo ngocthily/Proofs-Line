@@ -25,22 +25,31 @@ class QuestionShow extends React.Component {
         this.props.history.push(`/questions/new`);
     }
 
-    upvote(id) {
+    upvote(e, id) {
+        e.preventDefault();
         const vote = {
             vote_type: "upvote",
             post_type: "answer",
-            post_id: id,
+            answer_id: id,
+            post_id: id
         }
-        this.props.createVote(vote)
+        this.props.createVote(vote);
     }
 
-    downvote(id) {
+    downvote(e, id) {
+        e.preventDefault();
         const vote = {
             vote_type: "downvote",
             post_type: "answer",
-            post_id: id,
+            answer_id: id,
+            post_id: id
         }
         this.props.createVote(vote);
+    }
+
+    voteCount(answer) {
+        return ((answer.votes.filter(vote => vote.vote_type === "upvote").length
+                - answer.votes.filter(vote => vote.vote_type === "downvote").length))
     }
 
     render() {
@@ -94,13 +103,13 @@ class QuestionShow extends React.Component {
                                     {this.props.question.answers.map((answer) => (
                                         <div className = "answer-section" key = {answer.id}>
                                         <div className = "up-down">
-                                            <div className ="answer-up" onClick={() => this.upvote(answer.id)}>
+                                            <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}>
                                                 <i className="fas fa-caret-up fa-4x"></i>
                                             </div>
-                                            <div>
-                                                count
+                                            <div className="vote-count">
+                                                {this.voteCount(answer)}
                                             </div>
-                                            <div className="answer-down" onClick={() => this.downvote(answer.id)}>
+                                            <div className="answer-down" onClick={(e) => this.downvote(e, answer.id)}>
                                                 <i className="fas fa-caret-down fa-4x"></i>
                                             </div>
                                         </div>
@@ -108,7 +117,7 @@ class QuestionShow extends React.Component {
                                             <li className = "answer-to-q">
                                                 <p>{answer.body}</p>
                                                 <p className="answer-date">Asked on {answer.created_at.substring(0,10)}</p>
-                                                <p className="answer-author">By {answer.user.username}</p>
+                                                <p className="answer-author">By {answer.user}</p>
                                             </li>
                                         </div>
                                         </div>

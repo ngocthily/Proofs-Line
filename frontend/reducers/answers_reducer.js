@@ -1,21 +1,18 @@
 import {
     RECEIVE_QUESTION,
-    RECEIVE_ANSWER
+    RECEIVE_ANSWER,
+    RECEIVE_ANSWERS
 } from '../actions/questions_actions';
-import { RECEIVE_VOTE } from '../actions/votes_actions';
 
 const answersReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
-        case RECEIVE_QUESTION:
+        case RECEIVE_ANSWERS:
             return Object.assign({}, state, action.answers);
         case RECEIVE_ANSWER:
-            const { answer } = action;
-            return Object.assign({}, state, { [answer.id]: answer });
-        // case RECEIVE_VOTE:
-        //     const { vote } = action;
-        //     return Object.assign({}, state, { [vote.id]: vote });
-        // this nests it in the entities => answers (empty)
+            nextState = Object.assign({}, state);
+            nextState[action.answer.id] = action.answer;
+            return nextState;
         default: 
             return state;
     }

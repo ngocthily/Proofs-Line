@@ -17,7 +17,6 @@ class Api::VotesController < ApplicationController
 
     def create
         @vote = Vote.new(vote_params)
-        # debugger
         @vote.user_id = current_user.id 
         if @vote.save
             render 'api/votes/show'
@@ -37,6 +36,6 @@ class Api::VotesController < ApplicationController
 
     private
     def vote_params
-        params.require(:vote).permit(:vote_type, :post_type, :post_id)
+        params.require(:vote).permit(:vote_type, :post_type, :post_id, :answer_id)
     end
 end

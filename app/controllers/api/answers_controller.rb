@@ -6,6 +6,7 @@ class Api::AnswersController < ApplicationController
 
     def show
        @answer = Answer.find(params[:id])
+       debugger
        if @answer
             render 'api/answers/show'
        else

@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
         questionId,
         question,
         currentUserId: state.session.id,
-        authorId: question.author_id
+        authorId: question.author_id,
+        answers: question.answers
     }
 };
 

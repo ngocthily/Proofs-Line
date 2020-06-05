@@ -5,11 +5,6 @@ class AnswerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.answer;
-        // this.state = {
-        //     answer: {
-        //         body: ''
-        //     }
-        // }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -44,7 +39,7 @@ class AnswerForm extends React.Component {
     }
 
     refreshPage() {
-        window.location.reload();
+        setTimeout(window.location.reload(), 20000);
     }
 
     render() {
