@@ -22,6 +22,7 @@ export default () => {
         <div className = 'home-container1'>
             <div className="bg-main">
                 <img className ="background" src={window.background}/>
+                <img className="background-change" src={window.background_change}/>
             </div>
             <div className="splash-page-words">
                 <h1 className = "home-container1-header">We {`<3`} people who do proofs</h1>
@@ -29,6 +30,12 @@ export default () => {
                     <p>We build products that empowers mathematicians</p>
                     <p>and connect them to solutions that enable</p>
                     <p>productivity, growth, and discovery.</p>
+                </div>
+                <div className="description1-change">
+                    <p>We build products that empowers</p>
+                    <p>mathematicians and connect them to</p>
+                    <p>solutions that enable productivity,</p>
+                    <p>growth, and discovery.</p>
                 </div>
                 <br></br>
                 <div className="home-page-scroll-btns">

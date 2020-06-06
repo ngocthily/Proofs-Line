@@ -12,11 +12,16 @@
     flex-direction: column;
     background-position: center;
     margin-top: 280px;
+    text-align: center;
 }
 
 .bg-main {
     position: absolute;
     top: 60px;
+    width: 100%;
+    height: 488px;
+    background-color: #ffcf0c;
+    overflow: hidden;
 }
 
 .splash-page-words {
@@ -66,7 +71,77 @@
     border-radius: 3px;
 }
 .background {
-    width: 100%;
+    margin-top:-5px;
+    display: flex;
+    max-width:1600px;
+    max-height:1800px;
+    width: auto;
+    height: auto;
+    // margin-left: -80px;
+    position: absolute;
+    // position: fixed;
+    top: 50%;
+    left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.background-change {
+    display: none;
+}
+
+.description1-change {
+    display: none;
+}
+
+
+// responsive splash page background
+@media only screen and (max-width: 630px) {
+    .background {
+        display: none;
+    }
+
+    .background-change {
+        display: block;
+        max-width:600px;
+        max-height:600px;
+        width: auto;
+        height: auto;
+    }
+
+    .home-container1-header {
+        font-size: 28px;
+        margin-top: 3px;
+    }
+
+    .description1 {
+        display: none;
+    }
+
+    .description1-change {
+        display: block;
+        font-family: 'Source Sans Pro',sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        line-height: 80%;
+        margin-top: 18px;
+    }
+
+    .home-page-scroll-btns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .scroll-to-math {
+        font-size: 13px;
+        padding: 14px 5px;
+    }
+
+    .scroll-to-business {
+        font-size: 13px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
 }
 
 .home-container2 {
