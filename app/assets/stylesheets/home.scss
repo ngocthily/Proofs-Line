@@ -77,12 +77,10 @@
     max-height:1800px;
     width: auto;
     height: auto;
-    // margin-left: -80px;
     position: absolute;
-    // position: fixed;
     top: 50%;
     left: 50%;
-   transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .background-change {
@@ -95,7 +93,7 @@
 
 
 // responsive splash page background
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 580px) {
     .background {
         display: none;
     }
@@ -106,11 +104,15 @@
         max-height:600px;
         width: auto;
         height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .home-container1-header {
         font-size: 28px;
-        margin-top: 3px;
+        // margin-top: 3px;
     }
 
     .description1 {
@@ -121,7 +123,7 @@
         display: block;
         font-family: 'Source Sans Pro',sans-serif;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         text-align: center;
         line-height: 80%;
         margin-top: 18px;
@@ -160,6 +162,7 @@
     font-size: 28px;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
+    text-align: center;
 }
 
 .orange-divider {
@@ -188,9 +191,19 @@
 .three-boxes {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     padding: 50px;
+    text-align: center;
+    max-width: 100%;
+    position: relative;
 }
+
+// .public-wrapper {
+//     box-sizing: border-box;
+//   overflow: auto;
+//   max-width: 100%;
+//   height: calc(100vh - 16px);
+// }
 
 .public-q-and-a {
     -webkit-box-shadow: 0 0 6px lightgray;
@@ -201,8 +214,9 @@
     align-items: center;
     padding: 20px;
     margin-top: 50px;
-    margin-right: 200px;
-    width: 320px;
+    margin-right: 50px;
+    max-width: 320px;
+    width: 100%;
 }
 
 .public-q-and-a:hover {
@@ -211,7 +225,7 @@
 }
 
 .public-q-and-a-img {
-    width: 240px;
+    max-width: 240px;
     padding: 2px;
 }
 
@@ -223,8 +237,9 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    position: absolute;
-    width: 320px;
+    margin-right: 50px;
+    max-width: 320px;
+    height: 400px;
 }
 
 .private-q-and-a:hover {
@@ -233,7 +248,7 @@
 }
 
 .private-q-and-a-img {
-    width: 240px;
+    max-width: 240px;
     padding: 2px;
 }
 
@@ -246,7 +261,7 @@
     align-items: center;
     padding: 20px;
     margin-top: 50px;
-    width: 320px;
+    max-width: 320px;
 }
 
 .browse-jobs:hover {
@@ -269,9 +284,11 @@
 .box-description {
     text-align: center;
     font-family: 'Source Sans Pro',sans-serif;
-    line-height: 60%;
+    line-height: normal;
     font-size: 15px;
     padding: 4px;
+    width: 200px;
+    word-wrap: break-word;
 }
 
 .browse-questions-btn, .find-a-job-btn {
@@ -284,6 +301,7 @@
     border-radius: 6px;
     font-size: 15px;
     border: none;
+    margin-top: 5px;
 } 
 
 .try-for-free-btn {
@@ -296,6 +314,7 @@
     border-radius: 6px;
     font-size: 15px;
     border: none;
+    margin-top: 5px;
 }
 
 .home-container3 {

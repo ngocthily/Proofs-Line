@@ -61,25 +61,27 @@ export default () => {
                 </div>
             </div>
             <div className ="three-boxes">
+                {/* <div className="public-wrapper"> */}
                 <div className="public-q-and-a">
                     <img className="public-q-and-a-img" src={window.public_q_and_a}/>
                     <p className ="three-boxes-title">Public Q&A</p>
                     <div className="box-description">
-                        <p>Get answers to more than 5</p>
-                        <p>questions and give back by</p>
-                        <p>sharing your knowledge with </p>
-                        <p>others. <Link to="/signup" className="link-to-signup">Sign up</Link> for an account.</p>
+                        <p>Get answers to more than 5
+                        questions and give back by
+                        sharing your knowledge with
+                        others. <Link to="/signup" className="link-to-signup">Sign up</Link> for an account.</p>
                     </div>
                     <Link to="/questions"><button className="browse-questions-btn">Browse questions</button></Link>
+                {/* </div> */}
                 </div>
                 <div className="private-q-and-a">
                     <img className="private-q-and-a-img" src={window.private_q_and_a} />
                     <p className="three-boxes-title">Private Q&A</p>
                     <div className ="box-description">
-                        <p>Level up with Proofs Line while you</p>
-                        <p>work. Share knowledge privately with</p>
-                        <p>your coworkers using our flagship Q&A</p>
-                        <p>engine.</p>
+                        <p>Level up with Proofs Line while you
+                        work. Share knowledge privately with
+                        your coworkers using our flagship Q&A
+                        engine.</p>
                     </div>
                     <Link to="/signup"><button className="try-for-free-btn">Try for free</button></Link>
                 </div>
@@ -87,10 +89,10 @@ export default () => {
                     <img className="browse-jobs-img" src={window.browse_jobs} />
                     <p className="three-boxes-title">Browse Jobs</p>
                     <div className ="box-description">
-                        <p>Find the right job through high quality</p>
-                        <p>listings and search for roles based on</p>
-                        <p>title, technology stack, salary, location,</p>
-                        <p>and more.</p>
+                        <p>Find the right job through high quality
+                        listings and search for roles based on
+                        title, technology stack, salary, location,
+                        and more.</p>
                     </div>
                     <Link to="/signup"><button className="find-a-job-btn">Find a job</button></Link>
                 </div>
