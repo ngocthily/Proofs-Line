@@ -55,13 +55,12 @@ export default () => {
                 </h1>
                 <img className="orange-divider" src={window.orange_divider}/>
                 <div className="description2">
-                    <p> Proofs Line is an <Link to = "/questions" className="link-to-questions">open community</Link> for anyone that maths. We help </p>
-                    <p> you get answers to your toughest math questions, share knowledge with </p>
-                    <p> your coworkers in private, and find your next dream job. </p>
+                    <p> Proofs Line is an <Link to = "/questions" className="link-to-questions">open community</Link> for anyone that maths. We help
+                    you get answers to your toughest math questions, share knowledge with 
+                    your coworkers in private, and find your next dream job. </p>
                 </div>
             </div>
             <div className ="three-boxes">
-                {/* <div className="public-wrapper"> */}
                 <div className="public-q-and-a">
                     <img className="public-q-and-a-img" src={window.public_q_and_a}/>
                     <p className ="three-boxes-title">Public Q&A</p>
@@ -72,7 +71,6 @@ export default () => {
                         others. <Link to="/signup" className="link-to-signup">Sign up</Link> for an account.</p>
                     </div>
                     <Link to="/questions"><button className="browse-questions-btn">Browse questions</button></Link>
-                {/* </div> */}
                 </div>
                 <div className="private-q-and-a">
                     <img className="private-q-and-a-img" src={window.private_q_and_a} />
@@ -105,35 +103,35 @@ export default () => {
                 </h1>
                 <img className="orange-divider" src={window.orange_divider} />
                 <div className="description2">
-                    <p> Our mission is to help mathematicians write the script of the future. This means helping you </p>
-                    <p> find and hire skilled mathematicians for your business and providing them the tools they need </p>
-                    <p> to share knowledge and work effectively. </p>
+                    <p> Our mission is to help mathematicians write the script of the future. This means helping you 
+                    find and hire skilled mathematicians for your business and providing them the tools they need 
+                    to share knowledge and work effectively. </p>
                 </div>
             </div>
-            <div className="three-boxes">
+            <div className="three-boxes-bottom">
                 <div className="share">
                     <img className="share-img" src={window.share}/>
                     <div className="share-description">
-                        <p>Quickly find and share</p>
-                        <p>internal knowledge with</p>
-                        <p>Private Q&A</p>
+                        <p>Quickly find and share
+                        internal knowledge with
+                        Private Q&A</p>
                     </div>
                 </div>
                 <div className="find">
                     <img className="find-img" src={window.find} />
                     <div className="find-description">
-                        <p>Find the perfect candidate</p>
-                        <p>for your growing technical</p>
-                        <p>team with Talent solutions</p>
+                        <p>Find the perfect candidate
+                        for your growing technical
+                        team with Talent solutions</p>
                     </div>
                 </div>
                 <div className="rocket">
                     <img className="rocket-img" src={window.rocket} />
                     <div className="rocket-description">
-                        <p>Accelerate the discovery of</p>
-                        <p>your products or services</p>
-                        <p>through our Advertising</p>
-                        <p>platform</p>
+                        <p>Accelerate the discovery of
+                        your products or services
+                        through our Advertising
+                        platform</p>
                     </div>
                 </div>
             </div>
