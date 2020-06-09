@@ -6,12 +6,11 @@
   border-top: 4px solid orange;
   background-color: #fafafb;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   max-height: 55px;
-    // overflow: hidden;
 }
 
 .nav-bar-header {
@@ -23,7 +22,7 @@
 
 
 .dropdown {
-  left: 90px;
+  // left: -330px;
 }
 
 .dropdown-content {
@@ -87,7 +86,7 @@
 }
 
 .home-logo {
-  margin-left: 100px;
+  margin-left: 10px;
   margin-top: -6px;
   margin-bottom: -4px;
   max-width: 120px;
@@ -99,13 +98,14 @@
 }
 
 .home-logo-img {
+  // margin-left: -420px;
   margin-top: 15px;
   max-width: 120px;
   max-height: 18px;
 }
 
 .navbar-logout-btn-container {
-  margin-left: 90px;
+  margin-left: 10px;
 }
 
 .navbar-logout-btn {
@@ -113,13 +113,16 @@
   background-color: #DBEEFF; 
   border-color: #467594; 
   border-radius: 4px;
-  margin-top: -30px;
-  margin-left: -80px;
+  margin-top: -33px;
+  // margin-left: 300px;
   font-size: 12px;
-  padding: 8px 12px;
+  padding: 8px 8px;
   position: absolute;
   display: inline-block;
   top: 40px;
+  text-align:center;
+  max-height: 70%;
+  max-width: 50%;
 }
 
 .navbar-logout-btn:hover, 
@@ -165,6 +168,7 @@ fieldset[disabled] .navbar-logout-btn.active {
   display: flex;
   align-items: row;
   max-height: 44px;
+  margin-left: 600px;
 }
 
 .btn-login { 
@@ -267,9 +271,6 @@ fieldset[disabled] .btn-signup.active {
   background-color: #FFFFFF; 
 }
 
-// .search-bar-wrapper {
-//   // width: 75%;
-// }
 .search-bar {
   background-color: white;
   border-left-style: hidden;
@@ -295,7 +296,7 @@ fieldset[disabled] .btn-signup.active {
 .search-img {
   padding: 8px 10px;
   margin-top: 4px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   margin-left: 50px;
   background-color: white;
   border-top: 1px solid #bbc0c4;
@@ -393,7 +394,7 @@ fieldset[disabled] .btn-signup.active {
 }
 
 .navbar-home-logo {
-  width: 120px;
+  max-width: 120px;
 }
 
 .main-navbar-logo:hover {

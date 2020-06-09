@@ -56,9 +56,7 @@ export default ({ currentUser, logout }) => {
             <div className="search-img">
                 <i className="fas fa-search"></i>
             </div>
-            <div className="search-bar-wrapper">
                 <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
-            </div>
             <div>
                 {/* <Link to='/login'><button type="button" className="btn-login">Log in</button></Link>
                 <Link to='/signup'><button type="button" className="btn-signup">Sign up</button></Link> */}
