@@ -45,7 +45,9 @@ class QuestionForm extends React.Component {
         return (
             <div>
                 <div className="new-question-page">
-                    <HomeNavBarContainer/>
+                    <div className="home-page-nav-bar">
+                        <HomeNavBarContainer/>
+                    </div>
                     <div className="ask-question-midsection">
                         <div className = "question-form">
                             <h1 className="ask-question-header">Ask a public question</h1>
