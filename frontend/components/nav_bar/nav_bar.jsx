@@ -12,24 +12,26 @@ export default ({ currentUser, logout }) => {
             </div>
         ) : (
             <div>
-                <Link to='/login'><button type="button" className="btn-login">Log in</button></Link>
-                <Link to='/signup'><button type="button" className="btn-signup">Sign up</button></Link>
+                <Link to='/login'><button type="button" className="main-btn-login">Log in</button></Link>
+                <Link to='/signup'><button type="button" className="main-btn-signup">Sign up</button></Link>
             </div>
         );
     return (
-        <div className = "nav-bar-container">
+        <div className="main-nav-bar-container-wrapper">
+        <div className = "main-nav-bar-container">
             <div className = "main-navbar-logo">
                 <Link to="/">
                     <img className="navbar-home-logo" src={window.logo} />
                 </Link>
             </div>
-            <div className = "nav-bar-buttons">
-                <div className = "search-img">
+            <div className = "main-nav-bar-buttons">
+                <div className = "main-search-img">
                     <i className="fas fa-search"></i>
                 </div>
-                <input className="search-bar" type="text" placeholder="Search..(coming)"></input>
+                <input className="main-search-bar" type="text" placeholder="Search..(coming)"></input>
                     {display}
             </div>
+        </div>
         </div>
     )
 }

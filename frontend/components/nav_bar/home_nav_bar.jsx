@@ -15,17 +15,18 @@ export default ({ currentUser, logout }) => {
             <button className="navbar-logout-btn" onClick={logout}>Log out</button>
         </div>
     ) : (
-            <div>
+            <div className="login-signup-btns">
                 <Link to='/login'><button type="button" className="btn-login">Log in</button></Link>
                 <Link to='/signup'><button type="button" className="btn-signup">Sign up</button></Link>
             </div>
         );
 
     return (
+    <div className="home-nav-bar-container-wrapper">
     <div className="nav-bar-container">
         <div className="nav-bar-header">
             <div className="dropdown">
-                <label className="dropdown-items">
+                <div className="dropdown-items">
                     <div className="dropdown-icon" onClick={dropdownChange}>
                         <div className="x-icon">
                         <div className="dropdown-content">
@@ -44,7 +45,7 @@ export default ({ currentUser, logout }) => {
                         </div>
                         </div>
                     </div>
-                </label>
+                </div>
             </div>
             <div className="home-logo">
                 <Link to="/">
@@ -52,6 +53,9 @@ export default ({ currentUser, logout }) => {
                 </Link>
             </div>
         </div>
+        {/* <div className="space1"></div>
+        <div className="space2"></div> */}
+        {/* <div className="nav-bar-buttons-wrapper"> */}
         <div className="nav-bar-buttons">
             <div className="search-img">
                 <i className="fas fa-search"></i>
@@ -62,7 +66,9 @@ export default ({ currentUser, logout }) => {
                 <Link to='/signup'><button type="button" className="btn-signup">Sign up</button></Link> */}
                 {display}
             </div>
+        {/* </div> */}
         </div>
+    </div>
     </div>
     )
 }

@@ -422,7 +422,11 @@ fieldset[disabled] .answer-btn.active {
 
 .ind-question-navbar {
   position: fixed;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index:999999;
 }
+
 
 .answer-author {
   margin-left: 500px;
