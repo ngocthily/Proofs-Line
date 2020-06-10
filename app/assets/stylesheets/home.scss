@@ -435,7 +435,7 @@
     padding: 50px;
     text-align: center;
     max-width: 100%;
-    position: relative;
+    // position: relative;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -522,5 +522,10 @@
 @media only screen and (max-width: 400px) {
     .home-container3 {
         margin-top: 200px;
+    }
+
+    .share, .find, .rocket{
+        margin: 0 auto;
+        margin-top: 30px;
     }
 }
