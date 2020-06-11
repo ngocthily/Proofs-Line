@@ -3,5 +3,6 @@
         json.partial! 'question', question: question
         json.answerIds []
         json.countOfAnswers question.answers.count
+        json.author question.author.username
     end
 end
