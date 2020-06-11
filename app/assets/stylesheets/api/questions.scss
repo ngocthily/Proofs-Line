@@ -138,7 +138,8 @@ fieldset[disabled] .ask-question-button.active {
 .post-question-btn {
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border-color: #77A4C2; 
+  border: 1px solid #77A4C2;
+  // border-color: #77A4C2; 
   border-radius: 4px;
   margin: 4px 2px;
   font-size: 12px;
@@ -244,12 +245,11 @@ fieldset[disabled] .post-question-btn.active {
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
 }
-
 .answer-btn {
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border: 1px solid  #77A4C2;
-  // border-color: #77A4C2; 
+  border: 1px solid  #77A4C2; 
+  display: block;
   border-radius: 4px;
   margin: 4px 2px;
   font-size: 12px;

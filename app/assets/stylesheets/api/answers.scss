@@ -61,3 +61,54 @@
   margin: 0; 
   padding: 0;
 }
+
+.answer-btn {
+  color: #FFFFFF; 
+  background-color: #1499FF; 
+  border: 1px solid  #77A4C2; 
+  display: block;
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+.answer-btn:hover, 
+.answer-btn:focus, 
+.answer-btn:active, 
+.answer-btn.active, 
+.open .dropdown-toggle.answer-btn { 
+  color: #FFFFFF; 
+  background-color: #0A78CC; 
+  border-color: #77A4C2; 
+}
+
+.answer-btn:active, 
+.answer-btn.active, 
+.open .dropdown-toggle.answer-btn { 
+  background-image: none; 
+} 
+ 
+.answer-btn.disabled, 
+.answer-btn[disabled], 
+fieldset[disabled] .answer-btn, 
+.answer-btn.disabled:hover, 
+.answer-btn[disabled]:hover, 
+fieldset[disabled] .answer-btn:hover, 
+.answer-btn.disabled:focus, 
+.answer-btn[disabled]:focus, 
+fieldset[disabled] .answer-btn:focus, 
+.answer-btn.disabled:active, 
+.answer-btn[disabled]:active, 
+fieldset[disabled] .answer-btn:active, 
+.answer-btn.disabled.active, 
+.answer-btn[disabled].active, 
+fieldset[disabled] .answer-btn.active { 
+  background-color: #1499FF; 
+  border-color: #77A4C2; 
+} 
+
+.answer-btn.badge { 
+  color: #1499FF; 
+  background-color: #FFFFFF; 
+}
