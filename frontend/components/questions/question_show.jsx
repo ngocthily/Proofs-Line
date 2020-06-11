@@ -79,6 +79,7 @@ class QuestionShow extends React.Component {
 
     render() {
         const { question, currentUserId, authorId } = this.props;
+
         const editLink = (currentUserId === authorId) ? 
             <div>
                 <Link to={`/questions/${question.id}/edit`}>Edit</Link> &nbsp;
@@ -88,42 +89,11 @@ class QuestionShow extends React.Component {
             <div className="answer-response">
                 <AnswerFormContainer />
             </div>
+
         const count = this.props.answers ?
                         (<div className = "amt-of-answers-per-q">{this.props.answers.length} Answers</div> ):
                         (<div className="amt-of-answers-per-q"> 0 Answers</div>)
 
-        // const answerList = this.props.question.answers ? 
-            // ( <div>
-            //         <ul>
-            //             <div className="whole-answer-section">
-            //                 {this.props.question.answers.map((answer, idx) => (
-            //                     <div className="answer-section" key={idx}>
-            //                         <div className="up-down">
-            //                             <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}
-            //                             >
-            //                                 <i className="fas fa-caret-up fa-4x"></i>
-            //                                 <div className="vote-count">
-            //                                     {/* {this.voteCount(answer)} */}
-            //                                     {this.state.upvote ? this.voteCount(answer) + 1 :
-            //                                         this.state.downvote ? this.voteCount(answer) - 1 : this.voteCount(answer)}
-            //                                 </div>
-            //                             </div>
-            //                             <div className="answer-down" onClick={(e) => this.downvote(e, answer.id)}>
-            //                                 <i className="fas fa-caret-down fa-4x"></i>
-            //                             </div>
-            //                         </div>
-            //                         <div>
-            //                             <li className="answer-to-q">
-            //                                 <p>{answer.body}</p>
-            //                                 <p className="answer-date">Asked on {answer.created_at ? answer.created_at.substring(0, 10) : null}</p>
-            //                                 <p className="answer-author">By {answer.user}</p>
-            //                             </li>
-            //                         </div>
-            //                     </div>
-            //                 ))}
-            //             </div>
-            //         </ul>
-            // </div>) : (
         const answerList = (answers) => (
             answers.map(answer => (
                 <AnswerListItemContainer
@@ -132,6 +102,7 @@ class QuestionShow extends React.Component {
                 />
             ))
         );
+
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -161,9 +132,10 @@ class QuestionShow extends React.Component {
                         <div className = 'count-answers'>
                         {count}
                         </div>
-                        {this.props.answers ? 
-                        (answerList(this.props.answers)): null}
-                        {/* <AnswerIndex/> */}
+                        <div className = "whole-answer-section">
+                            {this.props.answers ? 
+                            (answerList(this.props.answers)): null}
+                        </div>
                         {(currentUserId !== authorId) ?
                             <div>
                                 {editLink}
