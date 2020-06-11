@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Footer from '../footer/footer';
-import Note from '../note/note';
+import NoteContainer from '../note/note_container';
 
 class QuestionIndex extends React.Component {
     constructor(props) {
@@ -74,7 +74,7 @@ class QuestionIndex extends React.Component {
                 </div>
             </div>
             <div className="questions-index-note">
-                <Note/>
+                <NoteContainer/>
             </div>
             </div>
             <Footer/>

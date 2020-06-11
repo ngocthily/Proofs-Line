@@ -66,13 +66,16 @@
     margin-left: 150px;
     // height: 100px;
 }
+
+
 .ask-question-button {
   // display: block;
   // margin-left: 100px;
   // top: 65px;
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border-color: #77A4C2; 
+  // border-color: #77A4C2; 
+  border: 1px solid #77A4C2;
   border-radius: 4px;
   margin: 4px 6px;
   font-size: 14px;
@@ -80,6 +83,7 @@
   display: block;
   margin-top: 10px;
   // display: relative;
+  // outline: 1px solid #7ec0ff;
 }
 
 .ask-question-button:hover, 
@@ -244,7 +248,8 @@ fieldset[disabled] .post-question-btn.active {
 .answer-btn {
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border-color: #77A4C2; 
+  border: 1px solid  #77A4C2;
+  // border-color: #77A4C2; 
   border-radius: 4px;
   margin: 4px 2px;
   font-size: 12px;

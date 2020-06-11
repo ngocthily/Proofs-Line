@@ -125,7 +125,7 @@
 .navbar-logout-btn {
   color: #467594; 
   background-color: #DBEEFF; 
-  border-color: #467594; 
+  border: 1px solid #467594;
   border-radius: 4px;
   margin-top: -28px;
   font-size: 12px;
@@ -208,7 +208,8 @@ fieldset[disabled] .navbar-logout-btn.active {
 .btn-login { 
   color: #467594; 
   background-color: #DBEEFF; 
-  border-color: #467594; 
+  border: 1px solid #467594;
+  // border-color: #467594; 
   border-radius: 4px;
   margin: 4px;
   font-size: 13px;
@@ -259,7 +260,8 @@ fieldset[disabled] .btn-login.active {
 .btn-signup { 
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border-color: #77A4C2; 
+  border: 1px solid #77A4C2;
+  // border-color: #77A4C2; 
   border-radius: 4px;
   margin: 4px 2px;
   font-size: 13px;
@@ -499,7 +501,8 @@ fieldset[disabled] .btn-signup.active {
 .main-btn-login { 
   color: #467594; 
   background-color: #DBEEFF; 
-  border-color: #467594; 
+  border: 1px solid #467594;
+  // border-color: #467594; 
   border-radius: 4px;
   margin: 2px;
   margin-right: 6px;
@@ -551,7 +554,8 @@ fieldset[disabled] .main-btn-login.active {
 .main-btn-signup { 
   color: #FFFFFF; 
   background-color: #1499FF; 
-  border-color: #77A4C2; 
+  border: 1px solid #77A4C2;
+  // border-color: #77A4C2; 
   border-radius: 4px;
   margin: 2px;
   font-size: 13px;
