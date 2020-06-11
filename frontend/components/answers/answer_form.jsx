@@ -19,6 +19,7 @@ class AnswerForm extends React.Component {
             question_id: questionId
         });
         this.props.createAnswer(answer);
+        this.state.body = "";
     }
 
     update(type) {
@@ -44,6 +45,7 @@ class AnswerForm extends React.Component {
                     <label className = "your-answer-label">Your answer</label>
                     <br/>
                     <textarea
+                        id="answer-body"
                         cols = "100"
                         rows = "10"
                         value = {this.state.body}

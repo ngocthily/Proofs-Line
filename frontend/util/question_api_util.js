@@ -17,7 +17,7 @@ export const createQuestion = (question) => (
     $.ajax({
         url: 'api/questions',
         method: 'POST',
-        data: question
+        data: { question }
     })
 );
 

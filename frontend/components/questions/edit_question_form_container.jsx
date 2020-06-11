@@ -9,15 +9,12 @@ const mapStateToProps = (state, ownProps) => {
     const questionId = parseInt(ownProps.match.params.questionId);
     const question = selectQuestion(state.entities, questionId);
     return {
-    question: {
-        id: question.id,
-        title: question.title,
-        body: question.body,
-        authorId: question.author_id
-    },
-    questionId,
-    errors: state.errors.question,
-    formType: 'Update question'
+        question,
+        questionId,
+        currentUserId: state.session.id,
+        authorId: question.author_id,
+        errors: errors.question,
+        formType: 'Update question'
     }
 }
 const mapDispatchToProps = (dispatch) => ({
