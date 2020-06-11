@@ -39,7 +39,8 @@ class QuestionIndex extends React.Component {
                     </div>
                 </div>
                 <div className = "count-unanswered-q">
-                    {count} questions with no accepted answers (editing this code)
+                    {count} questions 
+                    {/* with no accepted answers (editing this code) */}
                 </div>
                 <div>
                     {this.props.questions.map((question) => (

@@ -20,6 +20,9 @@ class AnswerForm extends React.Component {
         });
         this.props.createAnswer(answer);
         this.state.body = "";
+        // this clears error if body is empty but then you fill body and hit submit
+        // would rather have it to be if a person is typing the error will go away
+        this.props.clearAnswerErrors();
     }
 
     update(type) {
