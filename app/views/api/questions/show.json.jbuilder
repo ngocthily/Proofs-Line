@@ -1,5 +1,18 @@
-json.extract! @question, :id, :title, :body, :author_id, :created_at
-json.answers @question.answers do |answer|
-    json.(answer, :id, :body, :user_id, :question_id, :created_at, :votes)
-    json.user answer.user.username
+json.question do
+    json.partial! '/api/questions/question', question: @question
+    json.answerIds @question.answers.pluck(:id)
+end
+
+@question.answers.includes(:user).each do |answer|
+  json.answers do
+    json.set! answer.id do
+      json.partial! 'api/answers/answer', answer: answer
+    end
+  end
+
+  json.users do
+    json.set! answer.user.id do
+      json.extract! answer.user, :id, :username
+    end
+  end
 end

@@ -7,12 +7,10 @@ import {
 const answersReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
-        case RECEIVE_ANSWERS:
+        case RECEIVE_QUESTION:
             return Object.assign({}, state, action.answers);
         case RECEIVE_ANSWER:
-            nextState = Object.assign({}, state);
-            nextState[action.answer.id] = action.answer;
-            return nextState;
+            return Object.assign({}, state, { [action.answer.id]: answer });
         default: 
             return state;
     }

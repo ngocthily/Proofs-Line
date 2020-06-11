@@ -14,15 +14,15 @@ const mapStateToProps = (state, ownProps) => {
         questionId,
         question,
         currentUserId: state.session.id,
-        authorId: question.author_id,
-        answers: question.answers
+        authorId: question.author_id
+        // answers: question.answers
     }
 };
 
 const mapDispatchToProps = (dispatch) => ({
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
-    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    createVote: (vote) => dispatch(createVote(vote))
+    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId))
+    // createVote: (vote) => dispatch(createVote(vote))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);

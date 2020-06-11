@@ -5,19 +5,17 @@ export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS';
 export const CLEAR_QUESTION_ERRORS = 'CLEAR_QUESTION_ERRORS';
-export const RECEIVE_ANSWERS = 'RECEIVE_ANSWERS';
-export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
-export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
-export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
 
 export const receiveAllQuestions = (questions) => ({
     type: RECEIVE_ALL_QUESTIONS,
     questions
 });
 
-export const receiveQuestion = (question) => ({
+export const receiveQuestion = ( {question, answers, users} ) => ({
     type: RECEIVE_QUESTION,
-    question
+    question,
+    answers,
+    users
 });
 
 export const removeQuestion = (questionId) => ({
@@ -34,24 +32,6 @@ export const clearQuestionErrors = () => ({
     type: CLEAR_QUESTION_ERRORS
 });
 
-export const receiveAnswer = (answer) => ({
-    type: RECEIVE_ANSWER,
-    answer
-});
-
-export const receiveAnswers = (answers) => ({
-    type: RECEIVE_ANSWERS,
-    answers
-});
-
-export const receiveAnswerErrors = (errors) => ({
-    type: RECEIVE_ANSWER_ERRORS,
-    errors
-});
-
-export const clearAnswerErrors = () => ({
-    type: CLEAR_ANSWER_ERRORS
-});
 
 export const fetchQuestions = () => dispatch => (
     QuestionAPIUtil.fetchQuestions()
@@ -78,15 +58,4 @@ export const updateQuestion = (question) => dispatch => (
 export const deleteQuestion = (questionId) => dispatch => (
     QuestionAPIUtil.deleteQuestion(questionId)
         .then(() => (dispatch(removeQuestion(questionId))))
-);
-
-export const createAnswer = (answer) => dispatch => (
-    QuestionAPIUtil.createAnswer(answer)
-        .then((answer) => (dispatch(receiveAnswer(answer))),
-            err => (dispatch(receiveAnswerErrors(err.responseJSON))))
-);
-
-export const fetchAnswers = () => dispatch => (
-    QuestionAPIUtil.fetchAnswers()
-        .then((answers) => dispatch(receiveAnswers(answers)))
 );

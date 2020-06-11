@@ -2,14 +2,14 @@ class Api::QuestionsController < ApplicationController
 
     def index
         @questions = Question.all
-        render 'api/questions/index'
+        render :index
     end
 
     def create
         @question = Question.new(question_params)
-        # @question.author_id = current_user.id
+        @question.author_id = current_user.id
         if @question.save
-            render 'api/questions/show'
+            render :show
         else
             render json: @question.errors.full_messages, status: 422
         end
@@ -18,7 +18,7 @@ class Api::QuestionsController < ApplicationController
     def show
        @question = Question.find(params[:id])
        if @question
-            render 'api/questions/show'
+            render :show
        else
             render json: @question.errors.full_messages, status: 402
        end
@@ -27,7 +27,7 @@ class Api::QuestionsController < ApplicationController
     def update
         @question = Question.find(params[:id])
         if @question.update(question_params)
-            render 'api/questions/show'
+            render :show
         else
             render json: @question.errors.full_messages, status: 401
         end
@@ -37,7 +37,7 @@ class Api::QuestionsController < ApplicationController
         @question = Question.find(params[:id])
         if @question
             @question.destroy
-            render 'api/questions/show'
+            render :show
         else
             render json:["Can't find question"]
         end

@@ -4,6 +4,8 @@ import AnswerFormContainer from '../answers/answer_form_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
+// import AnswerListItemContainer from '../answers/answer_list_item_container';
+import AnswerIndex from '../answers/answer_index_container';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -89,6 +91,47 @@ class QuestionShow extends React.Component {
         const count = this.props.question.answers ?
                         (<div className = "amt-of-answers-per-q">{this.props.question.answers.length} Answers</div> ):
                         (<div className="amt-of-answers-per-q"> 0 Answers</div>)
+
+        // const answerList = this.props.question.answers ? 
+            // ( <div>
+            //         <ul>
+            //             <div className="whole-answer-section">
+            //                 {this.props.question.answers.map((answer, idx) => (
+            //                     <div className="answer-section" key={idx}>
+            //                         <div className="up-down">
+            //                             <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}
+            //                             >
+            //                                 <i className="fas fa-caret-up fa-4x"></i>
+            //                                 <div className="vote-count">
+            //                                     {/* {this.voteCount(answer)} */}
+            //                                     {this.state.upvote ? this.voteCount(answer) + 1 :
+            //                                         this.state.downvote ? this.voteCount(answer) - 1 : this.voteCount(answer)}
+            //                                 </div>
+            //                             </div>
+            //                             <div className="answer-down" onClick={(e) => this.downvote(e, answer.id)}>
+            //                                 <i className="fas fa-caret-down fa-4x"></i>
+            //                             </div>
+            //                         </div>
+            //                         <div>
+            //                             <li className="answer-to-q">
+            //                                 <p>{answer.body}</p>
+            //                                 <p className="answer-date">Asked on {answer.created_at ? answer.created_at.substring(0, 10) : null}</p>
+            //                                 <p className="answer-author">By {answer.user}</p>
+            //                             </li>
+            //                         </div>
+            //                     </div>
+            //                 ))}
+            //             </div>
+            //         </ul>
+            // </div>) : (
+        // const answerList = (answers) => (
+        //     answers.map(answer => (
+        //         <AnswerListItemContainer
+        //             answer={answer}
+        //             key={answer.id}
+        //         />
+        //     ))
+        // );
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -118,40 +161,10 @@ class QuestionShow extends React.Component {
                         <div className = 'count-answers'>
                         {count}
                         </div>
-                        <div>
-                            {this.props.question.answers ? 
-                            (  
-                                <ul>
-                                    <div className = "whole-answer-section">
-                                    {this.props.question.answers.map((answer, idx) => (
-                                        <div className = "answer-section" key = {idx}>
-                                        <div className = "up-down">
-                                            <div className="answer-up" onClick={(e) => this.upvote(e, answer.id)}
-                                            >
-                                                <i className="fas fa-caret-up fa-4x"></i>
-                                            <div className="vote-count">
-                                                {/* {this.voteCount(answer)} */}
-                                                {this.state.upvote ? this.voteCount(answer) + 1 : 
-                                                this.state.downvote ? this.voteCount(answer) - 1 : this.voteCount(answer)}
-                                            </div>
-                                            </div>
-                                            <div className="answer-down" onClick={(e) => this.downvote(e, answer.id)}>
-                                                <i className="fas fa-caret-down fa-4x"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <li className = "answer-to-q">
-                                                <p>{answer.body}</p>
-                                                <p className="answer-date">Asked on { answer.created_at ? answer.created_at.substring(0,10) : null}</p>
-                                                <p className="answer-author">By {answer.user}</p>
-                                            </li>
-                                        </div>
-                                        </div>
-                                    ))}
-                                    </div>
-                                </ul>
-                            ) : null }
-                        </div>
+                        {/* here */}
+                        {/* {this.props.question.answers ? 
+                        (answerList(question.answers)): null} */}
+                        <AnswerIndex/>
                         {(currentUserId !== authorId) ?
                             <div>
                                 {editLink}

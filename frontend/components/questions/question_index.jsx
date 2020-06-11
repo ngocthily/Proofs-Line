@@ -48,7 +48,7 @@ class QuestionIndex extends React.Component {
                                     <div className="ind-question-left-side">
                                         <p>votes</p>
                                         <p>answers</p>
-                                        <p>views</p>
+                                        {/* <p>views</p> */}
                                     </div>
                                     <div className="ind-question-middle">
                                         <Link className = "link-to-question" to = {`questions/${question.id}`}>
@@ -58,7 +58,7 @@ class QuestionIndex extends React.Component {
                                         <p className = "ind-body">
                                             {question.body}
                                         </p>
-                                        <p>*future tags*</p>
+                                        {/* <p>*future tags*</p> */}
                                     <div className="ind-question-right-side">
                                         {/* Will edit the asked to show how long ago it was asked */}
                                         <p>asked on {question.created_at.substring(0,10)}</p>

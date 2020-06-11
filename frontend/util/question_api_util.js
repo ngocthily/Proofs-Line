@@ -1,7 +1,8 @@
-export const fetchQuestions = () => (
+export const fetchQuestions = data => (
     $.ajax({
         url: 'api/questions',
-        method: 'GET'
+        method: 'GET',
+        data
     })
 );
 
@@ -16,7 +17,7 @@ export const createQuestion = (question) => (
     $.ajax({
         url: 'api/questions',
         method: 'POST',
-        data: { question } 
+        data: question
     })
 );
 
@@ -34,18 +35,3 @@ export const deleteQuestion = (questionId) => (
         method: 'DELETE'
     })
 )
-
-export const createAnswer = (answer) => (
-    $.ajax({
-        url: 'api/answers',
-        method: 'POST',
-        data: { answer }
-    })
-);
-
-export const fetchAnswers = () => (
-    $.ajax({
-        url: 'api/answers',
-        method: 'GET'
-    })
-);

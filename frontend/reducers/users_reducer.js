@@ -6,10 +6,10 @@ const usersReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
-        // case RECEIVE_ANSWER:
-        //     return Object.assign({}, state, { [action.user.id]: action.user});
-        // case RECEIVE_QUESTION:
-        //     return Object.assign({}, state, action.users);
+        case RECEIVE_ANSWER:
+            return Object.assign({}, state, { [action.user.id]: action.user});
+        case RECEIVE_QUESTION:
+            return Object.assign({}, state, action.users);
         default:
             return state;
     }

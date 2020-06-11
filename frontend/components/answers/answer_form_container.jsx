@@ -1,19 +1,14 @@
 import { connect } from 'react-redux';
 
-import { createAnswer, clearAnswerErrors } from '../../actions/questions_actions';
+import { createAnswer, clearAnswerErrors } from '../../actions/answers_actions';
 import AnswerForm from './answer_form';
 
 const mapStateToProps = ({errors, session}) => {
-    // const questionId = parseInt(ownProps.match.params.questionId);
-    // const question = selectQuestion(state.entities, questionId);
-    // // debugger
     return {
         answer: {
             body: '',
             user_id: session.id
         },
-        // questionId,
-        // question
         errors: errors.answer
     }
 };
@@ -21,7 +16,6 @@ const mapStateToProps = ({errors, session}) => {
 const mapDispatchToProps = dispatch => ({
     createAnswer: (answer) => dispatch(createAnswer(answer)),
     clearAnswerErrors: () => dispatch(clearAnswerErrors())
-    // fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnswerForm);

@@ -1,1 +1,7 @@
-json.extract! @answer, :id, :body, :user_id, :question_id, :created_at, :votes
+json.answer do
+    json.partial! '/api/answers/answer', answer: @answer
+end
+
+json.user do
+  json.partial! '/api/users/user', user: @answer.user
+end

@@ -1,23 +1,23 @@
 class Api::AnswersController < ApplicationController
     def index 
-        @answers = Answer.all
-        render 'api/answers/index'
+        @answers = Answer.where(question_id: params[question_id])
+        render :index
     end
 
     def show
        @answer = Answer.find(params[:id])
-       debugger
        if @answer
-            render 'api/answers/show'
+            render :show
        else
             render json: @answer.errors.full_messages, status: 402
        end
     end
     
     def create
+        # @answer = Answer.new(answer_params)
         @answer = Answer.new(answer_params)
         if @answer.save
-            render 'api/answers/show'
+            render :show
         else
             render json: @answer.errors.full_messages, status: 422
         end
