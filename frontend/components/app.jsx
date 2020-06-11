@@ -16,7 +16,7 @@ const App = () => (
             <AuthRoute path="/login" component={LoginContainer} />
         <Switch>
             <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
-            <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
+            <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
         </Switch>

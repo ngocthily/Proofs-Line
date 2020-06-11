@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Answer = ({ answer }) => {
-    const { body, created_at, user } = answer;
+const Answer = ({ answer, user }) => {
+    const { body, created_at} = answer;
     return (
         <div>
             <ul>
                 <li>{body}</li>
                 <li>{created_at ? created_at.substring(0, 10) : null}</li>
-                <li>{user}</li>
+                <li>{user.username}</li>
             </ul>
         </div>
     );
@@ -16,7 +16,7 @@ const Answer = ({ answer }) => {
 
 const mapStateToProps = ({ entities: { users } }, { answer }) => {
     return {
-        author: users[answer.author_id]
+        user: users[answer.user_id]
     };
 };
 

@@ -4,8 +4,8 @@ import AnswerFormContainer from '../answers/answer_form_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
-// import AnswerListItemContainer from '../answers/answer_list_item_container';
-import AnswerIndex from '../answers/answer_index_container';
+import AnswerListItemContainer from '../answers/answer_list_item_container';
+// import AnswerIndex from '../answers/answer_index_container';
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -124,14 +124,14 @@ class QuestionShow extends React.Component {
             //             </div>
             //         </ul>
             // </div>) : (
-        // const answerList = (answers) => (
-        //     answers.map(answer => (
-        //         <AnswerListItemContainer
-        //             answer={answer}
-        //             key={answer.id}
-        //         />
-        //     ))
-        // );
+        const answerList = (answers) => (
+            answers.map(answer => (
+                <AnswerListItemContainer
+                    answer={answer}
+                    key={answer.id}
+                />
+            ))
+        );
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -161,10 +161,9 @@ class QuestionShow extends React.Component {
                         <div className = 'count-answers'>
                         {count}
                         </div>
-                        {/* here */}
-                        {/* {this.props.question.answers ? 
-                        (answerList(question.answers)): null} */}
-                        <AnswerIndex/>
+                        {this.props.answers ? 
+                        (answerList(this.props.answers)): null}
+                        {/* <AnswerIndex/> */}
                         {(currentUserId !== authorId) ?
                             <div>
                                 {editLink}

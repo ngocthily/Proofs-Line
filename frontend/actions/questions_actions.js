@@ -40,7 +40,7 @@ export const fetchQuestions = () => dispatch => (
 
 export const fetchQuestion = (questionId) => dispatch => (
     QuestionAPIUtil.fetchQuestion(questionId)
-        .then((question) => dispatch(receiveQuestion(question)))
+        .then((payload) => dispatch(receiveQuestion(payload)))
 );
 
 export const createQuestion = (question) => dispatch => (

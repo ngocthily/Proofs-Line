@@ -5,9 +5,10 @@ export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const RECEIVE_ANSWER_ERRORS = 'RECEIVE_ANSWER_ERRORS';
 export const CLEAR_ANSWER_ERRORS = 'CLEAR_ANSWER_ERRORS';
 
-export const receiveAnswer = ( {answer} ) => ({
+export const receiveAnswer = ( {answer, user} ) => ({
     type: RECEIVE_ANSWER,
-    answer
+    answer,
+    user
 });
 
 export const receiveAnswers = (answers) => ({

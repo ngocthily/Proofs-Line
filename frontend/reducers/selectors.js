@@ -1,9 +1,8 @@
 export const selectQuestion = ({ questions }, questionId) => {
-    return questions[questionId] || {};
+    return questions[questionId] || { answerIds: [] };
 };
 
 
-// haven't
-// export const selectAnswersForQuestion = ({ questions, answers }, question) => {
-//     return question.answerIds.map(answerId => answers[answerId]);
-// };
+export const selectAnswersForQuestion = ({ answers }, question) => {
+    return question.answerIds.map(answerId => answers[answerId]);
+};

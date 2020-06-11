@@ -1,8 +1,8 @@
 import { 
     RECEIVE_ALL_QUESTIONS,
     RECEIVE_QUESTION, 
-    REMOVE_QUESTION,
-    RECEIVE_ANSWER } from '../actions/questions_actions';
+    REMOVE_QUESTION } from '../actions/questions_actions';
+import { RECEIVE_ANSWER } from '../actions/answers_actions';
 
 const questionsReducer = (state = {}, action) => {
     Object.freeze(state);
