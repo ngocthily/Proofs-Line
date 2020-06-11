@@ -88,8 +88,8 @@ class QuestionShow extends React.Component {
             <div className="answer-response">
                 <AnswerFormContainer />
             </div>
-        const count = this.props.question.answers ?
-                        (<div className = "amt-of-answers-per-q">{this.props.question.answers.length} Answers</div> ):
+        const count = this.props.answers ?
+                        (<div className = "amt-of-answers-per-q">{this.props.answers.length} Answers</div> ):
                         (<div className="amt-of-answers-per-q"> 0 Answers</div>)
 
         // const answerList = this.props.question.answers ? 

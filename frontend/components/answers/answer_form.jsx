@@ -14,7 +14,6 @@ class AnswerForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const answer = Object.assign({}, this.state);
         const questionId = parseInt(this.props.match.params.questionId);
         const answer = Object.assign({}, this.state, {
             question_id: questionId
