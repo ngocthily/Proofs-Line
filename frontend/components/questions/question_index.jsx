@@ -21,7 +21,9 @@ class QuestionIndex extends React.Component {
 
     render() {
         // need to redo once answers comes in
-        let count = this.props.questions.length;
+        const count = this.props.questions.length;
+
+        // const answerCount;
         return (
         <div>
             <div className="question-index-navbar">
@@ -48,7 +50,7 @@ class QuestionIndex extends React.Component {
                                 <li className="ind-question">
                                     <div className="ind-question-left-side">
                                         <p>votes</p>
-                                        <p>answers</p>
+                                        <p>{question.countOfAnswers} answers</p>
                                         {/* <p>views</p> */}
                                     </div>
                                     <div className="ind-question-middle">
