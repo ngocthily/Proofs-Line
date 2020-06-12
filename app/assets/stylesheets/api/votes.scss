@@ -1,3 +1,21 @@
-// Place all the styles related to the api/Votes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.answer-up {
+  cursor: pointer;
+  color: #bbc0c4;
+}
+
+.answer-up:active {
+  color: #f47f25;
+}
+
+.answer-down {
+  cursor: pointer;
+  color: #bbc0c4;
+}
+
+.answer-down:active {
+  color: #f47f25;
+}
+
+.voting-btns {
+  margin-right: 40px;
+}

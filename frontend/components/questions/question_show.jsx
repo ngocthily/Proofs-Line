@@ -5,22 +5,12 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
 import AnswerListItemContainer from '../answers/answer_list_item_container';
-// import AnswerIndex from '../answers/answer_index_container';
 
 class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            upvote: null,
-            downvote: null
-        }
         this.handleDelete = this.handleDelete.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
-
-        this.upvote = this.upvote.bind(this);
-        this.downvote = this.downvote.bind(this);
-
-        this.voteCount = this.voteCount.bind(this);
     }
 
     componentDidMount() {
@@ -34,47 +24,6 @@ class QuestionShow extends React.Component {
 
     routeToAsk() {
         this.props.history.push(`/questions/new`);
-    }
-
-    upvote(e, id) {
-        e.preventDefault();
-        const vote = {
-            vote_type: "upvote",
-            post_type: "answer",
-            answer_id: id,
-            post_id: id
-        }
-        this.props.createVote(vote);
-        this.setState({
-            upvote: true,
-            downvote: false
-        });
-        // $('.answer-up').toggleClass('active');
-    }
-
-    downvote(e, id) {
-        e.preventDefault();
-        const vote = {
-            vote_type: "downvote",
-            post_type: "answer",
-            answer_id: id,
-            post_id: id
-        }
-        this.props.createVote(vote);
-        this.setState({
-            upvote: false,
-            downvote: true
-        });
-        // $('.answer-down').toggleClass('active');
-    }
-
-    voteCount(answer) {
-        if (answer.votes) {
-            return ((answer.votes.filter(vote => vote.vote_type === "upvote").length
-                    - answer.votes.filter(vote => vote.vote_type === "downvote").length))
-        } else {
-            return null
-        }
     }
 
     render() {
