@@ -4,7 +4,8 @@ import AnswerFormContainer from '../answers/answer_form_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
-import AnswerListItemContainer from '../answers/answer_list_item_container';
+import AnswerListItem from '../answers/answer_list_item';
+
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ class QuestionShow extends React.Component {
 
         const answerList = (answers) => (
             answers.map(answer => (
-                <AnswerListItemContainer
+                <AnswerListItem
                     answer={answer}
                     key={answer.id}
                 />
@@ -79,7 +80,10 @@ class QuestionShow extends React.Component {
                             </div> : null}
                         </div>
                         <div className = 'count-answers'>
-                        {count}
+                            {count}
+                        </div>
+                        <div>
+
                         </div>
                         <div className = "whole-answer-section">
                             {this.props.answers ? 

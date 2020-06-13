@@ -1,1 +1,1 @@
-json.extract! @vote, :id, :vote_type, :post_type, :answer_id
+json.partial! 'api/votes/vote', vote: @vote
