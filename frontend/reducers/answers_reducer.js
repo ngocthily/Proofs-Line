@@ -1,5 +1,5 @@
 import { RECEIVE_QUESTION } from '../actions/questions_actions';
-import { RECEIVE_ANSWER } from '../actions/answers_actions'; 
+import { RECEIVE_ANSWER, RECEIVE_ANSWERS } from '../actions/answers_actions'; 
 import { RECEIVE_VOTE } from '../actions/votes_actions';
 
 const answersReducer = (state = {}, action) => {
@@ -10,9 +10,9 @@ const answersReducer = (state = {}, action) => {
         case RECEIVE_ANSWER:
             return Object.assign({}, state, { [action.answer.id]: action.answer });
         // case RECEIVE_VOTE:
-        //     const newState = Object.assign({}, state);
-        //     newState[action.vote.answer_id].voteIds.push(action.vote.id);
-        //     return newState;
+        //     return Object.assign({}, state, { [action.vote.id]: action.vote })
+        // case RECEIVE_VOTE:
+        //     return Object.assign({}, state, { [action.answer.id.votes]: action.vote });
         default: 
             return state;
     }

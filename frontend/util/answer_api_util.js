@@ -6,9 +6,9 @@ export const createAnswer = (answer) => (
     })
 );
 
-export const fetchAnswers = (questionId) => (
+export const fetchAnswers = () => (
     $.ajax({
-        url: `api/questions/${questionId}/answers`,
+        url: 'api/answers',
         method: 'GET'
     })
 );

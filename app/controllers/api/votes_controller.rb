@@ -1,5 +1,5 @@
 class Api::VotesController < ApplicationController
-    before_action :logged_in?, only: [:create]
+    before_action :logged_in?, only: [:create, :update]
 
     def index 
         @votes = Vote.all
@@ -22,6 +22,15 @@ class Api::VotesController < ApplicationController
             render :show
         else
             render json: @vote.errors.full_messages, status: 422
+        end
+    end
+
+    def update
+        @vote = Vote.find(params[:id])
+        if @vote.update(vote_params)
+            render :show
+        else
+            render json: @vote.errors.full_messages, status: 401
         end
     end
 

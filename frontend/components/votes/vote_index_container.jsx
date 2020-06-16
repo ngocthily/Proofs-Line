@@ -1,22 +1,18 @@
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchAnswers } from '../../actions/answers_actions';
-import { createVote, deleteVote } from '../../actions/votes_actions';
-import VoteIndex from './vote_index';
+const Vote = ({ vote }) => {
+    return (
+        <div>
+            {vote.id}
+        </div>
+    )
+};
 
-const mapStateToProps = (state) => {
-    const answers = Object.keys(state.entities.answers).map(key => state.entities.answers[key])
-    const currentUserId = state.session.id
+const mapStateToProps = ( {entities: { users }}, { vote }) => {
     return {
-        answers,
-        currentUserId
+        user: users[vote.id]
     }
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    fetchAnswers: (questionId) => dispatch(fetchAnswers(questionId)),
-    createVote: (id) => dispatch(createVote(id)),
-    deleteVote: (id) => dispatch(deleteVote(id))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(VoteIndex);
+export default connect(mapStateToProps)(Vote);

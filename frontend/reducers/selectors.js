@@ -5,3 +5,4 @@ export const selectQuestion = ({ questions }, questionId) => {
 export const selectAnswersForQuestion = ({ answers }, question) => {
     return question.answerIds.map(answerId => answers[answerId]);
 };
+

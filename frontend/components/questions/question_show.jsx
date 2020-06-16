@@ -16,7 +16,20 @@ class QuestionShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.questionId);
+        // this.props.fetchAnswers();
     }
+
+    // shouldComponentUpdate(nextProps) {
+    //     //     if (this.props.answers !== prevProps.answers) {
+    // //         this.props.fetchAnswers();
+    // //     }
+    //     console.log("here")
+    // }
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.answers !== prevProps.answers) {
+    //         this.props.fetchAnswers();
+    //     }
+    // }
 
     handleDelete() {
         this.props.deleteQuestion(this.props.questionId);

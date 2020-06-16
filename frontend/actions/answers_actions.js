@@ -31,7 +31,7 @@ export const createAnswer = (answer) => dispatch => (
             err => (dispatch(receiveAnswerErrors(err.responseJSON))))
 );
 
-export const fetchAnswers = (questionId) => dispatch => (
-    AnswerAPIUtil.fetchAnswers(questionId)
+export const fetchAnswers = () => dispatch => (
+    AnswerAPIUtil.fetchAnswers()
         .then((answers) => dispatch(receiveAnswers(answers)))
 );
