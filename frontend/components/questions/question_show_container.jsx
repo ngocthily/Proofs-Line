@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { 
     fetchQuestion, 
     deleteQuestion } from '../../actions/questions_actions';
-// import { fetchAnswers } from '../../actions/answers_actions';
+import { fetchAnswers } from '../../actions/answers_actions';
 import { selectQuestion, selectAnswersForQuestion } from '../../reducers/selectors';
 import QuestionShow from './question_show';
 
@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    // fetchAnswers: () => dispatch(fetchAnswers())
+    fetchAnswers: () => dispatch(fetchAnswers())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);

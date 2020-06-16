@@ -24,8 +24,8 @@ export const createVote = (vote) => dispatch => (
         .then((vote) => (dispatch(receiveVote(vote))))
 );
 
-export const fetchVotes = () => dispatch => (
-    VoteAPIUtil.fetchVotes()
+export const fetchVotes = (answerId) => dispatch => (
+    VoteAPIUtil.fetchVotes(answerId)
         .then((votes) => dispatch(receiveVotes(votes)))
 );
 

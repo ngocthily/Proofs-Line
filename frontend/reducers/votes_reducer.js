@@ -9,8 +9,8 @@ const votesReducer = (state = {}, action) => {
         //     return Object.assign({}, state, action.votes);
         case RECEIVE_ANSWER:
             return Object.assign({}, state, action.votes);
-        // case RECEIVE_VOTES:
-        //     return action.votes;
+            // case RECEIVE_VOTES:
+            //     return action.votes;
         case RECEIVE_VOTE:
             return Object.assign({}, state, { [action.vote.id]: action.vote });
         default:

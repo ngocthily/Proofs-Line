@@ -6,9 +6,9 @@ export const createVote = (vote) => (
     })
 );
 
-export const fetchVotes = () => (
+export const fetchVotes = (answerId) => (
     $.ajax({
-        url: '/api/votes',
+        url: `/api/answer/${answerId}/votes`,
         method: 'GET'
     })
 );

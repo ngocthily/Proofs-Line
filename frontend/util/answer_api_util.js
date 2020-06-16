@@ -12,3 +12,10 @@ export const fetchAnswers = () => (
         method: 'GET'
     })
 );
+
+export const fetchAnswer = (answerId) => (
+    $.ajax({
+        url: `api/answers/${answerId}`,
+        method: 'GET'
+    })
+)

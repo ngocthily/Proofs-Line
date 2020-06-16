@@ -7,7 +7,6 @@ end
   json.answers do
     json.set! answer.id do
       json.partial! 'api/answers/answer', answer: answer
-      json.set! :voteIds, []
     end
   end
 

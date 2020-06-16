@@ -16,7 +16,6 @@ class QuestionShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.questionId);
-        // this.props.fetchAnswers();
     }
 
     // shouldComponentUpdate(nextProps) {
@@ -26,9 +25,9 @@ class QuestionShow extends React.Component {
     //     console.log("here")
     // }
     // componentDidUpdate(prevProps) {
-    //     if (this.props.answers !== prevProps.answers) {
-    //         this.props.fetchAnswers();
-    //     }
+    //     // if (this.props.answers !== prevProps.answers) {
+    //     //     this.props.fetchAnswers;
+    //     // }
     // }
 
     handleDelete() {
@@ -57,10 +56,11 @@ class QuestionShow extends React.Component {
                         (<div className = "amt-of-answers-per-q">{this.props.answers.length} Answers</div> ):
                         (<div className="amt-of-answers-per-q"> 0 Answers</div>)
 
-        const answerList = (answers) => (
+        const answerList = (answers, currentUserId) => (
             answers.map(answer => (
                 <AnswerListItem
                     answer={answer}
+                    currentUserId={currentUserId}
                     key={answer.id}
                 />
             ))
@@ -100,7 +100,7 @@ class QuestionShow extends React.Component {
                         </div>
                         <div className = "whole-answer-section">
                             {this.props.answers ? 
-                            (answerList(this.props.answers)): null}
+                            (answerList(this.props.answers, this.props.currentUserId)): null}
                         </div>
                         {(currentUserId !== authorId) ?
                             <div>

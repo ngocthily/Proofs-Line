@@ -35,3 +35,8 @@ export const fetchAnswers = () => dispatch => (
     AnswerAPIUtil.fetchAnswers()
         .then((answers) => dispatch(receiveAnswers(answers)))
 );
+
+export const fetchAnswer = (answerId) => dispatch => (
+    QuestionAPIUtil.fetchAnswer(answerId)
+        .then((payload) => dispatch(receiveAnswer(payload)))
+);
