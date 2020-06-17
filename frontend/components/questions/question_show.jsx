@@ -85,12 +85,32 @@ class QuestionShow extends React.Component {
                             <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
                             </div>
                         </div>
-                        <div className='ind-question-body'>
-                            {question.body} 
-                            { (currentUserId === authorId) ? 
-                            <div>
-                            {editLink}
-                            </div> : null}
+                        <div className="ind-question-whole">
+                            <div className="question-voting">
+                                <div className="question-upvote">
+                                    <i className="fas fa-caret-up fa-4x"
+                                        style= { {color: "#bbc0c4"} }
+                                        // style={{ color: this.state.upvoteBtnColor }}
+                                        // onClick={this.upvote.bind(this)}
+                                    >
+                                    </i>
+                                </div>
+                                <div className="question-downvote">
+                                    <i className="fas fa-caret-down fa-4x"
+                                        style={{ color: "#bbc0c4" }}
+                                        // style={{ color: this.state.downvoteBtnColor }}
+                                        // onClick={this.downvote.bind(this)}
+                                    >
+                                    </i>
+                                </div>
+                            </div>
+                            <div className='ind-question-body'>
+                                {question.body} 
+                                { (currentUserId === authorId) ? 
+                                <div>
+                                {editLink}
+                                </div> : null}
+                            </div>
                         </div>
                         <div className = 'count-answers'>
                             {count}

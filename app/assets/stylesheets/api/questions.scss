@@ -437,3 +437,12 @@ fieldset[disabled] .answer-btn.active {
   margin-left: 500px;
 }
 
+.ind-question-whole {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.question-voting {
+  margin-left: 50px;
+}

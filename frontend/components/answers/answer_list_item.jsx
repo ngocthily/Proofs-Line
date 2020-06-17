@@ -52,52 +52,11 @@ class Answer extends React.Component {
             });
         }
 
-        // only works for if its a new answer
         this.setState({
             upvoteBtnColor: "#f47f25",
             downvoteBtnColor: "#bbc0c4",
             countUpvotes: this.state.countUpvotes += 1
         });
-        // if (this.props.answer.voted_by_current_user) {
-        //     const oldVote = this.props.answer.vote_by_current_user;
-        //     oldVote.vote_type = "upvote";
-        //     this.props.updateVote(oldVote)
-        //     if (this.state.downVoted) {
-        //         this.setState({
-        //             upvoteBtnColor: "#f47f25",
-        //             downvoteBtnColor: "#bbc0c4",
-        //             countUpvotes: this.state.countUpvotes += 2
-        //         });
-        //     } else {
-        //         this.setState({
-        //             upvoteBtnColor: "#f47f25",
-        //             downvoteBtnColor: "#bbc0c4",
-        //             countUpvotes: this.state.countUpvotes += 1
-        //         });
-        //     }
-        // } else {
-        //     this.props.createVote(newVote);
-        //     this.props.answer.voted_by_current_user = true;
-        //     this.props.answer.vote_by_current_user = newVote;
-        //     if (this.state.downVoted) {
-        //         this.setState({
-        //             upvoteBtnColor: "#f47f25",
-        //             downvoteBtnColor: "#bbc0c4",
-        //             countUpvotes: this.state.countUpvotes += 2
-        //         });
-        //     } else {
-        //         this.setState({
-        //             upvoteBtnColor: "#f47f25",
-        //             downvoteBtnColor: "#bbc0c4",
-        //             countUpvotes: this.state.countUpvotes += 1
-        //         });
-        //     }
-        // } 
-
-        // this.setState({
-        //     upVoted: true,
-        //     downVoted: false
-        // })
     }
 
     downvote(e) {

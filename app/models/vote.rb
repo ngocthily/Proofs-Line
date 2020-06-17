@@ -1,7 +1,7 @@
 class Vote < ApplicationRecord
     validates :vote_type, presence: true
     validates :post_type, presence: true
-    validates :answer_id, presence: true
+    # validates :answer_id
     # validates :question_id
 
     validates_uniqueness_of :user_id, scope: :answer_id
