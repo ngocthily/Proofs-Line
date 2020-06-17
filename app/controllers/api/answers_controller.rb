@@ -1,6 +1,5 @@
 class Api::AnswersController < ApplicationController
     def index 
-        # @answers = Answer.where(question_id: params[question_id])
         @answers = Answer.all
         render :index
     end
@@ -15,7 +14,6 @@ class Api::AnswersController < ApplicationController
     end
     
     def create
-        # @answer = Answer.new(answer_params)
         @answer = Answer.new(answer_params)
         if @answer.save
             render :show

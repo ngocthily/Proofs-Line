@@ -15,10 +15,10 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
         <Switch>
-            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
-            <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
-            <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
+            <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
+            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
+            <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
         </Switch>
     </div>
 );

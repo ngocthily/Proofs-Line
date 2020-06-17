@@ -7,14 +7,15 @@ import { fetchAnswers } from '../../actions/answers_actions';
 import { selectQuestion, selectAnswersForQuestion } from '../../reducers/selectors';
 import QuestionShow from './question_show';
 
-const mapStateToProps = (state, ownProps) => {
-    const questionId = parseInt(ownProps.match.params.questionId);
+const mapStateToProps = (state, { match }) => {
+    const questionId = parseInt(match.params.questionId);
     const question = selectQuestion(state.entities, questionId);
     const answers = selectAnswersForQuestion(state.entities, question);
+    const currentUserId = state.session.id;
     return {
         questionId,
         question,
-        currentUserId: state.session.id,
+        currentUserId,
         authorId: question.author_id,
         answers
     }
@@ -22,8 +23,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
-    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    fetchAnswers: () => dispatch(fetchAnswers())
+    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionShow);

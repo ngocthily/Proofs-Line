@@ -15,13 +15,4 @@ class Vote < ApplicationRecord
     # belongs_to :question,
     #     foreign_key: :question_id,
     #     class_name: :Question
-
-    # private 
-    # def increment_vote
-    #     Answer.find(self.answer_id).increment(:total_upvotes)
-    # end
-
-    # def decrement_vote
-
-    # end
 end

@@ -8,7 +8,7 @@ export const createVote = (vote) => (
 
 export const fetchVotes = (answerId) => (
     $.ajax({
-        url: `/api/answer/${answerId}/votes`,
+        url: '/api/votes',
         method: 'GET'
     })
 );

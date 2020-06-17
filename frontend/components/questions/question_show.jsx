@@ -6,7 +6,6 @@ import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
 import AnswerListItem from '../answers/answer_list_item';
 
-
 class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
@@ -17,18 +16,6 @@ class QuestionShow extends React.Component {
     componentDidMount() {
         this.props.fetchQuestion(this.props.questionId);
     }
-
-    // shouldComponentUpdate(nextProps) {
-    //     //     if (this.props.answers !== prevProps.answers) {
-    // //         this.props.fetchAnswers();
-    // //     }
-    //     console.log("here")
-    // }
-    // componentDidUpdate(prevProps) {
-    //     // if (this.props.answers !== prevProps.answers) {
-    //     //     this.props.fetchAnswers;
-    //     // }
-    // }
 
     handleDelete() {
         this.props.deleteQuestion(this.props.questionId);
@@ -86,7 +73,7 @@ class QuestionShow extends React.Component {
                             </div>
                         </div>
                         <div className="ind-question-whole">
-                            <div className="question-voting">
+                            {/* <div className="question-voting">
                                 <div className="question-upvote">
                                     <i className="fas fa-caret-up fa-4x"
                                         style= { {color: "#bbc0c4"} }
@@ -103,10 +90,10 @@ class QuestionShow extends React.Component {
                                     >
                                     </i>
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='ind-question-body'>
                                 {question.body} 
-                                { (currentUserId === authorId) ? 
+                                { ((currentUserId) && (currentUserId === authorId)) ? 
                                 <div>
                                 {editLink}
                                 </div> : null}
@@ -119,8 +106,10 @@ class QuestionShow extends React.Component {
 
                         </div>
                         <div className = "whole-answer-section">
-                            {this.props.answers ? 
-                            (answerList(this.props.answers, this.props.currentUserId)): null}
+                            {(this.props.answers) ? 
+                            // (answerList(this.props.answers, this.props.currentUserId)): null}
+                                (answerList(this.props.answers, this.props.currentUserId)) : 
+                                null}
                         </div>
                         {(currentUserId !== authorId) ?
                             <div>

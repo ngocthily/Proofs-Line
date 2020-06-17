@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createVote, updateVote, fetchVotes } from '../../actions/votes_actions';
-import { fetchAnswer } from '../../util/answer_api_util';
+import { createVote, updateVote } from '../../actions/votes_actions';
 
 class Answer extends React.Component {
     constructor(props) {
@@ -11,8 +10,6 @@ class Answer extends React.Component {
             downvoteBtnColor: '#bbc0c4',
             countUpvotes: 0,
             countDownvotes: 0,
-            upVoted: false,
-            downVoted: false,
             currentUserVote: {}
         }
     }
@@ -190,7 +187,7 @@ class Answer extends React.Component {
     }
 }
 
-const mapStateToProps = ( { entities: { users } }, { answer, currentUserId}) => {
+const mapStateToProps = ({ entities: { users } }, { answer, currentUserId }) => {
     return {
         user: users[answer.user_id],
         votes: answer.votes,
@@ -200,9 +197,7 @@ const mapStateToProps = ( { entities: { users } }, { answer, currentUserId}) => 
 
 const mapDispatchToProps = (dispatch) => ({
     createVote: (vote) => dispatch(createVote(vote)),
-    updateVote: (vote) => dispatch(updateVote(vote)),
-    fetchAnswer: (answerId) => dispatch(fetchAnswer(answerId)),
-    fetchVotes: (answerId) => dispatch(fetchAnswer(answerId))
+    updateVote: (vote) => dispatch(updateVote(vote))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Answer);
