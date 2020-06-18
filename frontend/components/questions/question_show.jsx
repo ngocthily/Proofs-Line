@@ -5,6 +5,7 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
 import AnswerListItem from '../answers/answer_list_item';
+import Popup from "reactjs-popup";
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -104,10 +105,14 @@ class QuestionShow extends React.Component {
         }
 
         if (!this.props.currentUserId) {
+            // (<Popup>
+            //     <div>
+            //         content
+            //     </div>
+            // </Popup>)
             console.log("sign in")
         } else {
             if (!this.props.question.voted_by_current_user) {
-                console.log(newVote)
                 this.props.createVote(newVote);
                 this.props.question.voted_by_current_user = true;
                 this.setState({
@@ -259,6 +264,29 @@ class QuestionShow extends React.Component {
             ))
         );
 
+        const upVoteBtn = (this.props.currentUserId) ? 
+            (<div className="question-upvote">
+                <i className="fas fa-caret-up fa-4x"
+                    style={{ color: this.state.upvoteBtnColor }}
+                    onClick={this.upvote.bind(this)}
+                >
+                </i>
+            </div>) :
+            (<div className="question-upvote">
+                <Popup 
+                    trigger={<i className="fas fa-caret-up fa-4x"
+                            style={{ color: this.state.upvoteBtnColor }}>
+                    </i>} modal>
+                    <div>
+                        <h2>Join the Proofs Line community</h2>
+                        <p>
+                            Join Proofs Line to start unlocking new privileges like asking 
+                            questions, answering, and voting
+                        </p>
+                    </div>
+                </Popup>
+            </div>)
+
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -280,13 +308,14 @@ class QuestionShow extends React.Component {
                         </div>
                         <div className="ind-question-whole">
                             <div className="question-voting">
-                                <div className="question-upvote">
+                                {/* <div className="question-upvote">
                                     <i className="fas fa-caret-up fa-4x"
                                         style={{ color: this.state.upvoteBtnColor }}
                                         onClick={this.upvote.bind(this)}
                                     >
                                     </i>
-                                </div>
+                                </div> */}
+                                {upVoteBtn}
                                 <div>
                                     {(question.votes) ?
                                         (this.countUpvotes(question.votes) 
