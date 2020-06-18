@@ -3,15 +3,16 @@ class Vote < ApplicationRecord
     validates :post_type, presence: true
     validates :answer_id, presence: true
     validates :question_id, presence: true
-    # validates_uniqueness_of :user_id, scope: [:answer_id, :question_id]
 
     belongs_to :user
     
     belongs_to :answer,
         foreign_key: :answer_id,
-        class_name: :Answer
+        class_name: :Answer,
+        optional: true
 
     belongs_to :question,
         foreign_key: :question_id,
-        class_name: :Question
+        class_name: :Question,
+        optional: true
 end

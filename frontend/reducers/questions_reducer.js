@@ -22,10 +22,13 @@ const questionsReducer = (state = {}, action) => {
             const newState = Object.assign({}, state);
             newState[action.answer.question_id].answerIds.push(action.answer.id);
             return newState;
-        // case RECEIVE_VOTE:
-        //     const newVote = Object.assign({}, state);
-        //     newVote[action.vote.post_id].votes.push(action.vote)
-        //     return newVote;
+            // no cause becomes duplicates
+        case RECEIVE_VOTE:
+            const newVote = Object.assign({}, state);
+            if (action.vote.post_type === "question") {
+                newVote[action.vote.post_id].votes.push(action.vote)
+            }
+            return newVote;
         default:
             return state;     
     }
