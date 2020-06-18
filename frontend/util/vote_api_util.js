@@ -6,7 +6,7 @@ export const createVote = (vote) => (
     })
 );
 
-export const fetchVotes = (answerId) => (
+export const fetchVotes = () => (
     $.ajax({
         url: '/api/votes',
         method: 'GET'
@@ -21,10 +21,9 @@ export const updateVote = (vote) => (
     })
 )
 
-export const deleteVote = (vote) => (
+export const deleteVote = (voteId) => (
     $.ajax({
-        url: 'api/votes',
-        method: 'DELETE',
-        data: { vote }
+        url: `api/votes/${voteId}`,
+        method: 'DELETE'
     })
 );

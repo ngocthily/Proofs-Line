@@ -21,7 +21,7 @@ const answersReducer = (state = {}, action) => {
         case RECEIVE_VOTE:
             const newState = Object.assign({}, state);
             if (action.vote.post_type === "answer") {
-                newState[action.vote.post_id].votes.push(action.vote)
+                newState[action.vote.answer_id].votes.push(action.vote)
             }
             return newState;
         default: 

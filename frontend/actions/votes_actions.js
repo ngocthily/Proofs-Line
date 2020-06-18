@@ -29,9 +29,9 @@ export const fetchVotes = (answerId) => dispatch => (
         .then((votes) => dispatch(receiveVotes(votes)))
 );
 
-export const deleteVote = (vote) => dispatch => (
-    VoteAPIUtil.deleteVote(vote)
-        .then((vote) => dispatch(removeVote(vote)))
+export const deleteVote = (voteId) => dispatch => (
+    VoteAPIUtil.deleteVote(voteId)
+        .then((voteId) => dispatch(removeVote(voteId)))
 );
 
 export const updateVote = (vote) => dispatch => (

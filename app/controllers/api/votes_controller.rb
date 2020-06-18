@@ -36,10 +36,10 @@ class Api::VotesController < ApplicationController
 
     def destroy
         @vote = Vote.find(params[:id])
-        if @vote
+        if @vote && @vote.user_id == current_user.id 
             @vote.destroy
         else
-            render json: ["Can't find vote"]
+            render plain: "Can't find vote"
         end
     end
 

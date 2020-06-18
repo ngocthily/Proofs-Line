@@ -43,17 +43,31 @@ class Answer extends React.Component {
             if (!this.props.answer.voted_by_current_user) {
                 this.props.createVote(newVote);
                 this.props.answer.voted_by_current_user = true;
+                this.setState({
+                    upvoteBtnColor: "#f47f25",
+                    downvoteBtnColor: "#bbc0c4",
+                });
+                this.state.currentVoteCount = 1;
             } else {
                 this.getCurrentVote();
-                this.state.currentUserVote.vote_type = "upvote";
-                this.props.updateVote(this.state.currentUserVote);
+                if (this.state.currentUserVote.vote_type === "upvote") {
+                    this.state.currentUserVote.vote_type = "neither";
+                    this.props.updateVote(this.state.currentUserVote);
+                    this.setState({
+                        upvoteBtnColor: "#bbc0c4",
+                        downvoteBtnColor: "#bbc0c4",
+                    });
+                    this.state.currentVoteCount = 0;
+                } else {
+                    this.state.currentUserVote.vote_type = "upvote";
+                    this.props.updateVote(this.state.currentUserVote);
+                    this.setState({
+                        upvoteBtnColor: "#f47f25",
+                        downvoteBtnColor: "#bbc0c4",
+                    });
+                    this.state.currentVoteCount = 1;
+                }
             }
-    
-            this.setState({
-                upvoteBtnColor: "#f47f25",
-                downvoteBtnColor: "#bbc0c4",
-            });
-            this.state.currentVoteCount = 1;
         }
     }
 
@@ -73,17 +87,31 @@ class Answer extends React.Component {
             if (!this.props.answer.voted_by_current_user) {
                 this.props.createVote(newVote);
                 this.props.answer.voted_by_current_user = true;
+                this.setState({
+                    upvoteBtnColor: "#bbc0c4",
+                    downvoteBtnColor: "#f47f25",
+                });
+                this.state.currentVoteCount = -1;
             } else {
                 this.getCurrentVote();
-                this.state.currentUserVote.vote_type = "downvote";
-                this.props.updateVote(this.state.currentUserVote);
+                if (this.state.currentUserVote.vote_type === "downvote") {
+                    this.state.currentUserVote.vote_type = "neither";
+                    this.props.updateVote(this.state.currentUserVote);
+                    this.setState({
+                        upvoteBtnColor: "#bbc0c4",
+                        downvoteBtnColor: "#bbc0c4",
+                    });
+                    this.state.currentVoteCount = 0;
+                } else {
+                    this.state.currentUserVote.vote_type = "downvote";
+                    this.props.updateVote(this.state.currentUserVote);
+                    this.setState({
+                        upvoteBtnColor: "#bbc0c4",
+                        downvoteBtnColor: "#f47f25",
+                    });
+                    this.state.currentVoteCount = -1;
+                }
             }
-    
-            this.setState({
-                upvoteBtnColor: "#bbc0c4",
-                downvoteBtnColor: "#f47f25",
-            });
-            this.state.currentVoteCount = -1;
         }
     }
 

@@ -1,4 +1,4 @@
-import { RECEIVE_VOTE, RECEIVE_VOTES } from '../actions/votes_actions';
+import { RECEIVE_VOTE } from '../actions/votes_actions';
 import { RECEIVE_QUESTION } from '../actions/questions_actions';
 import { RECEIVE_ANSWER } from '../actions/answers_actions';
 
