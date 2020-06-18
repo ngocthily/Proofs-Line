@@ -14,10 +14,13 @@ class QuestionShow extends React.Component {
             upvoteBtnColor: "#bbc0c4",
             downvoteBtnColor: "#bbc0c4",
             currentUserVote: {},
-            currentVoteCount: 0
+            currentVoteCount: 0,
+            open: false
         }
         this.handleDelete = this.handleDelete.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     componentDidMount() {
@@ -81,6 +84,13 @@ class QuestionShow extends React.Component {
         this.props.history.push(`/questions/new`);
     }
 
+    openModal() {
+        this.setState({ open: true });
+    }
+    closeModal() {
+        this.setState({ open: false });
+    }
+
     getCurrentVote() {
         if (this.props.question.votes) {
             this.props.question.votes.map(vote => {
@@ -96,6 +106,7 @@ class QuestionShow extends React.Component {
 
     upvote(e) {
         e.preventDefault();
+        
         const newVote = {
             vote_type: "upvote",
             post_type: "question",
@@ -105,12 +116,7 @@ class QuestionShow extends React.Component {
         }
 
         if (!this.props.currentUserId) {
-            // (<Popup>
-            //     <div>
-            //         content
-            //     </div>
-            // </Popup>)
-            console.log("sign in")
+            this.openModal();
         } else {
             if (!this.props.question.voted_by_current_user) {
                 this.props.createVote(newVote);
@@ -141,7 +147,6 @@ class QuestionShow extends React.Component {
                 }
             }
         }
-
     }
 
     downvote(e) {
@@ -155,7 +160,7 @@ class QuestionShow extends React.Component {
         }
 
         if (!this.props.currentUserId) {
-            console.log("sign in")
+            this.openModal();
         } else {
             if (!this.props.question.voted_by_current_user) {
                 this.props.createVote(newVote);
@@ -264,29 +269,6 @@ class QuestionShow extends React.Component {
             ))
         );
 
-        const upVoteBtn = (this.props.currentUserId) ? 
-            (<div className="question-upvote">
-                <i className="fas fa-caret-up fa-4x"
-                    style={{ color: this.state.upvoteBtnColor }}
-                    onClick={this.upvote.bind(this)}
-                >
-                </i>
-            </div>) :
-            (<div className="question-upvote">
-                <Popup 
-                    trigger={<i className="fas fa-caret-up fa-4x"
-                            style={{ color: this.state.upvoteBtnColor }}>
-                    </i>} modal>
-                    <div>
-                        <h2>Join the Proofs Line community</h2>
-                        <p>
-                            Join Proofs Line to start unlocking new privileges like asking 
-                            questions, answering, and voting
-                        </p>
-                    </div>
-                </Popup>
-            </div>)
-
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -308,14 +290,35 @@ class QuestionShow extends React.Component {
                         </div>
                         <div className="ind-question-whole">
                             <div className="question-voting">
-                                {/* <div className="question-upvote">
+                                <div className="question-upvote">
                                     <i className="fas fa-caret-up fa-4x"
                                         style={{ color: this.state.upvoteBtnColor }}
                                         onClick={this.upvote.bind(this)}
                                     >
                                     </i>
-                                </div> */}
-                                {upVoteBtn}
+                                </div>
+                                <Popup
+                                    open={this.state.open}
+                                    closeOnDocumentClick
+                                    onClose={this.closeModal}
+                                >
+                                    <div>
+                                        {/* close button */}
+                                        <a className="close" onClick={this.closeModal}>
+                                        </a>
+                                        <div className="popup-message-header">
+                                            Join the Proofs Line community
+                                        </div>
+                                        <div className="popup-message-info">
+                                            Join Proofs Line to start unlocking new privileges like asking
+                                            questions, answering, and voting
+                                        </div>
+                                        <Link to="/signup">
+                                            <button className="popup-btn-signup">Sign up using Email</button>
+                                        </Link>
+                                        <div>Already have an account? <Link to="/login">Log in</Link></div>
+                                    </div>
+                                </Popup>
                                 <div>
                                     {(question.votes) ?
                                         (this.countUpvotes(question.votes) 

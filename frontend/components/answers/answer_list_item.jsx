@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createVote, updateVote } from '../../actions/votes_actions';
+import { Link } from 'react-router-dom';
+import Popup from "reactjs-popup";
 
 class Answer extends React.Component {
     constructor(props) {
@@ -9,14 +11,24 @@ class Answer extends React.Component {
             upvoteBtnColor: '#bbc0c4',
             downvoteBtnColor: '#bbc0c4',
             currentVoteCount: 0,
-            currentUserVote: {}
+            currentUserVote: {},
+            open: false
         }
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     componentDidMount() {
         this.checkUpvoted();
         this.checkDownvoted();
-        // this.totalVotes();
+    }
+
+    openModal() {
+        this.setState({ open: true });
+    }
+
+    closeModal() {
+        this.setState({ open: false });
     }
 
     getCurrentVote() {
@@ -38,7 +50,7 @@ class Answer extends React.Component {
         }
 
         if (!this.props.currentUserId) {
-            console.log("sign in")
+            this.openModal();
         } else {
             if (!this.props.answer.voted_by_current_user) {
                 this.props.createVote(newVote);
@@ -82,7 +94,7 @@ class Answer extends React.Component {
         }
 
         if (!this.props.currentUserId) {
-            console.log("sign in")
+            this.openModal();
         } else {
             if (!this.props.answer.voted_by_current_user) {
                 this.props.createVote(newVote);
@@ -188,20 +200,37 @@ class Answer extends React.Component {
                                         style={{ color: this.state.upvoteBtnColor }}
                                         onClick={this.upvote.bind(this)}></i>
                                     </div>
+                                    <Popup
+                                        open={this.state.open}
+                                        closeOnDocumentClick
+                                        onClose={this.closeModal}
+                                    >
+                                        <div>
+                                            {/* close button */}
+                                            <a className="close" onClick={this.closeModal}>
+                                            </a>
+                                            <div className="popup-message-header">
+                                                Join the Proofs Line community
+                                        </div>
+                                            <div className="popup-message-info">
+                                                Join Proofs Line to start unlocking new privileges like asking
+                                                questions, answering, and voting
+                                        </div>
+                                            <Link to="/signup">
+                                                <button className="popup-btn-signup">Sign up using Email</button>
+                                            </Link>
+                                            <div>Already have an account? <Link to="/login">Log in</Link></div>
+                                        </div>
+                                    </Popup>
                                     <div>
                                         {totalCount}
                                     </div>
-                                    {/* {voteList(this.props.answer.votes)} */}
                                     <div className="answer-down">
                                         <i className="fas fa-caret-down fa-4x" 
                                         style={{ color: this.state.downvoteBtnColor }}
                                         onClick={this.downvote.bind(this)}></i>
                                     </div>
                                 </div>
-                                {/* <VoteIndexContainer
-                                    answer = {this.props.answer}
-                                    votes = {this.props.answer.votes}
-                                /> */}
                             </div>
                             <div className="answer-section-ind">
                                 <p>
