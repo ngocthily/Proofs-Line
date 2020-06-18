@@ -17,10 +17,10 @@ const answersReducer = (state = {}, action) => {
             // const newState = Object.assign({}, state);
             // newState[action.answer.question_id].answerIds.push(action.answer.id);
             // return newState;
-        case RECEIVE_VOTE:
-            const newState = Object.assign({}, state);
-            newState[action.vote.post_id].votes.push(action.vote)
-            return newState;
+        // case RECEIVE_VOTE:
+        //     const newState = Object.assign({}, state);
+        //     newState[action.vote.post_id].votes.push(action.vote)
+        //     return newState;
         default: 
             return state;
     }

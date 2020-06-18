@@ -34,7 +34,8 @@ class Answer extends React.Component {
             vote_type: "upvote",
             post_type: "answer",
             post_id: this.props.answer.id,
-            answer_id: this.props.answer.id
+            answer_id: this.props.answer.id,
+            question_id: this.props.answer.question_id
         }
 
         if (!this.props.answer.voted_by_current_user) {
@@ -62,7 +63,8 @@ class Answer extends React.Component {
             vote_type: "downvote",
             post_type: "answer",
             post_id: this.props.answer.id,
-            answer_id: this.props.answer.id
+            answer_id: this.props.answer.id,
+            question_id: this.props.answer.question_id
         }
 
         if (!this.props.answer.voted_by_current_user) {
@@ -87,7 +89,7 @@ class Answer extends React.Component {
     checkUpvoted() {
         if (this.props.answer.voted_by_current_user) {
             this.props.votes.map(vote => {
-                if (vote.vote_type === "upvote") {
+                if (vote.vote_type === "upvote" && vote.post_type === "answer") {
                     this.setState({
                         upvoteBtnColor: "#f47f25",
                         downvoteBtnColor: "#bbc0c4"
@@ -100,7 +102,7 @@ class Answer extends React.Component {
     checkDownvoted() {
         if (this.props.answer.voted_by_current_user) {
             this.props.votes.map(vote => {
-                if (vote.vote_type === "downvote") {
+                if (vote.vote_type === "downvote" && vote.post_type === "answer") {
                     this.setState({
                         upvoteBtnColor: "#bbc0c4",
                         downvoteBtnColor: "#f47f25"
@@ -113,7 +115,7 @@ class Answer extends React.Component {
     countUpvotes() {
         let count = 0;
         this.props.answer.votes.forEach(vote => {
-            if (vote.vote_type === "upvote") {
+            if (vote.vote_type === "upvote" && vote.post_type === "answer") {
                 count+=1;
             }
         });
@@ -123,7 +125,7 @@ class Answer extends React.Component {
     countDownvotes() {
         let count = 0;
         this.props.answer.votes.forEach(vote => {
-            if (vote.vote_type === "downvote") {
+            if (vote.vote_type === "downvote" && vote.post_type === "answer") {
                 count += 1;
             }
         });

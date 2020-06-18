@@ -23,8 +23,9 @@ const questionsReducer = (state = {}, action) => {
             newState[action.answer.question_id].answerIds.push(action.answer.id);
             return newState;
         // case RECEIVE_VOTE:
-        //     return Object.assign({}, state, action.answer.voteIds.push(action.vote.id));
-            // return newState;
+        //     const newVote = Object.assign({}, state);
+        //     newVote[action.vote.post_id].votes.push(action.vote)
+        //     return newVote;
         default:
             return state;     
     }

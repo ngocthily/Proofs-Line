@@ -9,6 +9,11 @@ import AnswerListItem from '../answers/answer_list_item';
 class QuestionShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            upvoteBtnColor: "#bbc0c4",
+            downvoteBtnColor: "#bbc0c4",
+            currentUserVote: {}
+        }
         this.handleDelete = this.handleDelete.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
     }
@@ -17,6 +22,53 @@ class QuestionShow extends React.Component {
         this.props.fetchQuestion(this.props.questionId);
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.question.votes !== prevProps.question.votes) {
+            this.setUpvoteBtn();
+            this.setDownvoteBtn();
+        }
+    }
+
+    setUpvoteBtn() {
+        let didUpvote = false;
+        if (this.props.question.votes) {
+            this.props.question.votes.map(vote => {
+                if (vote.user_id === this.props.currentUserId && vote.post_type === "question") {
+                    if (vote.vote_type === "upvote") {
+                        didUpvote = true;
+                    } 
+                }
+            });
+        }
+
+        if (didUpvote) {
+            this.setState({
+                upvoteBtnColor: "#f47f25",
+                downvoteBtnColor: "#bbc0c4"
+            })
+        }
+    }   
+
+    setDownvoteBtn() {
+        let didDownvote = false;
+        if (this.props.question.votes) {
+            this.props.question.votes.map(vote => {
+                if (vote.user_id === this.props.currentUserId && vote.post_type === "question") {
+                    if (vote.vote_type === "downvote") {
+                        didDownvote = true;
+                    }
+                }
+            });
+        }
+
+        if (didDownvote) {
+            this.setState({
+                upvoteBtnColor: "#bbc0c4",
+                downvoteBtnColor: "#f47f25"
+            })
+        }
+    }   
+
     handleDelete() {
         this.props.deleteQuestion(this.props.questionId);
     }
@@ -24,6 +76,88 @@ class QuestionShow extends React.Component {
 
     routeToAsk() {
         this.props.history.push(`/questions/new`);
+    }
+
+    getCurrentVote() {
+        if (this.props.question.votes) {
+            this.props.question.votes.map(vote => {
+                if (Object.keys(vote).length !== 0) {
+                    if (vote.user_id === this.props.currentUserId && vote.post_type === "question") {
+                        this.state.currentUserVote = vote;
+                    }
+                }
+            });
+        }
+    }
+
+    upvote(e) {
+        e.preventDefault();
+        const newVote = {
+            vote_type: "upvote",
+            post_type: "question",
+            post_id: this.props.question.id,
+            answer_id: this.props.question.id,
+            question_id: this.props.question.id
+        }
+
+        if (!this.props.question.voted_by_current_user) {
+            this.props.createVote(newVote);
+            this.props.question.voted_by_current_user = true;
+        } else {
+            this.getCurrentVote();
+            this.state.currentUserVote.vote_type = "upvote";
+            this.props.updateVote(this.state.currentUserVote);
+        }
+
+        this.setState({
+            upvoteBtnColor: "#f47f25",
+            downvoteBtnColor: "#bbc0c4",
+        });
+    }
+
+    downvote(e) {
+        e.preventDefault();
+        const newVote = {
+            vote_type: "downvote",
+            post_type: "question",
+            post_id: this.props.question.id,
+            answer_id: this.props.question.id,
+            question_id: this.props.question.question_id
+        }
+
+        if (!this.props.question.voted_by_current_user) {
+            this.props.createVote(newVote);
+            this.props.question.voted_by_current_user = true;
+        } else {
+            this.getCurrentVote();
+            this.state.currentUserVote.vote_type = "downvote";
+            this.props.updateVote(this.state.currentUserVote);
+        }
+
+        this.setState({
+            upvoteBtnColor: "#bbc0c4",
+            downvoteBtnColor: "#f47f25"
+        });
+    }
+
+    countUpvotes(questionVotes) {
+        let count = 0;
+        questionVotes.map(vote => {
+            if (vote.vote_type === "upvote" && vote.post_type === "question") {
+                count += 1
+            }
+        });
+        return count
+    }
+
+    countDownvotes(questionVotes) {
+        let count = 0;
+        questionVotes.map(vote => {
+            if (vote.vote_type === "downvote" && vote.post_type === "question") {
+                count += 1
+            }
+        });
+        return count
     }
 
     render() {
@@ -53,6 +187,11 @@ class QuestionShow extends React.Component {
             ))
         );
 
+        const totalCount = (question.votes) ? 
+            (this.countUpvotes(question.votes) -
+            this.countDownvotes(question.votes)):
+            null;
+
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -73,24 +212,25 @@ class QuestionShow extends React.Component {
                             </div>
                         </div>
                         <div className="ind-question-whole">
-                            {/* <div className="question-voting">
+                            <div className="question-voting">
                                 <div className="question-upvote">
                                     <i className="fas fa-caret-up fa-4x"
-                                        style= { {color: "#bbc0c4"} }
-                                        // style={{ color: this.state.upvoteBtnColor }}
-                                        // onClick={this.upvote.bind(this)}
+                                        style={{ color: this.state.upvoteBtnColor }}
+                                        onClick={this.upvote.bind(this)}
                                     >
                                     </i>
+                                </div>
+                                <div>
+                                    {totalCount}
                                 </div>
                                 <div className="question-downvote">
                                     <i className="fas fa-caret-down fa-4x"
-                                        style={{ color: "#bbc0c4" }}
-                                        // style={{ color: this.state.downvoteBtnColor }}
-                                        // onClick={this.downvote.bind(this)}
+                                        style={{ color: this.state.downvoteBtnColor}}
+                                        onClick={this.downvote.bind(this)}
                                     >
                                     </i>
                                 </div>
-                            </div> */}
+                            </div>
                             <div className='ind-question-body'>
                                 {question.body} 
                                 { ((currentUserId) && (currentUserId === authorId)) ? 

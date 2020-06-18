@@ -15,9 +15,10 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
         <Switch>
+            {/* ordering matters */}
+            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
             <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
-            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
         </Switch>
     </div>
