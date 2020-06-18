@@ -8,8 +8,7 @@ class Answer extends React.Component {
         this.state = {
             upvoteBtnColor: '#bbc0c4',
             downvoteBtnColor: '#bbc0c4',
-            countUpvotes: 0,
-            countDownvotes: 0,
+            currentVoteCount: 0,
             currentUserVote: {}
         }
     }
@@ -17,7 +16,7 @@ class Answer extends React.Component {
     componentDidMount() {
         this.checkUpvoted();
         this.checkDownvoted();
-        this.totalVotes();
+        // this.totalVotes();
     }
 
     getCurrentVote() {
@@ -45,16 +44,13 @@ class Answer extends React.Component {
             this.getCurrentVote();
             this.state.currentUserVote.vote_type = "upvote";
             this.props.updateVote(this.state.currentUserVote);
-            this.setState({
-                countUpvotes: this.state.countUpvotes += 1
-            });
         }
 
         this.setState({
             upvoteBtnColor: "#f47f25",
             downvoteBtnColor: "#bbc0c4",
-            countUpvotes: this.state.countUpvotes += 1
         });
+        this.state.currentVoteCount = 1;
     }
 
     downvote(e) {
@@ -74,16 +70,13 @@ class Answer extends React.Component {
             this.getCurrentVote();
             this.state.currentUserVote.vote_type = "downvote";
             this.props.updateVote(this.state.currentUserVote);
-            this.setState({
-                countDownvotes: this.state.countDownvotes += 1
-            });
         }
 
         this.setState({
             upvoteBtnColor: "#bbc0c4",
             downvoteBtnColor: "#f47f25",
-            countDownvotes: this.state.countDownvotes += 1
         });
+        this.state.currentVoteCount = -1;
     }
 
     checkUpvoted() {
@@ -115,7 +108,9 @@ class Answer extends React.Component {
     countUpvotes() {
         let count = 0;
         this.props.answer.votes.forEach(vote => {
-            if (vote.vote_type === "upvote" && vote.post_type === "answer") {
+            if (vote.vote_type === "upvote" 
+            && vote.post_type === "answer"
+            && vote.user_id !== this.props.currentUserId) {
                 count+=1;
             }
         });
@@ -125,22 +120,24 @@ class Answer extends React.Component {
     countDownvotes() {
         let count = 0;
         this.props.answer.votes.forEach(vote => {
-            if (vote.vote_type === "downvote" && vote.post_type === "answer") {
+            if (vote.vote_type === "downvote" 
+            && vote.post_type === "answer"
+            && vote.user_id !== this.props.currentUserId) {
                 count += 1;
             }
         });
         return count
     }
 
-    totalVotes() {
-        this.setState({
-            countUpvotes: this.countUpvotes(),
-            countDownvotes: this.countDownvotes()
-        })
-    }
+    // totalVotes() {
+    //     this.setState({
+    //         countUpvotes: this.countUpvotes(),
+    //         countDownvotes: this.countDownvotes()
+    //     })
+    // }
 
     render(){
-        const totalCount = this.state.countUpvotes - this.state.countDownvotes;
+        const totalCount = this.countUpvotes() - this.countDownvotes() + this.state.currentVoteCount;
 
         return (
             <div>
