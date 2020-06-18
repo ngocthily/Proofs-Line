@@ -13,8 +13,7 @@ class QuestionShow extends React.Component {
             upvoteBtnColor: "#bbc0c4",
             downvoteBtnColor: "#bbc0c4",
             currentUserVote: {},
-            countUpvotes: 0,
-            countDownvotes: 0
+            currentVoteCount: 0
         }
         this.handleDelete = this.handleDelete.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
@@ -28,8 +27,7 @@ class QuestionShow extends React.Component {
         if (this.props.question.votes !== prevProps.question.votes) {
             this.setUpvoteBtn();
             this.setDownvoteBtn();
-            this.countUpvotes();
-            this.countDownvotes();
+            this.currentUserVoteCount();
         }
     }
 
@@ -88,6 +86,7 @@ class QuestionShow extends React.Component {
                 if (Object.keys(vote).length !== 0) {
                     if (vote.user_id === this.props.currentUserId && vote.post_type === "question") {
                         this.state.currentUserVote = vote;
+                        return true;
                     }
                 }
             });
@@ -112,14 +111,13 @@ class QuestionShow extends React.Component {
             this.getCurrentVote();
             this.state.currentUserVote.vote_type = "upvote";
             this.props.updateVote(this.state.currentUserVote);
-            this.state.countUpvotes += 1;
         }
 
         this.setState({
             upvoteBtnColor: "#f47f25",
             downvoteBtnColor: "#bbc0c4",
         });
-        this.state.countUpvotes += 1;
+        this.state.currentVoteCount = 1;
     }
 
     downvote(e) {
@@ -139,34 +137,60 @@ class QuestionShow extends React.Component {
             this.getCurrentVote();
             this.state.currentUserVote.vote_type = "downvote";
             this.props.updateVote(this.state.currentUserVote);
-            this.state.countDownvotes += 1;
         }
 
         this.setState({
             upvoteBtnColor: "#bbc0c4",
             downvoteBtnColor: "#f47f25"
         });
-        this.state.countDownvotes += 1;
+
+        this.state.currentVoteCount = -1;
     }
 
-    countUpvotes() {
+    countUpvotes(questionVotes) {
         let count = 0;
-        this.props.question.votes.map(vote => {
-            if (vote.vote_type === "upvote" && vote.post_type === "question") {
+        questionVotes.map(vote => {
+            if (vote.vote_type === "upvote" && 
+            vote.post_type === "question" && 
+            vote.user_id !== this.props.currentUserId) {
                 count += 1
             }
         });
-        this.state.countUpvotes += count;
+        return count;
     }
 
-    countDownvotes() {
+    countDownvotes(questionVotes) {
         let count = 0;
-        this.props.question.votes.map(vote => {
-            if (vote.vote_type === "downvote" && vote.post_type === "question") {
+        questionVotes.map(vote => {
+            if (vote.vote_type === "downvote" && 
+            vote.post_type === "question" && 
+            vote.user_id !== this.props.currentUserId) {
                 count += 1
             }
         });
-        this.state.countDownvotes += count;
+        return count;
+    }
+
+    currentUserVoteCount() {
+        let upvoted = false;
+        let downvoted = false;
+        this.props.question.votes.map(vote => {
+            if (vote.vote_type === "upvote" && vote.post_type === "question" 
+                && vote.user_id === this.props.currentUserId) {
+                    upvoted = true;
+            } else if (vote.vote_type === "downvote" && vote.post_type === "question"
+                && vote.user_id === this.props.currentUserId) {
+                    downvoted = true;
+            } 
+        })
+
+        if (upvoted) {
+            this.state.currentVoteCount = 1;
+        } else if (downvoted) {
+            this.state.currentVoteCount = -1;
+        } else {
+            this.state.currentVoteCount = 0;
+        }
     }
 
     render() {
@@ -196,7 +220,6 @@ class QuestionShow extends React.Component {
             ))
         );
 
-        const totalCount = this.state.countUpvotes - this.state.countDownvotes;
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -226,7 +249,10 @@ class QuestionShow extends React.Component {
                                     </i>
                                 </div>
                                 <div>
-                                    {totalCount}
+                                    {(question.votes) ?
+                                        (this.countUpvotes(question.votes) 
+                                        - this.countDownvotes(question.votes)
+                                            + this.state.currentVoteCount) : null}
                                 </div>
                                 <div className="question-downvote">
                                     <i className="fas fa-caret-down fa-4x"
