@@ -37,20 +37,24 @@ class Answer extends React.Component {
             question_id: this.props.answer.question_id
         }
 
-        if (!this.props.answer.voted_by_current_user) {
-            this.props.createVote(newVote);
-            this.props.answer.voted_by_current_user = true;
+        if (!this.props.currentUserId) {
+            console.log("sign in")
         } else {
-            this.getCurrentVote();
-            this.state.currentUserVote.vote_type = "upvote";
-            this.props.updateVote(this.state.currentUserVote);
+            if (!this.props.answer.voted_by_current_user) {
+                this.props.createVote(newVote);
+                this.props.answer.voted_by_current_user = true;
+            } else {
+                this.getCurrentVote();
+                this.state.currentUserVote.vote_type = "upvote";
+                this.props.updateVote(this.state.currentUserVote);
+            }
+    
+            this.setState({
+                upvoteBtnColor: "#f47f25",
+                downvoteBtnColor: "#bbc0c4",
+            });
+            this.state.currentVoteCount = 1;
         }
-
-        this.setState({
-            upvoteBtnColor: "#f47f25",
-            downvoteBtnColor: "#bbc0c4",
-        });
-        this.state.currentVoteCount = 1;
     }
 
     downvote(e) {
@@ -63,20 +67,24 @@ class Answer extends React.Component {
             question_id: this.props.answer.question_id
         }
 
-        if (!this.props.answer.voted_by_current_user) {
-            this.props.createVote(newVote);
-            this.props.answer.voted_by_current_user = true;
+        if (!this.props.currentUserId) {
+            console.log("sign in")
         } else {
-            this.getCurrentVote();
-            this.state.currentUserVote.vote_type = "downvote";
-            this.props.updateVote(this.state.currentUserVote);
+            if (!this.props.answer.voted_by_current_user) {
+                this.props.createVote(newVote);
+                this.props.answer.voted_by_current_user = true;
+            } else {
+                this.getCurrentVote();
+                this.state.currentUserVote.vote_type = "downvote";
+                this.props.updateVote(this.state.currentUserVote);
+            }
+    
+            this.setState({
+                upvoteBtnColor: "#bbc0c4",
+                downvoteBtnColor: "#f47f25",
+            });
+            this.state.currentVoteCount = -1;
         }
-
-        this.setState({
-            upvoteBtnColor: "#bbc0c4",
-            downvoteBtnColor: "#f47f25",
-        });
-        this.state.currentVoteCount = -1;
     }
 
     checkUpvoted() {
