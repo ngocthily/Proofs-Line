@@ -25,6 +25,7 @@ class QuestionShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestion(this.props.questionId);
+        window.scrollTo(0, 0);
     }
 
     componentDidUpdate(prevProps) {
@@ -297,28 +298,42 @@ class QuestionShow extends React.Component {
                                     >
                                     </i>
                                 </div>
+                                <div>
                                 <Popup
                                     open={this.state.open}
                                     closeOnDocumentClick
                                     onClose={this.closeModal}
+                                        contentStyle={{ width: 360, borderRadius: 8}}
                                 >
-                                    <div>
-                                        {/* close button */}
+                                    <div className="popup-message">
                                         <a className="close" onClick={this.closeModal}>
                                         </a>
-                                        <div className="popup-message-header">
-                                            Join the Proofs Line community
+                                        <div className="popup-message-content">
+                                            <div className="popup-message-header">
+                                                Join the Proofs Line community
+                                            </div>
+                                            <br></br>
+                                            <div className="popup-message-info">
+                                                Join Proofs Line to start unlocking new privileges
+                                                like asking questions, answering, and voting
+                                            </div>
+                                            <div className="popup-btn-signup-wrapper">
+                                                <Link to="/signup">
+                                                    <button className="popup-btn-signup">
+                                                        <i class="fas fa-envelope"></i> 
+                                                        &nbsp;
+                                                        Sign up using Email
+                                                    </button>
+                                                </Link>
+                                            </div>
+                                            <div className="popup-message-signup">
+                                                Already have an account? &nbsp;
+                                                <Link to="/login">Log in</Link>
+                                            </div>
                                         </div>
-                                        <div className="popup-message-info">
-                                            Join Proofs Line to start unlocking new privileges like asking
-                                            questions, answering, and voting
-                                        </div>
-                                        <Link to="/signup">
-                                            <button className="popup-btn-signup">Sign up using Email</button>
-                                        </Link>
-                                        <div>Already have an account? <Link to="/login">Log in</Link></div>
                                     </div>
                                 </Popup>
+                                </div>
                                 <div>
                                     {(question.votes) ?
                                         (this.countUpvotes(question.votes) 

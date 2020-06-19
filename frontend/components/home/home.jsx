@@ -81,7 +81,7 @@ export default () => {
                         your coworkers using our flagship Q&A
                         engine.</p>
                     </div>
-                    <Link to="/signup"><button className="try-for-free-btn">Try for free</button></Link>
+                    <Link to="/teams"><button className="try-for-free-btn">Try for free</button></Link>
                 </div>
                 <div className="browse-jobs">
                     <img className="browse-jobs-img" src={window.browse_jobs} />

@@ -1,12 +1,3 @@
-// .answer-up {
-//   cursor: pointer;
-// }
-
-// .answer-down {
-//   cursor: pointer;
-//   color: #bbc0c4;
-// }
-
 .voting-btns {
   margin-right: 40px;
 }
@@ -17,4 +8,76 @@
 
 .fa-caret-down {
   cursor: pointer;
+}
+
+.popup-message {
+  padding: 20px;
+  max-height: 370px;
+}
+
+.popup-message > .popup-message-info {
+  width: 100%;
+}
+
+.popup-message > .popup-message-content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.popup-message > .popup-message-header {
+  width: 100%;
+}
+
+.close::before {
+  content: 'x';
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+}
+
+.popup-message > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+}
+
+.popup-message-header {
+  font-size: 27px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-weight: bold;
+}
+
+.popup-message-info {
+  font-size: 13px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.popup-message-signup {
+  font-size: 13px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  text-align: center;
+}
+
+.popup-btn-signup-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.popup-btn-signup {
+  border: 1px solid #9ea6ac;
+  border-radius: 4px;
+  background-color: #ffffff;
+  width: 280px;
+  color: #6a737b;
+  font-size: 13px;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  padding: 8px;
 }

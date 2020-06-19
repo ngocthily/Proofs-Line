@@ -13,6 +13,7 @@ class QuestionIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchQuestions();
+        window.scrollTo(0, 0);
     }
    
     routeToQuestions() {
