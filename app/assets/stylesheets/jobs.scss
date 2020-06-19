@@ -1,0 +1,141 @@
+.job-show-navbar {
+    position: fixed;
+}
+
+.job-show-midsection {
+    display: flex;
+    flex-direction: row;
+}
+
+.job-show-sidebar {
+    border-right: 1px solid #d7d9dc;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-top: 55px;
+    position: fixed;
+}
+
+.jobs-header-scroll-show-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.jobs-header {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    max-width: 400px;
+}
+
+.jobs-header1 {
+    font-size: 19px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+.jobs-header2 {
+    font-size: 19px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-weight: normal;
+}
+
+.jobs-side-scroll-show-wrapper {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #d7d9dc;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.jobs-side-scroll {
+    display: flex;
+    flex-direction: column;
+    max-height: 800px;
+    overflow:auto;
+}
+
+.ind-job {
+    border-bottom: 1px solid #d7d9dc;
+    border-right: 1px solid #d7d9dc;
+    padding: 20px 160px 50px;
+}
+
+.ind-job-title {
+    color: #1079cd;
+    font-size: 18px;
+}
+
+.ind-job-second-line {
+    display: flex;
+    flex-direction: row;
+}
+
+.ind-job-second-line li {
+    color: black;
+}
+
+.ind-job-second-line li span {
+    color: #838b92;
+}
+
+.job-show {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.ind-job-wrapper {
+    cursor: pointer;
+}
+
+.job-show {
+    padding-top: 60px;
+    padding-left: 30px;
+}
+
+.job-show-top {
+    border-bottom: 1px solid #d7d9dc;
+    // padding-right: 50px;
+    max-width: 600px;
+}
+
+.job-show-title {
+    font-size: 27px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.job-show-company-location-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+
+.job-show-company {
+    font-size: 17px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.job-show-location {
+    font-size: 17px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.job-show-company-location-wrapper li {
+    list-style: none;
+}
+ 
+.job-show-company-location-wrapper li span {
+    color: #838b92;
+}
+
+.job-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.job-show-description-header {
+    font-size: 19px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}

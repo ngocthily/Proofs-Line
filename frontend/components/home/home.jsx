@@ -92,7 +92,7 @@ export default () => {
                         title, technology stack, salary, location,
                         and more.</p>
                     </div>
-                    <Link to="/signup"><button className="find-a-job-btn">Find a job</button></Link>
+                    <Link to="/jobs"><button className="find-a-job-btn">Find a job</button></Link>
                 </div>
             </div>
         </div>

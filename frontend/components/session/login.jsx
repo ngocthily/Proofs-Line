@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomeNavbar from '../nav_bar/home_nav_bar_container';
 
 const demoInfo = {
     email: 'demo@proofsline.com',
@@ -55,52 +56,61 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className = "whole-login-page">
-            <div className="session-form-center">
-            <Link to="/">
-                <img className = "icon" src={window.icon}/>
-            </Link>
-            <div className="session-form">
-                <form>
-                    <div>
-                    <label className="login-email">Email
-                        <input
-                            className="login-textbox"
-                            type='text'
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                        /> 
-                    </label>
+            <div className="login-page">
+                <div className = "whole-login-page">
+                    <div className="login-navbar">
+                        <HomeNavbar/>
                     </div>
-                    <div>
-                    <label className = "login-password">Password
-                        <input
-                            className = "login-textbox"
-                            type='password'
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                            />
-                    </label>
-                            {this.renderErrors()}
-                    </div>
-                    <div>
-                        <div>
-                            <button className="login-form-button" onClick={this.handleSubmit}>Log in</button>
+                    <div className="session-form-main">
+                        <div className="session-form-center-wrapper">
+                            <div className="session-form-center">
+                                <Link to="/">
+                                    <img className = "icon" src={window.icon}/>
+                                </Link>
+                                <div className="session-form">
+                                    <form>
+                                        <div>
+                                            <label className="login-email">Email
+                                                <input
+                                                    className="login-textbox"
+                                                    type='text'
+                                                    value={this.state.email}
+                                                    onChange={this.handleInput('email')}
+                                                /> 
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label className = "login-password">Password
+                                                <input
+                                                    className = "login-textbox"
+                                                    type='password'
+                                                    value={this.state.password}
+                                                    onChange={this.handleInput('password')}
+                                                    />
+                                            </label>
+                                            {this.renderErrors()}
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <button className="login-form-button" onClick={this.handleSubmit}>Log in</button>
+                                            </div>
+                                            <div>
+                                                <button className = "login-form-button" onClick={this.demoLogin}>Log in demo</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <br/>
+                            <div className = "under-login">
+                                <p>
+                                    Don't have an account? 
+                                    <Link to = "/signup"> Sign up </Link>
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <button className = "login-form-button" onClick={this.demoLogin}>Log in demo</button>
-                        </div>
                     </div>
-                </form>
-            </div>
-            </div>
-            <br/>
-            <div className = "under-login">
-                <p>
-                    Don't have an account? 
-                    <Link to = "/signup"> Sign up </Link>
-                </p>
-            </div>
+                </div>
             </div>
         );
     }

@@ -42,6 +42,11 @@ export default ({ currentUser, logout }) => {
                                     <p className="dropdown-questions-word">Questions</p>
                                 </Link>
                             </div>
+                            <div className="dropdown-jobs">
+                                <Link to="/jobs" className="dropdown-jobs-link">
+                                    <p className="dropdown-jobs-word">Jobs</p>
+                                </Link>
+                            </div>
                         </div>
                         </div>
                     </div>

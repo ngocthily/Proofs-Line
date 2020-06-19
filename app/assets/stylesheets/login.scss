@@ -1,23 +1,28 @@
-.whole-login-page {
+.login-navbar {
+  position: relative;
+  z-index: 9998!important;
+}
+
+.session-form-main {
+  position: fixed;
   width: 100%;
-  height: 800px;
-  // margin: 500px;
   background-color: #eff0f1;
-  background-position: center;
+  height: 100%;
+}
+
+.session-form-center-wrapper {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .session-form-center {
-  // position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 8px 8px;
-  // margin: 10px 250px;
-  // width: 0vw;
-  // position: fixed;
-  // top: 38%;
-  // left: 50%;
 }
 
 .session-form {
@@ -28,10 +33,8 @@
   border: 1px solid lightgray;
   border-radius: 4px;
   padding: 30px 30px;
-  // margin: 200px 400px;
   background-color: white;
   box-shadow: 0 0 8px lightgray;
-  // position: relative;
   margin-top: 40px;
 }
 
@@ -42,7 +45,6 @@
 }
 
 .icon {
-  // position: fixed;
   top: 200px;
   height: 30px;
   margin-top: 200px;
@@ -61,11 +63,8 @@
   margin: 4px 2px;
   padding: 10px 10px 10px;
   font-size: 12px;
-  width: 200px;
+  width: 100%;
   display: inline-block;
-  // text-align: center;
-  // width: fit-content;
-  // line-height: 2;
   box-shadow: 0 -1px#b7cbbe;
 } 
 
@@ -124,10 +123,9 @@ fieldset[disabled] .login-form-button.active {
   font-size: 10px;
   position: relative;
   left: -30px;
-  // margin: 0; 
-  // padding: 0;
 }
 
 .under-login {
-  margin-left: 570px;
+  display: flex;
+  justify-content: center;
 }

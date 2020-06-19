@@ -7,6 +7,7 @@ import CreateQuestionFormContainer from './questions/create_question_form_contai
 import EditQuestionFormContainer from './questions/edit_question_form_container';
 import QuestionShowContainer from './questions/question_show_container';
 import TeamShow from './teams/team_show';
+import JobShow from './jobs/job_show';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -16,6 +17,7 @@ const App = () => (
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/teams" component={TeamShow} />
+            <Route path="/jobs" component={JobShow} />
         <Switch>
             {/* ordering matters */}
             <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>

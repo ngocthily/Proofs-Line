@@ -22,22 +22,30 @@
 }
 
 .sidebar-title {
-    background-color: #eff0f1;
+    // if on questions
+    // background-color: #eff0f1;
     width: 200px;
     margin-left: -10px;
 }
 
 .sidebar-title-word {
-    padding: 4px;
+    // padding: 4px;
     margin-left: 30px;
-}
-
-.sidebar-title-link {
-    color: black;
-    font-weight: 700;
+    color: #545c61;
+    font-size: 14px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    padding: 8px 6px 8px 8px;
 }
 
 .sidebar-title-link:hover {
     text-decoration: none;
     color: black;
+}
+
+.sidebar-jobs {
+    margin-left: 20px;
+    color: #545c61;
+    font-size: 14px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    padding: 8px 6px 8px 8px;
 }

@@ -99,6 +99,20 @@
   color: black;
 }
 
+.dropdown-jobs-link:hover {
+  text-decoration: none;
+}
+
+.dropdown-jobs-word {
+  position: relative;
+  left: 10px;
+  font-weight: 500;
+}
+
+.dropdown-jobs-word:hover {
+  color: black;
+}
+
 .home-logo {
   // margin-left: -75px;
   max-width: 140px;

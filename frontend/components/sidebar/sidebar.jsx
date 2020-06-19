@@ -12,5 +12,8 @@ export default () => (
                 <p className="sidebar-title-word">Proofs Line</p>
             </Link>
         </div>
+        <Link to="/jobs" className="sidebar-job-link">
+            <p className="sidebar-jobs">Jobs</p>
+        </Link>
     </div>
 )
