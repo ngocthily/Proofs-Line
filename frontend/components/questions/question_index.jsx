@@ -20,11 +20,42 @@ class QuestionIndex extends React.Component {
         this.props.history.push('/questions/new')
     }
 
+    timeAgo() {
+
+    }
+
     render() {
-        // need to redo once answers comes in
         const count = this.props.questions.length;
 
-        // const answerCount;
+        const countOfVotes = (questionVotes) => {
+            let numOfUpvotes = 0;
+            let numOfDownvotes = 0;
+            for (let i=0; i< questionVotes.length; i++) {
+                if (questionVotes[i].post_type === "question") {
+                    if (questionVotes[i].vote_type === "upvote") {
+                        numOfUpvotes+=1;
+                    } else if (questionVotes[i].vote_type === "downvote") {
+                        numOfDownvotes+=1
+                    }
+                }
+            }
+            return numOfUpvotes - numOfDownvotes
+        }
+
+        const timeAgo = (secs) => (
+            (secs < 60) ?
+            `asked ${Math.round(secs)} secs ago` :
+            (secs === 60) ?
+            `asked 1 min ago` :
+            (secs < 3600) ?
+            `asked ${Math.round(secs/60)} mins ago` :
+            (secs === 3600) ?
+            `asked 1 hour ago` :
+            (secs < 86400) ?
+            `asked ${Math.round(secs/3600)} hours ago` :
+            `asked ${Math.round(secs/86400)} days ago`
+        );
+        
         return (
         <div>
             <div className="question-index-navbar">
@@ -41,18 +72,18 @@ class QuestionIndex extends React.Component {
                         <button className = "ask-question-button" onClick = {this.routeToQuestions}>Ask Question</button>
                     </div>
                 </div>
-                <div className = "count-unanswered-q">
+                <div className = "count-questions">
                     {count} questions 
-                    {/* with no accepted answers (editing this code) */}
                 </div>
                 <div>
                     {this.props.questions.map((question) => (
                         <div key={question.id}>
                                 <li className="ind-question">
                                     <div className="ind-question-left-side">
-                                        <p>votes</p>
-                                        <p>{question.countOfAnswers} answers</p>
-                                        {/* <p>views</p> */}
+                                        <p className="ind-question-vote-count">{countOfVotes(question.votes)}</p>
+                                        <p className="ind-question-vote-word">votes</p>
+                                        <p className="ind-question-answer-count">{question.countOfAnswers}</p>
+                                        <p className="ind-question-answer-word">answers</p>
                                     </div>
                                     <div className="ind-question-middle">
                                         <Link className = "link-to-question" to = {`questions/${question.id}`}>
@@ -62,11 +93,9 @@ class QuestionIndex extends React.Component {
                                         <p className = "ind-body">
                                             {question.body}
                                         </p>
-                                        {/* <p>*future tags*</p> */}
                                     <div className="ind-question-right-side">
-                                        {/* Will edit the asked to show how long ago it was asked */}
-                                        <p>asked on {question.created_at.substring(0,10)}</p>
-                                        <p>by {question.author}</p>
+                                        <p className="question-time-ago">{timeAgo(question.secs)}</p>
+                                        <p className="question-author">{question.author}</p>
                                     </div>
                                     </div>
                                 </li>

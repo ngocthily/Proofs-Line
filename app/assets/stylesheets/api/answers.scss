@@ -119,3 +119,20 @@ fieldset[disabled] .answer-btn.active {
   display: flex;
   flex-direction: row;
 }
+
+.answer-vote-count {
+  text-align: center;
+  color: #6a737b;
+}
+
+.answer-date {
+  color: #6a737b;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 14px;
+}
+
+.answer-author {
+  color: #0176cc;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 14px;
+}

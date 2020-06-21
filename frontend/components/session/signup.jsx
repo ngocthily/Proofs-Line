@@ -49,8 +49,14 @@ class Signup extends React.Component {
                     <div className = "signup-form-center">
                         <div className = "signup-description">
                             <h3>Join the Proofs Line community</h3>
-                            <p>Get unstuck -- ask a question</p>
-                            <p>Unlock new privileges like voting and commenting</p>
+                            <p>
+                                <img className="ask-question-icon" src={window.ask_question_icon}/>
+                                &nbsp; Get unstuck -- ask a question
+                            </p>
+                            <p>
+                                <img className="voting-icon" src={window.voting_icon}/>
+                                &nbsp; Unlock new privileges like voting and commenting
+                            </p>
                         </div>
                         <div className="signup-form-wrapper">
                             <div className = "signup-form">

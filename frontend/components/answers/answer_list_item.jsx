@@ -177,15 +177,22 @@ class Answer extends React.Component {
         return count
     }
 
-    // totalVotes() {
-    //     this.setState({
-    //         countUpvotes: this.countUpvotes(),
-    //         countDownvotes: this.countDownvotes()
-    //     })
-    // }
-
     render(){
         const totalCount = this.countUpvotes() - this.countDownvotes() + this.state.currentVoteCount;
+
+        const timeAgo = (secs) => (
+            (secs < 60) ?
+                `answered ${Math.round(secs)} secs ago` :
+            (secs === 60) ?
+                `answered 1 min ago` :
+            (secs < 3600) ?
+                `answered ${Math.round(secs / 60)} mins ago` :
+            (secs === 3600) ?
+                `answered 1 hour ago` :
+            (secs < 86400) ?
+                `answered ${Math.round(secs / 3600)} hours ago` :
+                `answered ${Math.round(secs / 86400)} days ago`
+        )
 
         return (
             <div>
@@ -193,7 +200,6 @@ class Answer extends React.Component {
                     <li className="answer-to-q">
                         <div className="voting-answer-section">
                             <div>
-                                {/* <VoteIndexContainer/> */}
                                 <div className="voting-btns">
                                     <div className="answer-up">
                                         <i className="fas fa-caret-up fa-4x" 
@@ -222,7 +228,7 @@ class Answer extends React.Component {
                                             <div>Already have an account? <Link to="/login">Log in</Link></div>
                                         </div>
                                     </Popup>
-                                    <div>
+                                    <div className="answer-vote-count">
                                         {totalCount}
                                     </div>
                                     <div className="answer-down">
@@ -237,10 +243,10 @@ class Answer extends React.Component {
                                     {this.props.answer.body}
                                 </p>
                                 <p className="answer-date">
-                                    Asked on {this.props.answer.created_at ? this.props.answer.created_at.substring(0, 10) : null}
+                                    {timeAgo(this.props.answer.secs)}
                                 </p>
                                 <p className="answer-author">
-                                    By {this.props.user.username}
+                                    {this.props.user.username}
                                 </p>
                             </div>
                         </div>

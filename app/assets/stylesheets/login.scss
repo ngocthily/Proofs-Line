@@ -128,4 +128,9 @@ fieldset[disabled] .login-form-button.active {
 .under-login {
   display: flex;
   justify-content: center;
+  text-align: center;
+  max-width: 300px;
+  margin-left: 90px;
+  transform: translate(-20%, -50%);
+  margin-top: 20px;
 }

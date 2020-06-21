@@ -60,22 +60,14 @@ class Note extends React.Component {
             </div>
         </div>
         <div className="ad1">
-            ad (picture)
+            <a href = "https://www.ibm.com/cloud/bare-metal-servers?utm_content=000016GC&utm_term=10006171&p1=Display&p2=269853773&p3=130448700&cm_mmc=Display_N1114924.1948300STACKOVERFLOW-_-Cloud+and+Data+Platform_Cloud+Platform+Digital-_-WW_WW-_-269853773_Bare+Metal-IT+Architect-V1-300x250-Nonanimated-Standard+Load-NULL-NULL-NULL-NULL&cm_mmca1=000016GC&cm_mmca2=10006171&cm_mmca4=269853773&cm_mmca5=130448700&cm_mmca6=AMsySZbHZcqjRw8_dVJKrxZwJ0n6&dclid=CjkKEQjw57b3BRCsmJzWyIar290BEiQAjC3zZvK2HUV7FrbZNfAfNzGhv6B8c8C_vMddKD6-TDqzYLLw_wcB">
+                <img className="side-ad" src ={window.ibm_ad}/>
+            </a>
         </div>
         <div className="ad2">
-            ad (job posting)
-        </div>
-        <div className="side-other-questions">
-                    list with links to other questions posted (will be random)
-            {/* {this.props.questions ? this.props.questions.sort(() => Math.random() - 0.5).slice(0,6).map((question) => (
-                <div key={question.id}>
-                    <li>
-                        <Link className="link-to-question" to={`questions/${question.id}`}>
-                            {question.title}
-                        </Link>
-                    </li>
-                </div>
-            )) : null} */}
+            <a href= "https://www.linkedin.com/in/ngocthily/">
+                <img className="personal-ad" src={window.personal_ad}/>
+            </a> 
         </div>
         </div>
     )}

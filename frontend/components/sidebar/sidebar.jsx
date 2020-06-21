@@ -6,7 +6,7 @@ export default () => (
         <Link to="/" className="sidebar-home-link">
             <p className="sidebar-home">Home</p>
         </Link>
-        <p className="sidebar-public">Public</p>
+        <p className="sidebar-public">PUBLIC</p>
         <div className="sidebar-title">
             <Link to="/questions" className="sidebar-title-link">
                 <p className="sidebar-title-word">Proofs Line</p>

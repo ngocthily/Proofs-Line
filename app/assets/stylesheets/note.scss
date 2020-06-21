@@ -1,5 +1,5 @@
 .entire-note {
-    width: 300px;
+    max-width: 320px;
     background-color: #fbf2d4;
     -webkit-box-shadow: 0 0 6px lightgray;
     box-shadow: 0 0 6px lightgray;
@@ -35,4 +35,14 @@
 
 .external-link {
     width: 15px;
+}
+
+.side-ad {
+    max-width: 320px;
+    cursor: pointer;
+}
+
+.personal-ad {
+    max-width: 320px;
+    cursor: pointer;
 }

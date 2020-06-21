@@ -45,7 +45,7 @@ class AnswerForm extends React.Component {
         return (
             <div className="answer-form">
                 <form onSubmit = {this.handleSubmit}>
-                    <label className = "your-answer-label">Your answer</label>
+                    <label className = "your-answer-label">Your Answer</label>
                     <br/>
                     <textarea
                         id="answer-body"

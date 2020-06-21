@@ -270,6 +270,20 @@ class QuestionShow extends React.Component {
             ))
         );
 
+        const timeAgo = (secs) => (
+            (secs < 60) ?
+                `${Math.round(secs)} secs ago` :
+            (secs === 60) ?
+                `1 min ago` :
+            (secs < 3600) ?
+                `${Math.round(secs / 60)} mins ago` :
+            (secs === 3600) ?
+                `1 hour ago` :
+            (secs < 86400) ?
+                `${Math.round(secs / 3600)} hours ago` :
+                `${Math.round(secs / 86400)} days ago`
+        );
+
         return (
             <div>
                 <div className="ind-question-navbar">
@@ -283,7 +297,10 @@ class QuestionShow extends React.Component {
                         <div className = "ind-first-line">
                             <div className="ind-question-title-section">
                                 <p className = 'ind-question-title'>{question.title}</p>
-                                <p>Asked on {question.created_at ? question.created_at.substring(0,10): null}</p>
+                                <div className="ind-question-asked">
+                                    <p className="ind-question-show-asked-word">Asked &nbsp;</p>
+                                    <p>{timeAgo(question.secs)}</p>
+                                </div>
                             </div>
                             <div>
                             <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
@@ -320,7 +337,7 @@ class QuestionShow extends React.Component {
                                             <div className="popup-btn-signup-wrapper">
                                                 <Link to="/signup">
                                                     <button className="popup-btn-signup">
-                                                        <i class="fas fa-envelope"></i> 
+                                                        <i className="fas fa-envelope"></i> 
                                                         &nbsp;
                                                         Sign up using Email
                                                     </button>
@@ -334,7 +351,7 @@ class QuestionShow extends React.Component {
                                     </div>
                                 </Popup>
                                 </div>
-                                <div>
+                                <div className="question-show-vote-count">
                                     {(question.votes) ?
                                         (this.countUpvotes(question.votes) 
                                         - this.countDownvotes(question.votes)
@@ -354,6 +371,10 @@ class QuestionShow extends React.Component {
                                 <div>
                                 {editLink}
                                 </div> : null}
+                            <div className="ind-question-time-author">
+                                <p className="ind-question-show-asked">asked {timeAgo(question.secs)}</p>
+                                <p className="ind-question-show-author">{question.author}</p>
+                            </div>
                             </div>
                         </div>
                         <div className = 'count-answers'>
@@ -364,7 +385,6 @@ class QuestionShow extends React.Component {
                         </div>
                         <div className = "whole-answer-section">
                             {(this.props.answers) ? 
-                            // (answerList(this.props.answers, this.props.currentUserId)): null}
                                 (answerList(this.props.answers, this.props.currentUserId)) : 
                                 null}
                         </div>
