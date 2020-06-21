@@ -374,7 +374,7 @@ fieldset[disabled] .answer-btn.active {
 
 .ask-question-directions {
   margin-top: 230px;
-  margin-left: 60px;
+  margin-left: -120px;
   width: 350px;
   padding: 20px;
   height: 240px;
@@ -382,6 +382,8 @@ fieldset[disabled] .answer-btn.active {
   -webkit-box-shadow: 0 0 6px #d6d9dc;
   box-shadow: 0 0 6px #d6d9dc;
   border-radius: 3px;
+  position: relative;
+  z-index: 2;
 }
 
 .ask-question-directions-description {
@@ -522,4 +524,17 @@ fieldset[disabled] .answer-btn.active {
   color: #0176cc;
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
   font-size: 14px;
+}
+
+.question-header-robot-wrapper {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+}
+
+.question-robot {
+  max-width: 680px;
+  height: 130px;
+  left: 240px;
+  position: relative;
 }

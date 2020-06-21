@@ -50,7 +50,10 @@ class QuestionForm extends React.Component {
                     </div>
                     <div className="ask-question-midsection">
                         <div className = "question-form">
-                            <h1 className="ask-question-header">Ask a public question</h1>
+                            <div className="question-header-robot-wrapper">
+                                <h1 className="ask-question-header">Ask a public question</h1>
+                                <img className="question-robot" src={window.robot_question}/>
+                            </div>
                             <form onSubmit = {this.handleSubmit}>
                                 <div className="ask-question-form">
                                     <div className="ask-question-form-title">
@@ -76,9 +79,6 @@ class QuestionForm extends React.Component {
                                         />
                                             {this.renderErrors()}
                                         <br/>
-                                    </div>
-                                    <div className="ask-question-form-tags">
-                                        <label>Tags (Coming soon)</label>
                                     </div>
                                 </div>
                                     <div className="post-question-btn-container">
