@@ -157,7 +157,7 @@
 .home-container2 {
     margin-top: 50px;
     padding: 6px;
-    max-height: 1500px;
+    max-height: 1600px;
 }
 
 .before-boxes {
@@ -521,11 +521,17 @@
 
 @media only screen and (max-width: 400px) {
     .home-container3 {
-        margin-top: 200px;
+        // margin-top: 200px;
     }
 
     .share, .find, .rocket{
         margin: 0 auto;
         margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home-container2 {
+        max-height: 1800px;
     }
 }
