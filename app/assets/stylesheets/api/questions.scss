@@ -560,3 +560,30 @@ fieldset[disabled] .answer-btn.active {
 @media only screen and (max-width: 1024px) {
 
 }
+
+.page-numbers {
+  margin-left: 30px;
+}
+.pagination > li > a,
+  .pagination > li > span {
+    color: black;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+
+.pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus {
+    color: black;
+  }
+
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus {
+    background-color: #f47f23;
+    border-color: #f47f23;
+  }

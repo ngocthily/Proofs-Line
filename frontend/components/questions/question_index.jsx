@@ -30,6 +30,7 @@ class QuestionIndex extends React.Component {
         this.setState({
             currentPage: e.selected + 1
         });
+        window.scrollTo(0,0);
     }
 
     render() {
@@ -114,6 +115,7 @@ class QuestionIndex extends React.Component {
                         </div>
                     ))}
                 </div>
+                <div className="page-numbers">
                         <ReactPaginate
                             previousLabel={'previous'}
                             nextLabel={'next'}
@@ -127,6 +129,7 @@ class QuestionIndex extends React.Component {
                             subContainerClassName={'pages pagination'}
                             activeClassName={'active'}
                         />
+                </div>
             </div>
             <div className="questions-index-note">
                 <NoteContainer/>
