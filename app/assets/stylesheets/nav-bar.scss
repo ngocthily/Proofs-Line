@@ -103,8 +103,13 @@
 
 .home-logo {
   position: relative;
-  max-width: 140px;
-  left: 30px;
+  max-width: 120px;
+  // margin-top: 4px; 
+  // height: 40px;
+  // padding: 6px;
+  // position: relative;
+  margin-left: 30px;
+  margin-top: 5px;
 }
 
 .home-logo:hover {
@@ -113,8 +118,10 @@
 
 .home-logo-img {
   position: relative;
-  top: -4px;
-  max-width: 140px;
+  // top: 5px;
+  max-width: 120px;
+  padding: 4px;
+  max-height: 120px;
 }
 
 .main-navbar-logout-btn-container {
