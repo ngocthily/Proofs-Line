@@ -11,27 +11,27 @@ export default ({ currentUser, logout }) => {
                 <button className="navbar-logout-btn" onClick={logout}>Log out</button>
             </div>
         ) : (
-            <div>
+            <div className="navbar-login-signup-wrapper">
                 <Link to='/login'><button type="button" className="main-btn-login">Log in</button></Link>
                 <Link to='/signup'><button type="button" className="main-btn-signup">Sign up</button></Link>
             </div>
         );
     return (
         <div className="main-nav-bar-container-wrapper">
-        <div className = "main-nav-bar-container">
-            <div className = "main-navbar-logo">
-                <Link to="/">
-                    <img className="navbar-home-logo" src={window.logo} />
-                </Link>
-            </div>
-            <div className = "main-nav-bar-buttons">
-                <div className = "main-search-img">
-                    <i className="fas fa-search"></i>
+            <div className = "main-nav-bar-container">
+                <div className = "main-navbar-logo">
+                    <Link to="/">
+                        <img className="navbar-home-logo" src={window.logo} />
+                    </Link>
                 </div>
-                <input className="main-search-bar" type="text" placeholder="Search..(coming)"></input>
-                    {display}
+                <div className = "main-nav-bar-buttons">
+                    {/* <div className = "main-search-img">
+                        <i className="fas fa-search"></i>
+                    </div>
+                    <input className="main-search-bar" type="text" placeholder="Search..(coming)"></input> */}
+                        {display}
+                </div>
             </div>
-        </div>
         </div>
     )
 }

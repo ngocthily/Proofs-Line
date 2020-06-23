@@ -57,7 +57,7 @@ class QuestionIndex extends React.Component {
         );
         
         return (
-        <div>
+        <div className="questions-wrapper">
             <div className="question-index-navbar">
                 <NavBarContainer/>
             </div>
@@ -107,7 +107,9 @@ class QuestionIndex extends React.Component {
                 <NoteContainer/>
             </div>
             </div>
-            <Footer/>
+            <div className="question-ind-footer">
+                <Footer/>
+            </div>
         </div>
         )
     }
