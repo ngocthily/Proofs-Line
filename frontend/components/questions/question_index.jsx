@@ -4,11 +4,17 @@ import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Footer from '../footer/footer';
 import NoteContainer from '../note/note_container';
+import ReactPaginate from 'react-paginate';
 
 class QuestionIndex extends React.Component {
     constructor(props) {
         super(props);
         this.routeToQuestions = this.routeToQuestions.bind(this);
+        this.state = {
+            currentPage: 1,
+            questionsPerPage: 15
+        }
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     componentDidMount() {
@@ -20,8 +26,10 @@ class QuestionIndex extends React.Component {
         this.props.history.push('/questions/new')
     }
 
-    timeAgo() {
-
+    handlePageClick(e) {
+        this.setState({
+            currentPage: e.selected + 1
+        });
     }
 
     render() {
@@ -55,7 +63,11 @@ class QuestionIndex extends React.Component {
             `asked ${Math.round(secs/3600)} hours ago` :
             `asked ${Math.round(secs/86400)} days ago`
         );
-        
+
+        const indexOfLastQuestion = this.state.currentPage * this.state.questionsPerPage;
+        const indexOfFirstQuestion = indexOfLastQuestion - this.state.questionsPerPage;
+        const currentQuestions = this.props.questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
+
         return (
         <div className="questions-wrapper">
             <div className="question-index-navbar">
@@ -76,8 +88,8 @@ class QuestionIndex extends React.Component {
                     {count} questions 
                 </div>
                 <div>
-                    {this.props.questions.map((question) => (
-                        <div key={question.id}>
+                    {currentQuestions.map((question, idx) => (
+                        <div key={idx}>
                                 <li className="ind-question">
                                     <div className="ind-question-left-side">
                                         <p className="ind-question-vote-count">{countOfVotes(question.votes)}</p>
@@ -102,6 +114,19 @@ class QuestionIndex extends React.Component {
                         </div>
                     ))}
                 </div>
+                        <ReactPaginate
+                            previousLabel={'previous'}
+                            nextLabel={'next'}
+                            breakLabel={'...'}
+                            breakClassName={'break-me'}
+                            pageCount={count/15}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={5}
+                            onPageChange={this.handlePageClick}
+                            containerClassName={'pagination'}
+                            subContainerClassName={'pages pagination'}
+                            activeClassName={'active'}
+                        />
             </div>
             <div className="questions-index-note">
                 <NoteContainer/>
