@@ -208,7 +208,7 @@ fieldset[disabled] .post-question-btn.active {
 }
 
 .ind-question-page {
-  margin-left: 100px;
+  // margin-left: 120px;
   // margin-right: 250px;
   max-width: 875px;
   border-left: 1px solid #d7d9dc;
@@ -316,7 +316,7 @@ fieldset[disabled] .answer-btn.active {
 }
 
 .ind-question-page {
-  margin-left: 200px;
+  margin-left: 250px;
   margin-top: -152px;
 }
 
@@ -425,7 +425,6 @@ fieldset[disabled] .answer-btn.active {
 }
 
 .ind-question-sidebar {
-  margin-top: 100px;
   position: fixed;
 }
 
@@ -559,5 +558,5 @@ fieldset[disabled] .answer-btn.active {
 }
 
 @media only screen and (max-width: 1024px) {
-  
+
 }
