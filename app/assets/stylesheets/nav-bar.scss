@@ -120,6 +120,9 @@
 
 .navbar-logout-btn-container {
   // margin-left: 50px;
+  position: relative;
+  left: 490px;
+  padding-left: 72px;
 }
 
 .navbar-logout-btn {
@@ -127,13 +130,17 @@
   background-color: #DBEEFF; 
   border: 1px solid #467594;
   border-radius: 4px;
-  margin-top: -28px;
-  font-size: 12px;
-  padding: 8px 8px;
-  position: absolute;
-  display: inline-block;
-  top: 38px;
-  text-align:center;
+  margin: 3px;
+  font-size: 13px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  width: fit-content;
+  max-width: 100%;
+  max-height: 40px;
+  white-space: nowrap;
 }
 
 .navbar-logout-btn:hover, 
@@ -419,8 +426,8 @@ fieldset[disabled] .btn-signup.active {
   background-color: #fafafb;
   left: 0; 
   top: 0;
-  // max-width: 8000px;
   max-height: 55px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -431,10 +438,13 @@ fieldset[disabled] .btn-signup.active {
 }
 
 .main-navbar-logo {
-  margin-right: 950px;
+  // margin-right: 950px;
   margin-top: 4px; 
   height: 40px;
   padding: 6px;
+  position: relative;
+  right: 500px;
+  // right: 170%;
 }
 
 .navbar-home-logo {
@@ -482,20 +492,6 @@ fieldset[disabled] .btn-signup.active {
 }
 
 .main-btn-login { 
-  // color: #467594; 
-  // background-color: #DBEEFF; 
-  // border: 1px solid #467594;
-  // border-radius: 4px;
-  // margin: 2px;
-  // margin-right: 6px;
-  // font-size: 13px;
-  // padding: 8px 10px;
-  // text-align: center;
-  // margin-left: -110px;
-  // width: 60px;
-  // max-width: 100%;
-  // max-height: 40px;
-  // white-space: nowrap;
   color: #467594; 
   background-color: #DBEEFF; 
   border: 1px solid #467594;
@@ -625,5 +621,6 @@ fieldset[disabled] .main-btn-signup.active {
 }
 
 .navbar-login-signup-wrapper {
-  // margin-right: -110px;
+  position: relative;
+  left: 490px;
 }

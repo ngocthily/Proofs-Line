@@ -1,5 +1,7 @@
 .job-show-navbar {
     position: fixed;
+    width: 100%;
+    z-index: 2;
 }
 
 .job-show-midsection {
@@ -12,14 +14,16 @@
     height: 100%;
     overflow-x: hidden;
     padding-top: 20px;
-    margin-top: 55px;
+    margin-top: -20px;
+    padding-right: 10px;
     position: fixed;
+    z-index: 1;
 }
 
 .jobs-header-scroll-show-wrapper {
     display: flex;
     flex-direction: column;
-    margin-left: 200px;
+    margin-left: 250px;
     margin-top: 80px;
 }
 
