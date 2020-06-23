@@ -1,26 +1,41 @@
 .entire-note {
-    max-width: 320px;
+    max-width: 300px;
     background-color: #fbf2d4;
-    -webkit-box-shadow: 0 0 6px lightgray;
-    box-shadow: 0 0 6px lightgray;
+    // -webkit-box-shadow: 0 0 3px lightgray;
+    // box-shadow: 0 0 3px lightgray;
     // padding: 6px;
+    border: 1px solid #f0e5bc;
+    border-radius: 2px;
+    margin-bottom: 18px;
 }
 
-.note-title {
+.note-title-1 {
     background-color: #fbf2d4;
-    height: 30px;
+    height: 40px;
     padding: 8px;
     color: #6a737c;
     font-weight: 550;
-    font-size: 14px;
+    font-size: 13px;
+    // border-top: 1px solid #f0e5bc;
+    // margin-top:-10px;
 }
 
+.note-title-2 {
+    background-color: #fbf2d4;
+    height: 40px;
+    padding: 8px;
+    color: #6a737c;
+    font-weight: 550;
+    font-size: 13px;
+    border-top: 1px solid #f0e5bc;
+    margin-top: -10px;
+}
 .note-below {
     background-color: #fdf7e3;
 }
 
 .note-below p {
-    border-bottom: 1px solid #f0e5bc;
+    border-top: 1px solid #f0e5bc;
     padding: 8px;
     color: black;
 }
@@ -38,11 +53,13 @@
 }
 
 .side-ad {
-    max-width: 320px;
+    max-width: 305px;
     cursor: pointer;
+    margin-bottom: 18px;
 }
 
 .personal-ad {
-    max-width: 320px;
+    max-width: 305px;
     cursor: pointer;
+    margin-bottom: 18px;
 }

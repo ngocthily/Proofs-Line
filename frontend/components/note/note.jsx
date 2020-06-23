@@ -11,7 +11,7 @@ class Note extends React.Component {
         <div>
         <div className="entire-note">
             <div className="note-section1">
-                <div className="note-title">
+                <div className="note-title-1">
                     The Line Blog
                 </div>
                 <div className="note-below">
@@ -28,7 +28,7 @@ class Note extends React.Component {
                         </p>
                     </a>
                 </div>
-                <div className="note-title">
+                <div className="note-title-2">
                     Featured
                 </div>
                 <div className="note-below">
