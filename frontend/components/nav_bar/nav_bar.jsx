@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
     const display = currentUser ? (
-            <div className="navbar-logout-btn-container">
+            <div className="main-navbar-logout-btn-container">
                 {/* current user has no username, just id so no username shows up
                 will edit later to do what stack overflow does 
                 also logout will be in a dropdown eventually...*/}
