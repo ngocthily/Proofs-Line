@@ -22,7 +22,7 @@ import { BsPentagonFill } from "react-icons/bs";
 import { BsPieChartFill } from "react-icons/bs";
 import { BsVolumeUp } from "react-icons/bs";
 import { BsWatch } from "react-icons/bs";
-
+import {jobDescription} from './job_description';
 
 class Job extends React.Component {
     constructor(props) {
@@ -119,9 +119,7 @@ class Job extends React.Component {
                 "Boston, MA",
                 "Sacramento, CA"
             ],
-            jobDescription: [
-
-            ]
+            jobDescription: jobDescription
         }
         this.jobArray();
         this.jobPostingArray();
@@ -177,11 +175,17 @@ class Job extends React.Component {
                         </div>
                     </div>
                     <div className="job-show-description">
-                        <div className="job-show-description-header">
+                        {/* <div className="job-show-description-header">
                             About this job
-                        </div>
-                        <div className="job-show-description-header">
-                            Job description{/* {this.state.jobDescription[i]} */}
+                        </div> */}
+                        <div className="job-show-description-wrapper">
+                            Job description
+                            <p className="job-show-description-p ">
+                                <p>
+                                    *This is the same job description for each one*
+                                </p>
+                                {this.state.jobDescription[0]}
+                            </p>
                         </div>
                         <div>
 
@@ -249,12 +253,18 @@ class Job extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="job-show-description">
-                                            <div className="job-show-description-header">
+                                        <div className="job-show-description-wrapper">
+                                            {/* <div className="job-show-description-header">
                                                 About this job
-                                            </div>
+                                            </div> */}
                                             <div className="job-show-description-header">
-                                                Job description
+                                                    Job description
+                                                <p className="job-show-description-p ">
+                                                    <p>
+                                                        *This is the same job description for each one*
+                                                    </p>
+                                                    {this.state.jobDescription[0]}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>}
