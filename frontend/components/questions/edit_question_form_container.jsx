@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import { selectQuestion } from '../../reducers/selectors';
@@ -13,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
         questionId,
         currentUserId: state.session.id,
         authorId: question.author_id,
-        errors: errors.question,
+        errors: state.errors.question,
         formType: 'Update question'
     }
 }

@@ -6,6 +6,7 @@ import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
 import AnswerListItem from '../answers/answer_list_item';
 import Popup from "reactjs-popup";
+import ReactHtmlParser from 'react-html-parser'; 
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -366,7 +367,7 @@ class QuestionShow extends React.Component {
                                 </div>
                             </div>
                             <div className='ind-question-body'>
-                                {question.body} 
+                                {ReactHtmlParser(question.body)}
                                 { ((currentUserId) && (currentUserId === authorId)) ? 
                                 <div>
                                 {editLink}

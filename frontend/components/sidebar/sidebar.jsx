@@ -15,7 +15,6 @@ class Sidebar extends React.Component {
 
     componentDidMount() {
         if (document.location.href.includes("questions")) {
-            console.log("on questions page")
             this.setState({
                 proofsBgColor: "#eff0f1",
                 jobsBgColor: "rgba(0,0,0,0.0)",
@@ -23,7 +22,6 @@ class Sidebar extends React.Component {
                 jobsBorder: "none"
             })
         } else if (document.location.href.includes("jobs")) {
-            console.log("on jobs page")
             this.setState({
                 proofsBgColor: "rgba(0,0,0,0.0)",
                 jobsBgColor: "#eff0f1",

@@ -5,6 +5,7 @@ import Sidebar from '../sidebar/sidebar';
 import Footer from '../footer/footer';
 import NoteContainer from '../note/note_container';
 import ReactPaginate from 'react-paginate';
+import ReactHtmlParser from 'react-html-parser'; 
 
 class QuestionIndex extends React.Component {
     constructor(props) {
@@ -104,9 +105,9 @@ class QuestionIndex extends React.Component {
                                                     {question.title}
                                                 </Link>
                                                 <br/>
-                                                <p className = "ind-body">
-                                                    {question.body}
-                                                </p>
+                                                <div className = "ind-body">
+                                                    {ReactHtmlParser(question.body)}
+                                                </div>
                                                 <div className="ind-question-right-side">
                                                     <p className="question-time-ago">{timeAgo(question.secs)}</p>
                                                     <p className="question-author">{question.author}</p>

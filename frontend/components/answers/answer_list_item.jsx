@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createVote, updateVote } from '../../actions/votes_actions';
 import { Link } from 'react-router-dom';
 import Popup from "reactjs-popup";
+import ReactHtmlParser from 'react-html-parser'; 
 
 class Answer extends React.Component {
     constructor(props) {
@@ -239,9 +240,9 @@ class Answer extends React.Component {
                                 </div>
                             </div>
                             <div className="answer-section-ind">
-                                <p>
-                                    {this.props.answer.body}
-                                </p>
+                                <div>
+                                    {ReactHtmlParser(this.props.answer.body)}
+                                </div>
                                 <p className="answer-date">
                                     {timeAgo(this.props.answer.secs)}
                                 </p>

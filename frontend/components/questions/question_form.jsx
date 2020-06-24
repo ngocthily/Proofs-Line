@@ -1,7 +1,7 @@
 import React from 'react';
-// import { withRouter } from 'react-router';
 import HomeNavBarContainer from '../nav_bar/home_nav_bar_container';
 import Footer from '../footer/footer';
+import ReactQuill from 'react-quill';
 
 class QuestionForm extends React.Component {
     constructor(props) {
@@ -9,6 +9,7 @@ class QuestionForm extends React.Component {
         this.state = this.props.question;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.routeToIndQuestion = this.routeToIndQuestion.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleSubmit(e) {
@@ -24,6 +25,10 @@ class QuestionForm extends React.Component {
     handleInput(type) {
         return (e) => {this.setState({ [type]: e.currentTarget.value})};
     } 
+
+    handleChange(value, delta, source, editor) {
+        this.setState({ body: editor.getHTML()})
+    }
 
     routeToIndQuestion(question) {
         this.props.history.push(`/questions/${question.question.id}`);
@@ -71,12 +76,16 @@ class QuestionForm extends React.Component {
                                     <div className="ask-question-form-body">
                                         <label>Body</label>
                                         <p>Include all the information someone would need to answer your question</p>
-                                        <textarea
+                                        <ReactQuill
+                                            value={this.state.body}
+                                            onChange={this.handleChange}
+                                        />
+                                        {/* <textarea
                                             cols="105"
                                             rows = "10"
                                             value = {this.state.body}
                                             onChange={this.handleInput('body')}
-                                        />
+                                        /> */}
                                             {this.renderErrors()}
                                         <br/>
                                     </div>

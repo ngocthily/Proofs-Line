@@ -126,6 +126,10 @@ class Job extends React.Component {
         this.getJobIdx.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
+
     jobArray() {
         for (let i = 0; i < 20; i++) {
             this.state.jobs.push(

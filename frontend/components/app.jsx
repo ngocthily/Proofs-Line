@@ -13,16 +13,15 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
+        <Switch>
             <Route exact path="/" component={Home} />
             <AuthRoute path="/signup" component={SignupContainer} />
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/teams" component={TeamShow} />
             <Route path="/jobs" component={JobShow} />
-        <Switch>
-            {/* ordering matters */}
             <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
-            <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
+            <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
         </Switch>
     </div>

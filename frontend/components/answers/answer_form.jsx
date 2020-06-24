@@ -1,11 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class AnswerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this)
     }
 
     componentWillUnmount() {
@@ -25,8 +27,12 @@ class AnswerForm extends React.Component {
         this.props.clearAnswerErrors();
     }
 
-    update(type) {
-        return e => this.setState({ [type]: e.currentTarget.value});
+    // update(type) {
+    //     return e => this.setState({ [type]: e.currentTarget.value});
+    // }
+
+    handleChange(value, delta, source, editor) {
+        this.setState({ body: editor.getHTML() })
     }
 
     renderErrors() {
@@ -47,12 +53,16 @@ class AnswerForm extends React.Component {
                 <form onSubmit = {this.handleSubmit}>
                     <label className = "your-answer-label">Your Answer</label>
                     <br/>
-                    <textarea
+                    {/* <textarea
                         id="answer-body"
                         cols = "100"
                         rows = "10"
                         value = {this.state.body}
                         onChange = {this.update("body")}
+                    /> */}
+                    <ReactQuill
+                        value={this.state.body}
+                        onChange={this.handleChange}
                     />
                     <br/>
                     {this.renderErrors()}
