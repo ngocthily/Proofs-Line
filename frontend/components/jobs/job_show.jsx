@@ -180,12 +180,12 @@ class Job extends React.Component {
                         </div> */}
                         <div className="job-show-description-wrapper">
                             Job description
-                            <p className="job-show-description-p ">
+                            <div className="job-show-description-p ">
                                 <p>
                                     *This is the same job description for each one*
                                 </p>
                                 {this.state.jobDescription[0]}
-                            </p>
+                            </div>
                         </div>
                         <div>
 
@@ -259,12 +259,12 @@ class Job extends React.Component {
                                             </div> */}
                                             <div className="job-show-description-header">
                                                     Job description
-                                                <p className="job-show-description-p ">
+                                                <div className="job-show-description-p ">
                                                     <p>
                                                         *This is the same job description for each one*
                                                     </p>
                                                     {this.state.jobDescription[0]}
-                                                </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>}
