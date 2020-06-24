@@ -1,8 +1,7 @@
 .sidebar {
+    position: fixed;
     margin-top: 75px;
-    margin-left: 90px;
-    // height: 500px;
-    // border-right: 1px solid lightgray;
+    margin-left: 110px;
 }
 
 .sidebar-home-link {
@@ -60,4 +59,16 @@
 .sidebar-job-link:hover {
     text-decoration: none;
     color: black;
+}
+
+@media only screen and (max-width: 1080px) {
+    .sidebar {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-50px);
+    }
 }
