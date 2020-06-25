@@ -6,8 +6,6 @@
     margin-left: 250px;
     margin-top: 54px;
     border-left: 1px solid #d7d9dc;
-    height: 600px;
-    padding-left: 40px;
 }
 
 .search-header {
@@ -15,13 +13,111 @@
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     padding: 8px;
     padding-top: 30px;
+    padding-left: 40px;
 }
 
 .main-searchbar-container {
     padding: 8px;
 }
 
+.search-textbox-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
 .main-searchbar {
     width: 650px;
     padding: 8px;
+    border:1px solid #bbc0c4;
+    border-radius: 3px;
+}
+
+.main-searchbar:focus {
+    border: 0.1px solid #6cbbf7;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #b3d3ea;
+}
+
+.search-btn {
+    font-size: 13px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    margin: 0px 4px;
+    padding: 10.4px;
+    border: 1px solid #77A4C2;
+    background-color: #0095FF;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    height: 40px;
+    margin-top: 8px;
+}
+
+.search-btn:hover {
+    background-color: #0A78CC;
+}
+
+.search-results {
+    min-height: 500px;
+    max-height: auto;
+}
+
+.search-ind-question {
+    border-top: 1px solid #d7d9dc;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 120px;
+    max-width: 760px;
+}
+
+.search-header-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-ask-btn-wrapper {
+    position: relative;
+    left: 520px;
+    top: 10px;
+}
+
+.search-ask-question-button {
+  color: #FFFFFF; 
+  background-color: #1499FF; 
+  border: 1px solid #77A4C2;
+  border-radius: 4px;
+  margin: 4px 6px;
+  font-size: 14px;
+  padding: 10px 10px;
+  display: block;
+  margin-top: 10px;
+}
+
+.search-ask-question-button:hover {
+    background-color: #0A78CC; 
+}
+
+.search-question-title:hover {
+    text-decoration: none;
+}
+
+.search-question-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.search-section-note-wrapper {
+    display: flex;
+    flex-direction: row;
+    min-height: 1200px;
+}
+
+.search-note {
+    position: relative;
+    top: 75px;
+    left: 20px;
 }

@@ -12,7 +12,7 @@ class SearchNav extends React.Component {
     }
 
     keyPressed(e) {
-        if (event.key === "Enter") {
+        if (e.key === "Enter") {
             this.setState({
                 searchFor: e.target.value,
                 redirect: true
