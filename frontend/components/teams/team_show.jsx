@@ -9,7 +9,7 @@ class Team extends React.Component {
     
     render() {
         return (
-                <div>
+                <div className="teams-container">
                     <div className="teams-navbar1">
                         <Link to = "/">
                             <img className="teams-navbar-icon" src={window.icon}/>
@@ -96,12 +96,8 @@ class Team extends React.Component {
                                 <img className="teams-container3-starter" src={window.starter}/>
                             </div>
                             <div className="teams-container3-header">
-                                <div className="teams-container3-header-notbold">
-                                    Built on our &nbsp;
-                                </div>
-                                <div className="teams-container3-header-bold">
-                                    trusted Q&A platform
-                                </div>
+                                Built on our
+                                <strong> trusted Q&A platform</strong>
                             </div>
                             <div className="teams-container3-section">
                                 <div className="teams-container3-img-wrapper">
