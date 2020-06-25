@@ -10,11 +10,11 @@ import ReactHtmlParser from 'react-html-parser';
 class QuestionIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.routeToQuestions = this.routeToQuestions.bind(this);
         this.state = {
             currentPage: 1,
             questionsPerPage: 15
         }
+        this.routeToQuestions = this.routeToQuestions.bind(this);
         this.handlePageClick = this.handlePageClick.bind(this);
     }
 
@@ -123,7 +123,7 @@ class QuestionIndex extends React.Component {
                                 nextLabel={'next'}
                                 breakLabel={'...'}
                                 breakClassName={'break-me'}
-                                pageCount={count/15}
+                                pageCount={Math.ceil(count/15)}
                                 marginPagesDisplayed={2}
                                 pageRangeDisplayed={5}
                                 onPageChange={this.handlePageClick}

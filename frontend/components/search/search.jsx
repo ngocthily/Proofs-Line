@@ -5,6 +5,7 @@ import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
 import Footer from '../footer/footer';
 import ReactHtmlParser from 'react-html-parser';
+import ReactPaginate from 'react-paginate';
 
 class Search extends React.Component {
     constructor(props) {
@@ -12,12 +13,15 @@ class Search extends React.Component {
         this.state = {
             searchFor: '',
             questionsThatContain: [],
-            searched: false
+            searched: false,
+            currentPage: 1,
+            questionsPerPage: 15
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.find = this.find.bind(this);
         this.keyPressed = this.keyPressed.bind(this);
         this.routeToAsk = this.routeToAsk.bind(this);
+        this.handlePageClick = this.handlePageClick.bind(this);
     }
 
     componentDidMount() {
@@ -30,6 +34,13 @@ class Search extends React.Component {
                 searched: true
             });
         }
+    }
+
+    handlePageClick(e) {
+        this.setState({
+            currentPage: e.selected + 1
+        });
+        window.scrollTo(0, 0);
     }
 
     find() {
@@ -101,13 +112,22 @@ class Search extends React.Component {
         }
 
         const count = (this.state.questionsThatContain.length !== 0) ?
-            (`${this.state.questionsThatContain.length} results`) :
+            (this.state.questionsThatContain.length) :
             (this.state.searched && this.state.searchFor) ? 
-                (`${this.props.questions.filter(question => 
+                (this.props.questions.filter(question => 
                     (question.title.includes(this.state.searchFor) ||
                     question.body.includes(this.state.searchFor))
-                ).length} results`) : null;
-
+                ).length) : null;
+        
+        // for questions on search age
+        const indexOfLastQuestion = this.state.currentPage * this.state.questionsPerPage;
+        const indexOfFirstQuestion = indexOfLastQuestion - this.state.questionsPerPage;
+        const currentQuestionsForSearchPage = this.state.questionsThatContain.slice(indexOfFirstQuestion, indexOfLastQuestion);
+        
+        // for questions through search bar
+        const currentQuestionsForSearchBar = this.props.questions.filter(question => 
+            (question.title.includes(this.state.searchFor) ||
+            question.body.includes(this.state.searchFor))).slice(indexOfFirstQuestion,indexOfLastQuestion);
         return (
             <div>
                 <div>
@@ -140,13 +160,15 @@ class Search extends React.Component {
                                 <button className="search-btn" onClick={this.handleSubmit}>Search</button>
                             </div>
                             <div className="search-questions-count">
-                                {count}
+                                {count ? 
+                                (`${count} results`):
+                                null}
                             </div>
                         </div>
                         <div className="search-results">
                             {(this.state.questionsThatContain.length !== 0) ? (
                             <div>
-                                {this.state.questionsThatContain.map((question,idx) => (
+                                {currentQuestionsForSearchPage.map((question,idx) => (
                                     <div key={idx} className="search-ind-question">
                                         <div className="search-vote-answer-count">
                                             <div className="search-vote-count-word-container">
@@ -182,11 +204,9 @@ class Search extends React.Component {
                                 ))}
                             </div>)
                             : (this.state.searched && this.state.searchFor) ? 
-                                (<div> {this.props.questions.map((question,idx) => (
+                                (<div> {currentQuestionsForSearchBar.map((question,idx) => (
                                     <div key={idx}>
-                                        {(question.title.includes(this.state.searchFor) ||
-                                            question.body.includes(this.state.searchFor)) ?
-                                        (<div className="searchbar-ind-question">
+                                        <div className="searchbar-ind-question">
                                             <div className="searchbar-vote-answer-container">
                                                 <div className="search-vote-count-word-container">
                                                     <div className="search-vote-count">
@@ -217,10 +237,26 @@ class Search extends React.Component {
                                                     <p className="search-author">{question.author}</p>
                                                 </div>
                                             </div>
-                                        </div>) : null}
+                                        </div>
                                     </div>
                             ))} </div>) : null }
                         </div>
+                        {count ? 
+                        (<div className="page-numbers">
+                            <ReactPaginate
+                                previousLabel={'previous'}
+                                nextLabel={'next'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
+                                pageCount={Math.ceil(count / 15)}
+                                marginPagesDisplayed={2}
+                                pageRangeDisplayed={5}
+                                onPageChange={this.handlePageClick}
+                                containerClassName={'pagination'}
+                                subContainerClassName={'pages pagination'}
+                                activeClassName={'active'}
+                            />
+                        </div>) : null}
                     </div>
                     <div className="search-note">
                         <Note/>
