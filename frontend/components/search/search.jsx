@@ -7,8 +7,7 @@ class Search extends React.Component {
         super(props)
         this.state = {
             searchFor: '',
-            questionsThatContain: [],
-            searched: false
+            questionsThatContain: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.find = this.find.bind(this);
@@ -17,6 +16,12 @@ class Search extends React.Component {
     componentDidMount() {
         this.props.fetchQuestions();
         window.scrollTo(0, 0);
+
+        if (this.props.location.state) {
+            this.setState({
+                searchFor: this.props.location.state.searchFor
+            });
+        }
     }
 
     find() {
@@ -72,7 +77,20 @@ class Search extends React.Component {
                                 </div>
                             ))}
                         </div>)
-                            : (<div> No </div>) }
+                        : (this.state.searchFor) ? 
+                            (<div> {this.props.questions.map((question,idx) => (
+                            <div key={idx}>
+                                {(question.title.includes(this.state.searchFor)) ?
+                                (<div>
+                                    <div>
+                                        {question.title}
+                                    </div>
+                                    <div>
+                                        {question.body}
+                                    </div>
+                                </div>) : null}
+                            </div>
+                        ))} </div>) : null }
                     </div>
             </div>
         )

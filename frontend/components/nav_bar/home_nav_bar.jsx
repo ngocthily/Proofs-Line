@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchNav from '../search/search_nav';
 
 export default ({ currentUser, logout }) => {
     function dropdownChange() {
@@ -58,20 +59,15 @@ export default ({ currentUser, logout }) => {
                     </Link>
                 </div>
             </div>
-            {/* <div className="space1"></div>
-            <div className="space2"></div> */}
-            {/* <div className="nav-bar-buttons-wrapper"> */}
             <div className="nav-bar-buttons">
                 {/* <div className="search-img">
                     <i className="fas fa-search"></i>
                 </div>
                     <input className="search-bar" type="text" placeholder="Search..(coming)"></input> */}
+                <SearchNav/>
                 <div>
-                    {/* <Link to='/login'><button type="button" className="btn-login">Log in</button></Link>
-                    <Link to='/signup'><button type="button" className="btn-signup">Sign up</button></Link> */}
                     {display}
                 </div>
-            {/* </div> */}
             </div>
         </div>
     </div>
