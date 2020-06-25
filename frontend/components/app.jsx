@@ -8,6 +8,7 @@ import EditQuestionFormContainer from './questions/edit_question_form_container'
 import QuestionShowContainer from './questions/question_show_container';
 import TeamShow from './teams/team_show';
 import JobShow from './jobs/job_show';
+import SearchContainer from './search/search_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -23,6 +24,7 @@ const App = () => (
             <Route exact path="/questions" component={QuestionIndexContainer} />
             <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
+            <Route path="/search" component={SearchContainer}/>
         </Switch>
     </div>
 );
