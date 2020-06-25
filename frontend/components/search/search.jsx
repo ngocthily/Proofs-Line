@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 class Search extends React.Component {
     constructor(props) {
@@ -29,15 +30,18 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.state.questionsThatContain = [];
         this.find();
         this.setState({
             questionsThatContain: this.state.questionsThatContain
         });
     }
 
-    handleInput(type) {
-        return (e) => { this.setState({ [type]: e.currentTarget.value }) };
-    } 
+    handleChange(e) {
+        this.setState({
+            searchFor: e.target.value
+        })
+    }
 
     render() {
         return (
@@ -49,7 +53,7 @@ class Search extends React.Component {
                         <input 
                             type="text" 
                             value={this.state.searchFor}
-                            onChange={this.handleInput('searchFor')}
+                            onChange={(e) => this.handleChange(e)}
                         />
                         <button className="search-btn" onClick={this.handleSubmit}>Search</button>
                 </div>
@@ -63,7 +67,7 @@ class Search extends React.Component {
                                         {question.title}
                                     </Link>
                                     <div>
-                                        {question.body}
+                                        {ReactHtmlParser(question.body)}
                                     </div>
                                 </div>
                             ))}

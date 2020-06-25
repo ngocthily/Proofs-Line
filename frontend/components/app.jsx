@@ -24,7 +24,7 @@ const App = () => (
             <Route exact path="/questions" component={QuestionIndexContainer} />
             <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
-            <Route path="/search" component={SearchContainer}/>
+            <Route exact path="/search" component={SearchContainer}/>
         </Switch>
     </div>
 );
