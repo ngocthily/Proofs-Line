@@ -258,12 +258,9 @@ class Job extends React.Component {
                                             </div>
                                         </div>
                                         <div className="job-show-description-wrapper">
-                                            {/* <div className="job-show-description-header">
-                                                About this job
-                                            </div> */}
                                             <div className="job-show-description-header">
                                                     Job description
-                                                <div className="job-show-description-p ">
+                                                <div className="job-show-description-p">
                                                     <p>
                                                         *This is the same job description for each one*
                                                     </p>
