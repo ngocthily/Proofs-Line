@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchNav from '../search/search_nav';
 
 export default ({ currentUser, logout }) => {
     const display = currentUser ? (
@@ -25,7 +26,12 @@ export default ({ currentUser, logout }) => {
                     </Link>
                 </div>
                 <div className = "main-nav-bar-buttons">
+                    <div className="main-navbar-searchbar">
+                        <SearchNav/>
+                    </div>
+                    <div>
                         {display}
+                    </div>
                 </div>
             </div>
         </div>

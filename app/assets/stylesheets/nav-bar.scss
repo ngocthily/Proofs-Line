@@ -125,11 +125,9 @@
 }
 
 .main-navbar-logout-btn-container {
-  // margin-left: 50px;
   position: relative;
-  // left: 490px;
-  // padding-left: 90px;
-  padding-left: 232px;
+  padding-left: 10px;
+  margin-top: -4px;
 }
 
 .navbar-logout-btn-container {
@@ -608,17 +606,10 @@ fieldset[disabled] .main-btn-signup.active {
 }
 
 .navbar-login-signup-wrapper {
-  // position: relative;
-  // // left: 490px;
-  // // padding-left: 40px;
-  // // left: 30%;
-  // float: right;
-  // right: -50%;
-  // padding-left: 120px;
   display: flex;
   flex-direction: row;
-  // margin-right: 0vw;
-  padding-left: 160px;
+  padding-left: 10px;
+  margin-top: -4px;
 }
 
 @media only screen and (max-width: 414px) {
@@ -641,4 +632,8 @@ fieldset[disabled] .main-btn-signup.active {
   .home-navbar-search {
     display: none;
   }
+}
+
+.main-nav-bar-buttons {
+  margin-top: 4px;
 }

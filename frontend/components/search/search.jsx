@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import Sidebar from '../sidebar/sidebar';
+import Footer from '../footer/footer';
 import ReactHtmlParser from 'react-html-parser';
 
 class Search extends React.Component {
@@ -51,47 +54,63 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <div className="search-section">
-                    <div className="search-header">
-                        Search
-                    </div>
-                        <input 
-                            type="text" 
-                            value={this.state.searchFor}
-                            onChange={(e) => this.handleChange(e)}
-                        />
-                        <button className="search-btn" onClick={this.handleSubmit}>Search</button>
+                <div>
+                    <NavBarContainer/>
                 </div>
-                    <div className="search-results">
-                        results
-                        {(this.state.questionsThatContain.length !== 0) ? (
-                        <div>
-                            {this.state.questionsThatContain.map((question,idx) => (
-                                <div key={idx}>
-                                    <Link to={`questions/${question.id}`}>
-                                        {question.title}
-                                    </Link>
-                                    <div>
-                                        {ReactHtmlParser(question.body)}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>)
-                        : (this.state.searchFor) ? 
-                            (<div> {this.props.questions.map((question,idx) => (
-                            <div key={idx}>
-                                {(question.title.includes(this.state.searchFor)) ?
-                                (<div>
-                                    <div>
-                                        {question.title}
-                                    </div>
-                                    <div>
-                                        {question.body}
-                                    </div>
-                                </div>) : null}
+                <div className="search-sidebar">
+                    <Sidebar/>
+                </div>
+                <div>
+                    <div className="search-section-container">
+                        <div className="search-section">
+                            <div className="search-header">
+                                Search
                             </div>
-                        ))} </div>) : null }
+                            <div className="main-searchbar-container">
+                                <input 
+                                    className="main-searchbar"
+                                    type="text" 
+                                    value={this.state.searchFor}
+                                    onChange={(e) => this.handleChange(e)}
+                                />
+                            </div>
+                            <button className="search-btn" onClick={this.handleSubmit}>Search</button>
+                        </div>
+                        <div className="search-results">
+                            results
+                            {(this.state.questionsThatContain.length !== 0) ? (
+                            <div>
+                                {this.state.questionsThatContain.map((question,idx) => (
+                                    <div key={idx}>
+                                        <Link to={`questions/${question.id}`}>
+                                            {question.title}
+                                        </Link>
+                                        <div>
+                                            {ReactHtmlParser(question.body)}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>)
+                            : (this.state.searchFor) ? 
+                                (<div> {this.props.questions.map((question,idx) => (
+                                <div key={idx}>
+                                    {(question.title.includes(this.state.searchFor)) ?
+                                    (<div>
+                                        <div>
+                                            {question.title}
+                                        </div>
+                                        <div>
+                                            {question.body}
+                                        </div>
+                                    </div>) : null}
+                                </div>
+                            ))} </div>) : null }
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <Footer/>
+                </div>
             </div>
         )
     }

@@ -14,7 +14,8 @@ class Sidebar extends React.Component {
     }
 
     componentDidMount() {
-        if (document.location.href.includes("questions")) {
+        if (document.location.href.includes("questions") ||
+            document.location.href.includes("search")) {
             this.setState({
                 proofsBgColor: "#eff0f1",
                 jobsBgColor: "rgba(0,0,0,0.0)",
