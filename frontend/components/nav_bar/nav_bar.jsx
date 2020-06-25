@@ -25,10 +25,6 @@ export default ({ currentUser, logout }) => {
                     </Link>
                 </div>
                 <div className = "main-nav-bar-buttons">
-                    {/* <div className = "main-search-img">
-                        <i className="fas fa-search"></i>
-                    </div>
-                    <input className="main-search-bar" type="text" placeholder="Search..(coming)"></input> */}
                         {display}
                 </div>
             </div>

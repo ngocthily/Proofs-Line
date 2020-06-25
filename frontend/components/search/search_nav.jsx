@@ -28,10 +28,18 @@ class SearchNav extends React.Component {
         }
 
         return (
-            <input 
-                type="text"
-                onKeyPress={this.keyPressed}
-            />
+            <div>
+                <div className="searchbar">
+                    <div className="search-img">
+                        <i className="fas fa-search"></i>
+                    </div>
+                    <input 
+                        className="search-text-box"
+                        type="text"
+                        onKeyPress={this.keyPressed}
+                    />
+                </div>
+            </div>
         )
     }
 }

@@ -1,0 +1,25 @@
+// gets rid of highlight
+input:focus {outline: none;}
+
+.searchbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-img {
+    background-color: white;
+    border-top: 1px solid #bbc0c4;
+    border-left: 1px solid #bbc0c4;
+    border-bottom: 1px solid #bbc0c4;
+    color: #bbc0c4;
+    border-radius: 3px 0px 0px 3px;
+    padding: 6px;
+}
+
+.search-text-box {
+    border-top: 1px solid #bbc0c4;
+    border-right: 1px solid #bbc0c4;
+    border-bottom: 1px solid #bbc0c4;
+    border-left: none;
+    border-radius: 0px 3px 3px 0px;
+}

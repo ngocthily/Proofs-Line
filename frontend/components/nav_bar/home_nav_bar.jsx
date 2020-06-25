@@ -60,11 +60,9 @@ export default ({ currentUser, logout }) => {
                 </div>
             </div>
             <div className="nav-bar-buttons">
-                {/* <div className="search-img">
-                    <i className="fas fa-search"></i>
+                <div className="home-navbar-search">
+                    <SearchNav/>
                 </div>
-                    <input className="search-bar" type="text" placeholder="Search..(coming)"></input> */}
-                <SearchNav/>
                 <div>
                     {display}
                 </div>
