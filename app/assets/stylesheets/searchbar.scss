@@ -6,6 +6,12 @@ input:focus {outline: none;}
     flex-direction: row;
 }
 
+.searchbar:focus-within {
+    border: 0.1px solid #6cbbf7;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #b3d3ea;
+}
+
 .search-img {
     background-color: white;
     border-top: 1px solid #bbc0c4;
