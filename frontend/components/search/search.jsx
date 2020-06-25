@@ -171,40 +171,41 @@ class Search extends React.Component {
                             </div>)
                             : (this.state.searched && this.state.searchFor) ? 
                                 (<div> {this.props.questions.map((question,idx) => (
-                                <div key={idx} className="search-ind-question">
-                                    {(question.title.includes(this.state.searchFor)) ?
-                                    (<div>
-                                        <div className="search-vote-answer-count">
-                                            <div className="search-vote-count-word-container">
-                                                <div className="search-vote-count">
-                                                    {countOfVotes(question.votes)}
+                                    <div key={idx}>
+                                        {(question.title.includes(this.state.searchFor) ||
+                                            question.body.includes(this.state.searchFor)) ?
+                                        (<div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        {countOfVotes(question.votes)}
+                                                    </div>
+                                                    <div>
+                                                        votes
+                                                    </div>
                                                 </div>
-                                                <div className="search-vote-word">
-                                                    votes
+                                                <div>
+                                                    <div>
+                                                        {question.countOfAnswers}
+                                                    </div>
+                                                    <div>
+                                                        answers
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div className="search-answer-count-word-container">
-                                                <div className="search-answer-count">
-                                                    {question.countOfAnswers}
-                                                </div>
-                                                <div className="search-answer-word">
-                                                    answers
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="search-question-title-body-wrapper">
-                                            <Link to={`questions/${question.id}`} className="search-question-title">
-                                                {question.title}
-                                            </Link>
-                                            <div className="search-question-body">
-                                                {ReactHtmlParser(question.body)}
                                             </div>
                                             <div>
-                                                <p>{timeAgo(question.secs)} by {question.author}</p>
+                                                <Link to={`questions/${question.id}`}>
+                                                    {question.title}
+                                                </Link>
+                                                <div>
+                                                    {ReactHtmlParser(question.body)}
+                                                </div>
+                                                <div>
+                                                    <p>{timeAgo(question.secs)} by {question.author}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>) : null}
-                                </div>
+                                        </div>) : null}
+                                    </div>
                             ))} </div>) : null }
                         </div>
                     </div>
