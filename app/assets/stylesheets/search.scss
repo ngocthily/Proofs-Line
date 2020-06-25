@@ -150,9 +150,7 @@
 }
 
 .search-answer-count-word-container {
-    // background-color: #5cbb7c;
     padding: 5px;
-    // border-radius: 3px;
 }
 
 .search-answer-count {
@@ -163,4 +161,45 @@
 .search-answer-word {
     color: #6a737b;
     font-size: 12px;
+}
+
+.searchbar-ind-question {
+    border-top: 1px solid #d7d9dc;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-height: 140px;
+    max-width: 760px;
+    display: flex;
+    flex-direction: row;
+}
+
+.searchbar-vote-answer-container {
+    color: #6a737b;
+    padding-left: 20px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+.searchbar-question-title-body-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-time-author-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 400px;
+}
+
+.search-author {
+    color: #3387d3;
+}
+
+.search-questions-count {
+    font-size: 17px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    padding: 10px;
+    padding-left: 40px;
 }

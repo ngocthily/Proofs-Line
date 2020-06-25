@@ -100,6 +100,14 @@ class Search extends React.Component {
             return numOfUpvotes - numOfDownvotes
         }
 
+        const count = (this.state.questionsThatContain.length !== 0) ?
+            (`${this.state.questionsThatContain.length} results`) :
+            (this.state.searched && this.state.searchFor) ? 
+                (`${this.props.questions.filter(question => 
+                    (question.title.includes(this.state.searchFor) ||
+                    question.body.includes(this.state.searchFor))
+                ).length} results`) : null;
+
         return (
             <div>
                 <div>
@@ -130,6 +138,9 @@ class Search extends React.Component {
                                     />
                                 </div>
                                 <button className="search-btn" onClick={this.handleSubmit}>Search</button>
+                            </div>
+                            <div className="search-questions-count">
+                                {count}
                             </div>
                         </div>
                         <div className="search-results">
@@ -162,8 +173,9 @@ class Search extends React.Component {
                                             <div className="search-question-body">
                                                 {ReactHtmlParser(question.body)}
                                             </div>
-                                            <div>
-                                                <p>{timeAgo(question.secs)} by {question.author}</p>
+                                            <div className="search-time-author-container">
+                                                <p>{timeAgo(question.secs)} by&nbsp;</p>
+                                                <p className="search-author">{question.author}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -174,34 +186,35 @@ class Search extends React.Component {
                                     <div key={idx}>
                                         {(question.title.includes(this.state.searchFor) ||
                                             question.body.includes(this.state.searchFor)) ?
-                                        (<div>
-                                            <div>
-                                                <div>
-                                                    <div>
+                                        (<div className="searchbar-ind-question">
+                                            <div className="searchbar-vote-answer-container">
+                                                <div className="search-vote-count-word-container">
+                                                    <div className="search-vote-count">
                                                         {countOfVotes(question.votes)}
                                                     </div>
-                                                    <div>
+                                                    <div className="search-vote-word">
                                                         votes
                                                     </div>
                                                 </div>
-                                                <div>
-                                                    <div>
+                                                <div className="search-answer-count-word-container">
+                                                    <div className="search-answer-count">
                                                         {question.countOfAnswers}
                                                     </div>
-                                                    <div>
+                                                    <div className="search-answer-word">
                                                         answers
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <Link to={`questions/${question.id}`}>
+                                            <div className="searchbar-question-title-body-wrapper">
+                                                <Link to={`questions/${question.id}`} className="search-question-title">
                                                     {question.title}
                                                 </Link>
-                                                <div>
+                                                <div className="search-question-body">
                                                     {ReactHtmlParser(question.body)}
                                                 </div>
-                                                <div>
-                                                    <p>{timeAgo(question.secs)} by {question.author}</p>
+                                                <div className="search-time-author-container">
+                                                    <p>{timeAgo(question.secs)} by&nbsp;</p>
+                                                    <p className="search-author">{question.author}</p>
                                                 </div>
                                             </div>
                                         </div>) : null}
