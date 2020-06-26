@@ -4,7 +4,7 @@ Proofs Line is a mathematical question and answer forum with an upvote / downvot
 Meaning of site name: Mathematical **proofs** are arguments for mathematical statements such as theorems and the mathematical defintion for a **line** is a straight one-dimensional figure having no thickness and extending *infinitely* in both directions, therefore a site of inifinite "arugments".
 
 [Link to live site!](https://proofs-line.herokuapp.com/#/)
-![Homepage](https://user-images.githubusercontent.com/53027578/85837057-6352f500-b74c-11ea-8d23-68b0fb643a5c.png)
+<img src="https://user-images.githubusercontent.com/53027578/85839387-bbd7c180-b74f-11ea-9364-c306e03a1fa0.png" width="708"> &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/53027578/85838009-c1cca300-b74d-11ea-854f-f61747ccbd41.png" width="200">
 
 ## Technologies Used
 ### Languages
