@@ -7,7 +7,7 @@ Meaning of site name: Mathematical **proofs** are arguments for mathematical sta
 [Link to live site!](https://proofs-line.herokuapp.com/#/)   
 
 ## Web and Mobile
-All pages almost mobile friendly!  
+All pages are almost mobile friendly!  
 Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDTV 1080p, etc.  
 <img src="https://user-images.githubusercontent.com/53027578/85839387-bbd7c180-b74f-11ea-9364-c306e03a1fa0.png" width="600"> &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/53027578/85891361-c9b73200-b7a3-11ea-8253-5f636dd6fce2.png" width="160">  
 Pages mobile:
