@@ -1,4 +1,5 @@
-# Proofs Line ![alt text](https://github.com/ngocthily/Proofs-Line/blob/master/app/assets/images/icon.png)
+# <img src="https://github.com/ngocthily/Proofs-Line/blob/master/app/assets/images/icon.png" width="80"> Proofs Line
+## Description  
 Proofs Line is a mathematical question and answer forum with an upvote / downvote and search feature inspired by Stack Overflow and Math Exchange.
 
 Meaning of site name: Mathematical **proofs** are arguments for mathematical statements such as theorems and the mathematical defintion for a **line** is a straight one-dimensional figure having no thickness and extending *infinitely* in both directions, therefore a site of inifinite "arugments".
@@ -8,7 +9,16 @@ Meaning of site name: Mathematical **proofs** are arguments for mathematical sta
 ## Web and Mobile
 All pages almost mobile friendly!  
 Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDTV 1080p, etc.  
-<img src="https://user-images.githubusercontent.com/53027578/85839387-bbd7c180-b74f-11ea-9364-c306e03a1fa0.png" width="650"> &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/53027578/85838009-c1cca300-b74d-11ea-854f-f61747ccbd41.png" width="184">
+<img src="https://user-images.githubusercontent.com/53027578/85839387-bbd7c180-b74f-11ea-9364-c306e03a1fa0.png" width="650"> &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/53027578/85891361-c9b73200-b7a3-11ea-8253-5f636dd6fce2.png" width="184">  
+Pages mobile:
+- [x] `/` Splash page
+- [x] `/questions` All questions page
+- [x] `/questions/:id` Individual question page
+- [ ] `/questions/new` Ask question page
+- [ ] `/questions/edit` Edit question page
+- [ ] `/search` Search page
+- [x] `/teams` Teams page
+- [x] `/jobs` Jobs page
 
 ## Technologies Used
 ### Languages
@@ -30,6 +40,10 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
   * Database management system
 
 #### Other
+* Heroku
+  * Hosting
+* VS Code 
+  * Open source-code editor
 * Google fonts
   * Font library
 * Font Awesome
@@ -42,6 +56,8 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
   * A simple react popup component
 * react-paginate
   * A ReactJS component to render a pagination
+* Quill js
+  * Rich text editor
 * Images and icons taken from Stack Overflow
 
 ## Features
@@ -69,6 +85,6 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
 * Select questions that contain keywords in title and/or body
 
 ## Currently working on
-* Make every page mobile friendly (4 out of 10 pages left)
+* Making every page mobile friendly
 * Edit search function to find based on multiple keywords
 * Comment on questions and answers
