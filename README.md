@@ -60,5 +60,7 @@ Proofs Line is a mathematical question and answer forum with an upvote / downvot
 * Search for questions based on keyword
 * Select questions that contain keywords in title and/or body
 
-## Future
+## Currently working on
+* Make every page mobile friendly (4 out of 10 pages left)
 * Edit search function to find based on multiple keywords
+* Comment on questions and answers
