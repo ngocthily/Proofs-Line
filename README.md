@@ -1,7 +1,10 @@
-# Proofs Line
-Proofs Line is a mathematical question and answer forum with an upvote / downvote and search feature. Inspired by Stack Overflow and Math Exchange.
+# Proofs Line ![alt text](https://github.com/ngocthily/Proofs-Line/blob/master/app/assets/images/icon.png)
+Proofs Line is a mathematical question and answer forum with an upvote / downvote and search feature inspired by Stack Overflow and Math Exchange.
+
+Meaning of site name: Mathematical **proofs** are arguments for mathematical statements such as theorems and the mathematical defintion for a **line** is a straight one-dimensional figure having no thickness and extending *infinitely* in both directions, therefore a site of inifinite "arugments".
 
 [Link to live site!](https://proofs-line.herokuapp.com/#/)
+![Homepage](https://user-images.githubusercontent.com/53027578/85837057-6352f500-b74c-11ea-8d23-68b0fb643a5c.png)
 
 ## Technologies Used
 ### Languages
@@ -35,6 +38,7 @@ Proofs Line is a mathematical question and answer forum with an upvote / downvot
   * A simple react popup component
 * react-paginate
   * A ReactJS component to render a pagination
+* Images and icons taken from Stack Overflow
 
 ## Features
 1. ### User Authorization
