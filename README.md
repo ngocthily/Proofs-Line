@@ -80,12 +80,13 @@ Pages mobile:
   * Has a text editor, which allows users to change font size, bold, italicize, underline, add hyperlink, add numbering, and add bullet points
   <img src="https://user-images.githubusercontent.com/53027578/85897148-94fca800-b7ae-11ea-84ba-554716e84633.png" width="500">
 
-4. ### Upvotes and Downvotes <img src="https://user-images.githubusercontent.com/53027578/85896734-e0fb1d00-b7ad-11ea-8d52-fb486ac3715c.png" width="50">
+4. ### Upvotes and Downvotes
 * Upvote and/or downvote questions and answers if logged in
   * If not logged in and tries to vote, popup will appear asking user to sign up or log in
   <img src="https://user-images.githubusercontent.com/53027578/85896668-c0cb5e00-b7ad-11ea-8b05-7eb02d0871db.png" width="500">
 * Can switch upvote to downvote and vice versa
 * Cannot make multiple upvotes and/or downvote
+  <img src="https://user-images.githubusercontent.com/53027578/85896734-e0fb1d00-b7ad-11ea-8d52-fb486ac3715c.png" width="50">  
 
 5. ### Search
 * Search for questions based on keyword
