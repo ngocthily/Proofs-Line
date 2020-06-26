@@ -20,9 +20,9 @@ const App = () => (
             <AuthRoute path="/login" component={LoginContainer} />
             <Route path="/teams" component={TeamShow} />
             <Route path="/jobs" component={JobShow} />
-            <ProtectedRoute exact path="/questions/new" component={CreateQuestionFormContainer}/>
+            <ProtectedRoute path="/questions/new" component={CreateQuestionFormContainer}/>
             <Route exact path="/questions" component={QuestionIndexContainer} />
-            <Route exact path= "/questions/:questionId" component={QuestionShowContainer}/>
+            <Route path= "/questions/:questionId" component={QuestionShowContainer}/>
             <ProtectedRoute path= "/questions/:questionId/edit" component={EditQuestionFormContainer}/>
             <Route exact path="/search" component={SearchContainer}/>
         </Switch>

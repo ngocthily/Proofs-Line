@@ -4,6 +4,7 @@ import AnswerFormContainer from '../answers/answer_form_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import Sidebar from '../sidebar/sidebar';
 import Note from '../note/note';
+import Footer from '../footer/footer';
 import AnswerListItem from '../answers/answer_list_item';
 import Popup from "reactjs-popup";
 import ReactHtmlParser from 'react-html-parser'; 
@@ -286,7 +287,7 @@ class QuestionShow extends React.Component {
         );
 
         return (
-            <div>
+            <div className="ind-question-wrapper">
                 <div className="ind-question-navbar">
                     <NavBarContainer/>
                 </div>
@@ -294,109 +295,114 @@ class QuestionShow extends React.Component {
                     <div className="ind-question-sidebar">
                         <Sidebar/>
                     </div>
-                    <div className = "ind-question-page">
-                        <div className = "ind-first-line">
-                            <div className="ind-question-title-section">
-                                <p className = 'ind-question-title'>{question.title}</p>
-                                <div className="ind-question-asked">
-                                    <p className="ind-question-show-asked-word">Asked &nbsp;</p>
-                                    <p>{timeAgo(question.secs)}</p>
-                                </div>
-                            </div>
-                            <div>
-                            <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
-                            </div>
-                        </div>
-                        <div className="ind-question-whole">
-                            <div className="question-voting">
-                                <div className="question-upvote">
-                                    <i className="fas fa-caret-up fa-4x"
-                                        style={{ color: this.state.upvoteBtnColor }}
-                                        onClick={this.upvote.bind(this)}
-                                    >
-                                    </i>
+                    <div className="ind-question-page-note-container">
+                        <div className = "ind-question-page">
+                            <div className = "ind-first-line">
+                                <div className="ind-question-title-section">
+                                    <p className = 'ind-question-title'>{question.title}</p>
+                                    <div className="ind-question-asked">
+                                        <p className="ind-question-show-asked-word">Asked &nbsp;</p>
+                                        <p>{timeAgo(question.secs)}</p>
+                                    </div>
                                 </div>
                                 <div>
-                                <Popup
-                                    open={this.state.open}
-                                    closeOnDocumentClick
-                                    onClose={this.closeModal}
-                                        contentStyle={{ width: 360, borderRadius: 8}}
-                                >
-                                    <div className="popup-message">
-                                        <a className="close" onClick={this.closeModal}>
-                                        </a>
-                                        <div className="popup-message-content">
-                                            <div className="popup-message-header">
-                                                Join the Proofs Line community
-                                            </div>
-                                            <br></br>
-                                            <div className="popup-message-info">
-                                                Join Proofs Line to start unlocking new privileges
-                                                like asking questions, answering, and voting
-                                            </div>
-                                            <div className="popup-btn-signup-wrapper">
-                                                <Link to="/signup">
-                                                    <button className="popup-btn-signup">
-                                                        <i className="fas fa-envelope"></i> 
-                                                        &nbsp;
-                                                        Sign up using Email
-                                                    </button>
-                                                </Link>
-                                            </div>
-                                            <div className="popup-message-signup">
-                                                Already have an account? &nbsp;
-                                                <Link to="/login">Log in</Link>
+                                <button className="ask-question-button" onClick = {this.routeToAsk}>Ask Question</button>
+                                </div>
+                            </div>
+                            <div className="ind-question-whole">
+                                <div className="question-voting">
+                                    <div className="question-upvote">
+                                        <i className="fas fa-caret-up fa-4x"
+                                            style={{ color: this.state.upvoteBtnColor }}
+                                            onClick={this.upvote.bind(this)}
+                                        >
+                                        </i>
+                                    </div>
+                                    <div>
+                                    <Popup
+                                        open={this.state.open}
+                                        closeOnDocumentClick
+                                        onClose={this.closeModal}
+                                            contentStyle={{ width: 360, borderRadius: 8}}
+                                    >
+                                        <div className="popup-message">
+                                            <a className="close" onClick={this.closeModal}>
+                                            </a>
+                                            <div className="popup-message-content">
+                                                <div className="popup-message-header">
+                                                    Join the Proofs Line community
+                                                </div>
+                                                <br></br>
+                                                <div className="popup-message-info">
+                                                    Join Proofs Line to start unlocking new privileges
+                                                    like asking questions, answering, and voting
+                                                </div>
+                                                <div className="popup-btn-signup-wrapper">
+                                                    <Link to="/signup">
+                                                        <button className="popup-btn-signup">
+                                                            <i className="fas fa-envelope"></i> 
+                                                            &nbsp;
+                                                            Sign up using Email
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                                <div className="popup-message-signup">
+                                                    Already have an account? &nbsp;
+                                                    <Link to="/login">Log in</Link>
+                                                </div>
                                             </div>
                                         </div>
+                                    </Popup>
                                     </div>
-                                </Popup>
+                                    <div className="question-show-vote-count">
+                                        {(question.votes) ?
+                                            (this.countUpvotes(question.votes) 
+                                            - this.countDownvotes(question.votes)
+                                                + this.state.currentVoteCount) : null}
+                                    </div>
+                                    <div className="question-downvote">
+                                        <i className="fas fa-caret-down fa-4x"
+                                            style={{ color: this.state.downvoteBtnColor}}
+                                            onClick={this.downvote.bind(this)}
+                                        >
+                                        </i>
+                                    </div>
                                 </div>
-                                <div className="question-show-vote-count">
-                                    {(question.votes) ?
-                                        (this.countUpvotes(question.votes) 
-                                        - this.countDownvotes(question.votes)
-                                            + this.state.currentVoteCount) : null}
+                                <div className='ind-question-body'>
+                                    {ReactHtmlParser(question.body)}
+                                    { ((currentUserId) && (currentUserId === authorId)) ? 
+                                    <div>
+                                    {editLink}
+                                    </div> : null}
+                                <div className="ind-question-time-author">
+                                    <p className="ind-question-show-asked">asked {timeAgo(question.secs)}</p>
+                                    <p className="ind-question-show-author">{question.author}</p>
                                 </div>
-                                <div className="question-downvote">
-                                    <i className="fas fa-caret-down fa-4x"
-                                        style={{ color: this.state.downvoteBtnColor}}
-                                        onClick={this.downvote.bind(this)}
-                                    >
-                                    </i>
                                 </div>
                             </div>
-                            <div className='ind-question-body'>
-                                {ReactHtmlParser(question.body)}
-                                { ((currentUserId) && (currentUserId === authorId)) ? 
-                                <div>
-                                {editLink}
-                                </div> : null}
-                            <div className="ind-question-time-author">
-                                <p className="ind-question-show-asked">asked {timeAgo(question.secs)}</p>
-                                <p className="ind-question-show-author">{question.author}</p>
+                            <div className = 'count-answers'>
+                                {count}
                             </div>
-                            </div>
-                        </div>
-                        <div className = 'count-answers'>
-                            {count}
-                        </div>
-                        <div>
-
-                        </div>
-                        <div className = "whole-answer-section">
-                            {(this.props.answers) ? 
-                                (answerList(this.props.answers, this.props.currentUserId)) : 
-                                null}
-                        </div>
-                        {(currentUserId !== authorId) ?
                             <div>
-                                {editLink}
-                            </div> : null}
+
+                            </div>
+                            <div className = "whole-answer-section">
+                                {(this.props.answers) ? 
+                                    (answerList(this.props.answers, this.props.currentUserId)) : 
+                                    null}
+                            </div>
+                            {(currentUserId !== authorId) ?
+                                <div>
+                                    {editLink}
+                                </div> : null}
+                        </div>
+                        <div className="ind-question-note">
+                            <Note/>
+                        </div>
                     </div>
-                    <div className="ind-question-note">
-                        <Note/>
-                    </div>
+                </div>
+                <div className="question-show-footer">
+                    <Footer/>
                 </div>
             </div>
         )
