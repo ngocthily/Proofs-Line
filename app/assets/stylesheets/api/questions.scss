@@ -264,10 +264,11 @@ fieldset[disabled] .post-question-btn.active {
 
 .ind-body {
   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  max-height: 50px; /*cuts off*/
 }
 
 .answer-btn {
@@ -568,7 +569,7 @@ fieldset[disabled] .answer-btn.active {
 }
 .pagination > li > a,
   .pagination > li > span {
-    color: black;
+    color: #474c50;
     margin-left: 5px;
     border-radius: 3px;
 }
@@ -577,7 +578,7 @@ fieldset[disabled] .answer-btn.active {
   .pagination > li > span:hover,
   .pagination > li > a:focus,
   .pagination > li > span:focus {
-    color: black;
+    color: #474c50;
   }
 
   .pagination > .active > a,
