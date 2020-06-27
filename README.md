@@ -69,7 +69,7 @@ Pages mobile:
 2. ### Questions
 * Users can view all questions posted
   * Only a max of 15 questions shown on each page
-  <img src="https://user-images.githubusercontent.com/53027578/85896583-9b3e5480-b7ad-11ea-9b25-9c65cf5204ae.png" width="150">
+  <img src="https://user-images.githubusercontent.com/53027578/85896583-9b3e5480-b7ad-11ea-9b25-9c65cf5204ae.png" width="200">
 * Post questions if logged in
   * Has a text editor for the question's body
   <img src="https://user-images.githubusercontent.com/53027578/85896574-94afdd00-b7ad-11ea-980c-824791ba550e.png" width="500">
