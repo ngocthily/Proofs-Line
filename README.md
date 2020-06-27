@@ -87,3 +87,4 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
 ## Currently working on
 * Edit search function to find based on multiple keywords
 * Comment on questions and answers
+* Text editor that allows math symbols
