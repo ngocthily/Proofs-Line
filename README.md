@@ -85,6 +85,7 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
   <img src="https://user-images.githubusercontent.com/53027578/85898070-75ff1580-b7b0-11ea-9c0c-658d0566629f.png" width="150">
 
 ## Currently working on
+* Clean up code
 * Edit search function to find based on multiple keywords
 * Comment on questions and answers
 * Text editor that allows math symbols
