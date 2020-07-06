@@ -83,6 +83,38 @@ Compatible with iPhone 8, iPhone 8+, iPhone X, small tablet, iPad, iPad Pro, HDT
 * Select questions that contain keywords in title and/or body
 * Can search through the navbar search bar or on the search page  
   <img src="https://user-images.githubusercontent.com/53027578/85898070-75ff1580-b7b0-11ea-9c0c-658d0566629f.png" width="150">
+  
+A simple search bar in the navbar.
+It takes what string was searched by the user and redirects it to search component when the user hits the enter button. Then the search component handles finding questions and / or answers that includes the string. In addition, I removed the search bar from the navbar when it was on search page.
+
+```javascript
+// search_nav.jsx
+
+render() {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                    pathname: '/search',
+                    state: {searchFor: this.state.searchFor}}}/>;
+        }
+
+        return (
+            <div>
+                {!document.location.href.includes("search") ?
+                    (<div className="searchbar">
+                        <div className="search-img">
+                            <i className="fas fa-search"></i>
+                        </div>
+                        <input 
+                            className="search-text-box"
+                            type="text"
+                            onKeyPress={this.keyPressed}
+                        />
+                    </div>) : null
+                }
+            </div>
+        )
+    }
+```
 
 ## Currently working on
 * Clean up code
