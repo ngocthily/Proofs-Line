@@ -117,9 +117,9 @@ render() {
 ```
 
 ## Currently working on
-* Clean up code
-* Edit search function to find based on multiple keywords
 - [x] Order questions by showing recently added first
-* Add a profile
-* Comment on questions and answers
-* Text editor that allows math symbols
+- [ ] Clean up code
+- [ ] Edit search function to find based on multiple keywords
+- [ ] Add a profile
+- [ ] Comment on questions and answers
+- [ ] Text editor that allows math symbols
